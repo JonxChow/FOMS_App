@@ -1,4 +1,4 @@
-package Entity.Person;
+package Entity.Actor;
 
 public enum Role {
     CUSTOMER,

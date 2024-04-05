@@ -1,4 +1,4 @@
-package Entity.Person;
+package Entity.Actor;
 public class Person {
     private int id;
     private String name;

@@ -1,4 +1,7 @@
 package Controller;
 
-public class PaymentController {
+import Interface.Admin.AddPaymentMethod;
+import Interface.Admin.RemovePaymentMethod;
+
+public abstract class PaymentController implements AddPaymentMethod, RemovePaymentMethod {
 }

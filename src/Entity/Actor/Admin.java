@@ -1,4 +1,4 @@
-package Entity.Person;
+package Entity.Actor;
 
 public class Admin extends Staff {
     public Admin(int id, String name) {

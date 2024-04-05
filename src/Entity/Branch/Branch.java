@@ -1,8 +1,8 @@
-package Entity;
+package Entity.Branch;
 
 import Entity.Menu.Menu;
 import Entity.Order.Order;
-import Entity.Person.Staff;
+import Entity.Actor.Staff;
 
 import java.util.ArrayList;
 import java.util.List;
