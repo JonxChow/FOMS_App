@@ -4,42 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Food_Prog.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/BranchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/StaffController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Branch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Order/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Order/OrderList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Person/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Person/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Person/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Person/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Person/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/BranchManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/PaymentManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/StaffManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/CollectFood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/CreateOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/CustomizeOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/DisplayMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/MakePayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/PrintReceipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/TrackOrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Manager/ListStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Manager/ManageMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Staff/ProcessOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProcessOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Order/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/AddPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/AddStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/CloseBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/EditStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/OpenBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/PromoteStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/RemovePaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/RemoveStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/TransferStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/AddToOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/EditOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Customer/RemoveFromOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Manager/AddMenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Manager/EditMenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Manager/RemoveMenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Staff/DisplayNewOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Staff/ViewOrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order/OrderList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/BranchManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/PaymentManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/StaffManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CollectFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Customer/CollectFood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Customer/CreateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CustomizeOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/DisplayMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Customer/DisplayMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/MakePayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Customer/MakePayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/PrintReceipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Customer/PrintReceipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/TrackOrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Customer/TrackOrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/ListStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Manager/ListStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/ManageMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/ProcessOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Staff/ProcessOrder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +64,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -71,8 +86,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main"
   }
 }]]></component>
@@ -85,6 +102,27 @@
       <option name="presentableId" value="Default" />
       <updated>1712290728320</updated>
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1712302681776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712302681777</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1712302899839</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712302899839</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>
