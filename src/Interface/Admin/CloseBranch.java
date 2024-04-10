@@ -1,5 +1,6 @@
 package Interface.Admin;
 
 public interface CloseBranch {
-    void closeBranch();
+    //remove branch by name
+    public void closeBranch(String bName);
 }

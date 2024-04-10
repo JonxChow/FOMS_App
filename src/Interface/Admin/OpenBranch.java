@@ -1,5 +1,7 @@
 package Interface.Admin;
 
+import Entity.Lists.AllBranches;
+
 public interface OpenBranch {
-    void openBranch();
+    public static void openBranch(AllBranches allBranches) {}
 }

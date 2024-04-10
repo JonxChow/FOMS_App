@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Login system and main">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/src/Controller/BranchCreationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ManagerCreationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/StaffCreationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/AddManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/EditManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/RemoveManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/CloseBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Admin/CloseBranch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/OpenBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Admin/OpenBranch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -67,10 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712290728320</updated>
-      <workItem from="1712420149153" duration="9819000" />
-      <workItem from="1712484385795" duration="1214000" />
-      <workItem from="1712652769245" duration="3278000" />
-      <workItem from="1712731210200" duration="1037000" />
+      <workItem from="1712420149153" duration="7624000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -88,23 +96,7 @@
       <option name="project" value="LOCAL" />
       <updated>1712302899839</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added and implemented the functionality for branch to add payment methods">
-      <option name="closed" value="true" />
-      <created>1712427881504</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1712427881504</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Login system and main">
-      <option name="closed" value="true" />
-      <created>1712731398647</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1712731398647</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,8 +104,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <MESSAGE value="Added and implemented the functionality for branch to add payment methods" />
-    <MESSAGE value="Login system and main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login system and main" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>
