@@ -7,17 +7,27 @@ import java.util.List;
 
 public class AllBranches {
 
-    private static List<Branch> allBranches;
+    private final List<Branch> allBranches;
 
     public AllBranches() {
         this.allBranches = new ArrayList<>();
     }
 
-    public static void addBranch(Branch branch) {
+    public void addBranch(Branch branch) {
         allBranches.add(branch);
     }
 
-    public static List<Branch> getAllBranches() {
+    public List<Branch> getAllBranches() {
         return allBranches;
+    }
+
+    public Branch getBranchByName (String name) {
+        for (Branch allBranch : allBranches) {
+            if (allBranch.getBranchName().equals(name)) {
+                return allBranch;
+            }
+        }
+
+        return null;
     }
 }

@@ -8,10 +8,10 @@ public class LoginController {
         return person.getUserName().equals(enteredUserName) && person.getPassword().equals(enteredPassword);
     }
 
-    public boolean renameAccount(Person person, String enteredUserName, String enteredPasssword) {
+    public boolean renameAccount(Person person, String enteredUserName, String enteredPassword) {
         try {
             person.setUserName(enteredUserName);
-            person.setPassword(enteredPasssword);
+            person.setPassword(enteredPassword);
             return true;
         } catch (Exception e) {
             System.out.println("Account creation failed");

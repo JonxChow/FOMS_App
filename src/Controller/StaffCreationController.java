@@ -9,10 +9,10 @@ import Interface.Admin.RemoveStaff;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class StaffCreationController implements AddStaff, RemoveStaff {
+public class StaffCreationController implements AddStaff, RemoveStaff {
     static Scanner in = new Scanner(System.in);
 
-    public static void addStaff(Branch b){
+    public void addStaff(Branch b){
         System.out.println("Enter staff name: ");
         String name = in.nextLine();
         ArrayList<Staff> staffMembers = b.getStaffMembers();

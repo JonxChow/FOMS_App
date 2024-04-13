@@ -10,14 +10,24 @@ import Interface.Admin.RemoveManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class ManagerCreationController implements AddManager, EditManager, RemoveManager {
-    static Scanner in = new Scanner(System.in);
+public class ManagerCreationController implements AddManager, EditManager, RemoveManager {
+    Scanner in = new Scanner(System.in);
 
-    public static void addManager(Branch b){
+    public void addManager(Branch branch){
         System.out.println("Enter Manager name: ");
         String name = in.nextLine();
-        ArrayList<Staff> staffMembers = b.getStaffMembers();
+        ArrayList<Staff> staffMembers = branch.getStaffMembers();
         staffMembers.add(new Manager(-1, name));
-        b.setStaffMembers(staffMembers);
+        branch.setStaffMembers(staffMembers);
+    }
+
+    @Override
+    public void editManager() {
+
+    }
+
+    @Override
+    public void removeManager() {
+
     }
 }
