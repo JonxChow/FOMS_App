@@ -1,11 +1,9 @@
-package Controller;
+package ClassesWeDontNeedAnymore;
 
 import Entity.Actor.Manager;
 import Entity.Actor.Staff;
 import Entity.Branch.Branch;
-import Interface.Admin.AddManager;
 import Interface.Admin.EditManager;
-import Interface.Admin.RemoveManager;
 
 import java.util.ArrayList;
 import java.util.Scanner;

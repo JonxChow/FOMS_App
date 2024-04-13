@@ -1,4 +1,4 @@
-package Interface.Admin;
+package ClassesWeDontNeedAnymore;
 
 import Entity.Actor.Person;
 

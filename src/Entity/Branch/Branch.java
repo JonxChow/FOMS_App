@@ -50,4 +50,8 @@ public class Branch {
     public void setStaffMembers(ArrayList<Staff> staffMembers) {
         this.staffMembers = staffMembers;
     }
+
+//    public void addStaff(Staff staff) {
+//        this.staffMembers.add(staff);
+//    }
 }

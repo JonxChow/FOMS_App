@@ -1,10 +1,8 @@
-package Controller;
+package ClassesWeDontNeedAnymore;
 
 import Entity.Actor.Person;
 import Entity.Actor.Staff;
 import Entity.Branch.Branch;
-import Interface.Admin.AddStaff;
-import Interface.Admin.RemoveStaff;
 
 import java.util.ArrayList;
 import java.util.Scanner;

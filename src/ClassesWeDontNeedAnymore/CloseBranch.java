@@ -1,4 +1,4 @@
-package Interface.Admin;
+package ClassesWeDontNeedAnymore;
 
 public interface CloseBranch {
     //remove branch by name

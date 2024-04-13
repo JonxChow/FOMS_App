@@ -31,7 +31,11 @@ public class Person {
         return this.userName;
     }
 
-    public String getPassword() {
-        return this.password;
+    public Boolean validatePassword(String enteredPassword) {
+        return this.password.equals(enteredPassword);
+    }
+
+    public Role getRole() {
+        return role;
     }
 }
