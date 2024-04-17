@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Changed branch creation and added boundary.">
-      <change afterPath="$PROJECT_DIR$/src/Boundary/AdminUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/LoginUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/StaffUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/NewBranchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/StaffManagementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helper/InputHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/IBranchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/IStaffManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Display/IDisplayMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/BranchControlUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchControlUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/BranchCreationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchCreationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BranchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BranchCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ManagerCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/ManagerCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StaffCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/StaffCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/AddManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/AddManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/AddStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/AddStaff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/CloseBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/CloseBranch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/CreateBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/CreateBranch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/OpenBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/OpenBranch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/RemoveManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/RemoveManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/RemoveStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/RemoveStaff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-    </list>
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +68,7 @@
       <workItem from="1712484385795" duration="1214000" />
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
+      <workItem from="1713332175986" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -141,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713026797769</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
+      <option name="closed" value="true" />
+      <created>1713037072511</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713037072511</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +129,7 @@
     <MESSAGE value="Added and implemented the functionality for branch to add payment methods" />
     <MESSAGE value="Login system and main" />
     <MESSAGE value="Changed branch creation and added boundary." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed branch creation and added boundary." />
+    <MESSAGE value="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
   </component>
 </project>
