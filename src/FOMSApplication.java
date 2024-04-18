@@ -1,11 +1,13 @@
 import Boundary.AdminUI;
 import Boundary.CreateBranchUI;
-import Boundary.CustomerUI;
+import Boundary.StaffActionsUI;
 import Controller.NewBranchController;
 import Controller.StaffManagementController;
-import Entity.Actor.Admin;
 import Entity.Lists.AllBranches;
 import Helper.InputHelper;
+import Interface.Admin.IAllBranches;
+import Interface.Controllers.IBranchController;
+import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
 
 public class FOMSApplication {
@@ -17,12 +19,14 @@ public class FOMSApplication {
     public static void main(String[] args) {
 
         /*CONTROLLERS*/
-        AllBranches allBranches = new AllBranches();
-        StaffManagementController staffManager = new StaffManagementController();
-        NewBranchController branchManger = new NewBranchController(allBranches, staffManager);
+        IAllBranches allBranches = new AllBranches();
+        IStaffManager staffManager = new StaffManagementController();
+        IBranchController branchManger = new NewBranchController(allBranches, staffManager);
 
         /*USER INTERFACE*/
-        CreateBranchUI createBranchUI = new CreateBranchUI(branchManger);
+        CreateBranchUI branchUI = new CreateBranchUI(branchManger);
+        StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
+        IDisplayMenu adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
         //LoginUI
         //CustomerUI
 
@@ -34,8 +38,10 @@ public class FOMSApplication {
             case 1:
                 //showUserInterface(CustomerUI);
 
+
             case 2:
                 //showUserInterface(LoginUI);
+                adminUI.displayMenu();
 
             case 3:
                 //exit

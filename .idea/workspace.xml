@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
+      <change afterPath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Actor/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/AdminUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/AdminUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/NewBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NewBranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StaffManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaffManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/IBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IBranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/IStaffManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IStaffManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -69,6 +86,8 @@
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
       <workItem from="1713332175986" duration="5000" />
+      <workItem from="1713360162959" duration="1904000" />
+      <workItem from="1713362300514" duration="10683000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -118,7 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713037072511</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
+      <option name="closed" value="true" />
+      <created>1713360424667</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713360424667</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
+      <option name="closed" value="true" />
+      <created>1713360438506</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713360438506</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,18 +1,16 @@
-package Interface.Admin;
+package Interface.Controllers;
 
 import Entity.Branch.Branch;
-import  Entity.Actor.Staff;
 import  Entity.Actor.Manager;
 
 public interface IStaffManager {
 
-    void addStaff(Branch branch, int noOfStaff);
+    boolean addStaff(Branch branch, int noOfStaff);
 
     void addManager(Branch branch, int noOfManagers);
 
-    void removeStaff(Branch branch, Staff staff);
+    boolean removeStaff(Branch branch, String staffName);
 
     void removeManger(Branch branch, Manager manager);
-
 
 }

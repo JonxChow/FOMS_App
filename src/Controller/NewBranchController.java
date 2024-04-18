@@ -1,15 +1,16 @@
 package Controller;
 
 import Entity.Branch.Branch;
-import Entity.Lists.AllBranches;
-import Interface.Admin.IBranchController;
+import Interface.Admin.IAllBranches;
+import Interface.Controllers.IBranchController;
+import Interface.Controllers.IStaffManager;
 
 public class NewBranchController implements IBranchController {
 
-    private final AllBranches allBranches;
-    private final StaffManagementController staffManager;
+    private final IAllBranches allBranches;
+    private final IStaffManager staffManager;
 
-    public NewBranchController(AllBranches allBranches, StaffManagementController staffManager){
+    public NewBranchController(IAllBranches allBranches, IStaffManager staffManager){
         this.allBranches = allBranches;
         this.staffManager = staffManager;
     }
@@ -26,5 +27,10 @@ public class NewBranchController implements IBranchController {
     public void intialiseBranchwithStaff(Branch branch, int noOfStaff, int noOfManagers) {
         staffManager.addStaff(branch, noOfStaff);
         staffManager.addManager(branch, noOfManagers);
+    }
+
+    @Override
+    public void closeBranch(String name) {
+        allBranches.getAllBranches().remove(allBranches.getBranchByName(name));
     }
 }

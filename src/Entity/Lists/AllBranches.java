@@ -1,11 +1,12 @@
 package Entity.Lists;
 
 import Entity.Branch.Branch;
+import Interface.Admin.IAllBranches;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllBranches {
+public class AllBranches implements IAllBranches {
 
     private final List<Branch> allBranches;
 
@@ -29,5 +30,9 @@ public class AllBranches {
         }
 
         return null;
+    }
+
+    public void removeBranch (String name) {
+
     }
 }

@@ -4,10 +4,8 @@ import Entity.Menu.Menu;
 import Entity.Order.Order;
 import Entity.Actor.Staff;
 import Entity.Payment.PaymentMethods;
-import Entity.Payment.PaymentType;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Branch {
     private final String branchName;
@@ -51,7 +49,20 @@ public class Branch {
         this.staffMembers = staffMembers;
     }
 
-//    public void addStaff(Staff staff) {
-//        this.staffMembers.add(staff);
-//    }
+    private int getStaffIndex(String name) {
+        for (int i = 0; i < staffMembers.size(); i++) {
+            if(staffMembers.get(i).getName().equals(name)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public Staff getStaffByName(String name) {
+        int index = getStaffIndex(name);
+        return staffMembers.get(index);
+    }
+
+
 }

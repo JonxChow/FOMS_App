@@ -1,14 +1,14 @@
 package Boundary;
 
-import Controller.NewBranchController;
 import Entity.Branch.Branch;
 import Helper.InputHelper;
+import Interface.Controllers.IBranchController;
 
 public class CreateBranchUI {
 
-    private final NewBranchController branchManager;
+    private final IBranchController branchManager;
 
-    public CreateBranchUI(NewBranchController branchManager) {
+    public CreateBranchUI(IBranchController branchManager) {
         this.branchManager = branchManager;
     }
 
@@ -25,5 +25,10 @@ public class CreateBranchUI {
         branchManager.intialiseBranchwithStaff(newBranch, noOfStaff, noOfManagers);
 
         System.out.println("Branch successfully created");
+    }
+
+    public void closeBranch() {
+        String name = InputHelper.getValidatedString("Enter Branch Name:");
+        branchManager.closeBranch(name);
     }
 }
