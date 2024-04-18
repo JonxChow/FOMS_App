@@ -22,7 +22,7 @@ public class CreateBranchUI {
         int noOfManagers = (int) (double) (noOfStaff / 4);
 
         System.out.println("Creating branch with " + noOfStaff + " Staff members and " + noOfManagers + " Managers");
-        branchManager.intialiseBranchwithStaff(newBranch, noOfStaff, noOfManagers);
+        branchManager.intialiseBranchwithStaff(newBranch); //remove noOfStaff and noOfMangers
 
         System.out.println("Branch successfully created");
     }

@@ -18,14 +18,14 @@ public class FOMSApplication {
 
     public static void main(String[] args) {
 
-        /*CONTROLLERS*/
+        /*INIT CONTROLLERS and INTERFACE*/
         IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
-        IBranchController branchManger = new NewBranchController(allBranches, staffManager);
-
-        /*USER INTERFACE*/
-        CreateBranchUI branchUI = new CreateBranchUI(branchManger);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
+        IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
+        CreateBranchUI branchUI = new CreateBranchUI(branchManger);
+
+
         IDisplayMenu adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
         //LoginUI
         //CustomerUI

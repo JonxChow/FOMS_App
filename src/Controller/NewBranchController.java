@@ -1,18 +1,23 @@
 package Controller;
 
+import Boundary.StaffActionsUI;
 import Entity.Branch.Branch;
 import Interface.Admin.IAllBranches;
 import Interface.Controllers.IBranchController;
 import Interface.Controllers.IStaffManager;
 
+import java.util.ArrayList;
+
 public class NewBranchController implements IBranchController {
 
     private final IAllBranches allBranches;
-    private final IStaffManager staffManager;
+    //private final IStaffManager staffManager;
+    private final StaffActionsUI staffActionsUI;
 
-    public NewBranchController(IAllBranches allBranches, IStaffManager staffManager){
+    public NewBranchController(IAllBranches allBranches, StaffActionsUI staffActionsUI){
         this.allBranches = allBranches;
-        this.staffManager = staffManager;
+        //this.staffManager = staffManager;
+        this.staffActionsUI = staffActionsUI;
     }
 
 
@@ -24,9 +29,9 @@ public class NewBranchController implements IBranchController {
     }
 
     @Override
-    public void intialiseBranchwithStaff(Branch branch, int noOfStaff, int noOfManagers) {
-        staffManager.addStaff(branch, noOfStaff);
-        staffManager.addManager(branch, noOfManagers);
+    public void intialiseBranchwithStaff(Branch branch) {
+        //divert to some UI to get staff info
+        staffActionsUI.addStaff(branch);
     }
 
     @Override

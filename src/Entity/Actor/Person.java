@@ -19,6 +19,7 @@ public class Person {
         this.userName = "default";
         this.password = "default";
         this.role = Role.PERSON;
+        this.age = age;
         this.gender = gender;
     }
 

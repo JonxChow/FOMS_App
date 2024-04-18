@@ -15,7 +15,7 @@ public class ManagerCreationController implements AddManager, EditManager, Remov
         System.out.println("Enter Manager name: ");
         String name = in.nextLine();
         ArrayList<Staff> staffMembers = branch.getStaffMembers();
-        staffMembers.add(new Manager(-1, name));
+        //staffMembers.add(new Manager(-1, name));
         branch.setStaffMembers(staffMembers);
     }
 

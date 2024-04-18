@@ -14,15 +14,8 @@ public class StaffManagementController implements IStaffManager {
 
 
     @Override
-    public boolean addStaff(Branch branch, int noOfStaff) {
-        for(int i = 0; i < noOfStaff; i++) {
-            System.out.println("Enter staff name: ");
-            String name = scanner.nextLine();
-            ArrayList<Staff> staffMembers = branch.getStaffMembers();
-            staffMembers.add(new Staff(-1, name));
-            branch.setStaffMembers(staffMembers);
-        }
-
+    public boolean addStaff(Branch branch, ArrayList<Staff> staffMembers) {
+        branch.setStaffMembers(staffMembers);
         return true;
     }
 
@@ -32,7 +25,7 @@ public class StaffManagementController implements IStaffManager {
             System.out.println("Enter Manager name: ");
             String name = scanner.nextLine();
             ArrayList<Staff> staffMembers = branch.getStaffMembers();
-            staffMembers.add(new Manager(-1, name));
+            //staffMembers.add(new Manager(-1, name));
             branch.setStaffMembers(staffMembers);
         }
 
