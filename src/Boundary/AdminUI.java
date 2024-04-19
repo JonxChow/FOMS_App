@@ -8,9 +8,9 @@ public class AdminUI implements IDisplayMenu {
 
     private final IAllBranches allBranches;
     private final CreateBranchUI branchUI;
-    private final  StaffActionsUI staffActionsUI;
+    private final  IDisplayMenu staffActionsUI;
 
-    public AdminUI (IAllBranches allBranches, CreateBranchUI branchUI, StaffActionsUI staffActionsUI) {
+    public AdminUI (IAllBranches allBranches, CreateBranchUI branchUI, IDisplayMenu staffActionsUI) {
         this.allBranches = allBranches;
         this.branchUI = branchUI;
         this.staffActionsUI = staffActionsUI;

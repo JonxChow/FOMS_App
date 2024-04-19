@@ -1,8 +1,9 @@
-import Boundary.AdminUI;
-import Boundary.CreateBranchUI;
-import Boundary.StaffActionsUI;
+import Boundary.*;
+import Controller.LoginController;
 import Controller.NewBranchController;
 import Controller.StaffManagementController;
+import Entity.Actor.Admin;
+import Entity.Actor.Staff;
 import Entity.Lists.AllBranches;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
@@ -18,38 +19,43 @@ public class FOMSApplication {
 
     public static void main(String[] args) {
 
+
+
         /*INIT CONTROLLERS and INTERFACE*/
         IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
         CreateBranchUI branchUI = new CreateBranchUI(branchManger);
+        AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
+        ManagerUI managerUI = new ManagerUI();
+        LoginController loginController = new LoginController();
+        LoginUI loginUi = new LoginUI(allBranches, loginController, staffActionsUI, managerUI, adminUI);
 
 
-        IDisplayMenu adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
-        //LoginUI
-        //CustomerUI
+        int choice;
+
+        do {
+            System.out.println("**********WELCOME TO FOMS APPLICATION************");
+            System.out.println("****Continue As Customer Or Log In As a Staff****");
+            choice = InputHelper.getValidatedInt("Press 1 for Customer, 2 to Log in and 3 to Exit", 1, 3);
+            switch (choice) {
+                case 1:
+                    //showUserInterface(CustomerUI);
+                    break;
 
 
-        System.out.println("**********WELCOME TO FOMS APPLICATION************");
-        System.out.println("****Continue As Customer Or Log In As a Staff****");
-        int choice = InputHelper.getValidatedInt("Press 1 for Customer, 2 to Log in and 3 to Exit", 1, 3);
-        switch (choice){
-            case 1:
-                //showUserInterface(CustomerUI);
+                case 2:
+                    loginUi.displayMenu();
+                    break;
 
+                case 3:
+                    System.out.println("Program terminating");
+            }
 
-            case 2:
-                //showUserInterface(LoginUI);
-                adminUI.displayMenu();
-
-            case 3:
-                //exit
-        }
-
-        /*List of methods to call when main screen has been implemented later*/
-        //to create a branch: createBranchUI.createBranch();
-        //Display admin menu: showUserInterface(adminUI);
-
+            /*List of methods to call when main screen has been implemented later*/
+            //to create a branch: createBranchUI.createBranch();
+            //Display admin menu: showUserInterface(adminUI);
+        } while(choice < 3);
     }
 }

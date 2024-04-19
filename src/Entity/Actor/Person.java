@@ -6,7 +6,6 @@ public class Person {
     private int age;
     private Gender gender;
 
-    private String userName, password;
     public Person(){
         id = -1;
         name = "Undefined";
@@ -16,40 +15,29 @@ public class Person {
     public Person(int id, String name, int age, Gender gender){
         this.id = id;
         this.name = name;
-        this.userName = "default";
-        this.password = "default";
         this.role = Role.PERSON;
         this.age = age;
         this.gender = gender;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserName() {
-        return this.userName;
-    }
-
-    public Boolean validatePassword(String enteredPassword) {
-        return this.password.equals(enteredPassword);
-    }
-
-    public Role getRole() {
-        return role;
     }
 
     public String getName() {
         return this.name;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId() {
+        this.id = 1;
+    }
+
+    public void resetId() {
+        this.id = -1;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
-
 
 }

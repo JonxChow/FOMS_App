@@ -1,21 +1,47 @@
 package Controller;
 
-import Entity.Actor.Person;
+import Entity.Actor.Role;
+import Entity.Actor.Staff;
+import Entity.Branch.Branch;
+import Interface.Controllers.ILoginController;
 
-public class LoginController {
+public class LoginController implements ILoginController {
 
-//    public boolean isAuthenticated(Person person, String enteredUserName, String enteredPassword) {
-//        return person.getUserName().equals(enteredUserName) && person.getPassword().equals(enteredPassword);
-//    }
-
-    public boolean renameAccount(Person person, String enteredUserName, String enteredPassword) {
-        try {
-            person.setUserName(enteredUserName);
-            person.setPassword(enteredPassword);
-            return true;
-        } catch (Exception e) {
-            System.out.println("Account creation failed");
+    @Override
+    public boolean validateAccount(Branch branch, String enteredUsername, String enteredPassword) {
+        Staff staff = branch.getStaffByUsername(enteredUsername);
+        if(staff == null) {
+            System.out.println("Account doesn't exist");
             return false;
+        } else {
+            return staff.validateAccount(enteredUsername, enteredPassword);
         }
     }
+
+    public Role getRoleByUsername(Branch branch, String username) {
+        Staff staff = branch.getStaffByUsername(username);
+        return staff.getStaffRole();
+    }
+
+    @Override
+    public Staff getAvailableAccount(Branch branch, Role role) {
+        return branch.getUnassignedStaff(role);
+    }
+
+    @Override
+    public boolean setAccountDetails(Branch branch, String enteredUsername, String newUsername, String newPassword) {
+        Staff staff = branch.getStaffByUsername(enteredUsername);
+        if(staff == null) return false;
+
+        staff.setUsername(newUsername);
+        staff.setPassword(newPassword);
+
+        return true;
+    }
+
+    @Override
+    public void claimAccount(Branch branch, Staff staff) {
+        branch.getStaffByName(staff.getName()).setId();
+    }
+
 }

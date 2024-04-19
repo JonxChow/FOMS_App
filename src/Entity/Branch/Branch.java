@@ -1,11 +1,13 @@
 package Entity.Branch;
 
+import Entity.Actor.Role;
 import Entity.Menu.Menu;
 import Entity.Order.Order;
 import Entity.Actor.Staff;
 import Entity.Payment.PaymentMethods;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class Branch {
     private final String branchName;
@@ -49,20 +51,38 @@ public class Branch {
         this.staffMembers = staffMembers;
     }
 
-    private int getStaffIndex(String name) {
+    private int getIndexByPredicate(Predicate<Staff> predicate) {
         for (int i = 0; i < staffMembers.size(); i++) {
-            if(staffMembers.get(i).getName().equals(name)) {
+            if (predicate.test(staffMembers.get(i))) {
                 return i;
             }
         }
-
-        return -1;
+        return -1;  // Return -1 if no match found
     }
 
     public Staff getStaffByName(String name) {
-        int index = getStaffIndex(name);
-        return staffMembers.get(index);
+        return getStaffByPredicate(staff -> staff.getName().equals(name));
     }
 
+    public Staff getStaffByUsername(String username) {
+        return getStaffByPredicate(staff -> staff.getUsername().equals(username));
+    }
 
+    private Staff getStaffByPredicate(Predicate<Staff> predicate) {
+        int index = getIndexByPredicate(predicate);
+        if (index != -1) {
+            return staffMembers.get(index);
+        }
+        return null;
+    }
+
+    public Staff getUnassignedStaff(Role role) {
+        for (Staff staffMember : staffMembers) {
+            if (staffMember.getId() == -1 && staffMember.getStaffRole().equals(role)) {
+                return staffMember;
+            }
+        }
+
+        return null;
+    }
 }

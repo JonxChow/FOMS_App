@@ -77,7 +77,10 @@ public class StaffActionsUI implements IDisplayMenu {
             staffMembers.add(new Staff(-1, staffName, staffAge, gender));
         }
         //init the required number of managers
-        for(int i=0; i < (noOfStaff%4)+1; i++){
+        int managers = (int) Math.ceil(noOfStaff / 4.0);
+        managers = Math.min(managers, 3);
+
+        for(int i=0; i < managers; i++){
             String staffName = InputHelper.getValidatedString("Enter manager name: ");
             int staffGender = InputHelper.getValidatedInt("Enter staff gender 0(female), 1(male)", 0, 1);
             if(staffGender == 0) gender = Gender.FEMALE;
