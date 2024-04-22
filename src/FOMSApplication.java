@@ -2,8 +2,6 @@ import Boundary.*;
 import Controller.LoginController;
 import Controller.NewBranchController;
 import Controller.StaffManagementController;
-import Entity.Actor.Admin;
-import Entity.Actor.Staff;
 import Entity.Lists.AllBranches;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
@@ -24,13 +22,15 @@ public class FOMSApplication {
         /*INIT CONTROLLERS and INTERFACE*/
         IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
+        StaffUI staffUI = new StaffUI();
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
+        MenuActionsUI menuActionsUI = new MenuActionsUI();
         IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
         CreateBranchUI branchUI = new CreateBranchUI(branchManger);
         AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
-        ManagerUI managerUI = new ManagerUI();
+        ManagerUI managerUI = new ManagerUI(staffActionsUI, menuActionsUI);
         LoginController loginController = new LoginController();
-        LoginUI loginUi = new LoginUI(allBranches, loginController, staffActionsUI, managerUI, adminUI);
+        LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
 
 
         int choice;

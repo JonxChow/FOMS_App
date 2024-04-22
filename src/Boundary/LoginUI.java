@@ -1,6 +1,5 @@
 package Boundary;
 
-import Entity.Actor.Admin;
 import Entity.Actor.Role;
 import Entity.Actor.Staff;
 import Entity.Branch.Branch;
@@ -9,23 +8,21 @@ import Interface.Admin.IAllBranches;
 import Interface.Controllers.ILoginController;
 import Interface.Display.IDisplayMenu;
 
-import java.util.Scanner;
-
 public class LoginUI implements IDisplayMenu {
 
     private  IAllBranches allBranches;
     private ILoginController loginController;
 
-    private StaffActionsUI staffActionsUI;
+    private StaffUI staffUI;
 
     private ManagerUI managerUI;
 
     private AdminUI adminUI;
 
-    public LoginUI(IAllBranches allBranches, ILoginController loginController, StaffActionsUI staffActionsUI, ManagerUI managerUI, AdminUI adminUI) {
+    public LoginUI(IAllBranches allBranches, ILoginController loginController, StaffUI staffUI, ManagerUI managerUI, AdminUI adminUI) {
         this.allBranches = allBranches;
         this.loginController = loginController;
-        this.staffActionsUI = staffActionsUI;
+        this.staffUI = staffUI;
         this.managerUI = managerUI;
         this.adminUI = adminUI;
     }
@@ -68,11 +65,11 @@ public class LoginUI implements IDisplayMenu {
 
                             switch (role) {
                                 case STAFF:
-                                    staffActionsUI.displayMenu();
-                                    //add in correct staff ui once done
+                                    staffUI.displayMenu();
                                     return;
 
                                 case MANAGER:
+                                    managerUI.displayMenu();
                                     return;
                             }
                             break;

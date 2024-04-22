@@ -46,5 +46,23 @@ public class InputHelper {
         }
         return number;
     }
+
+    public static double getValidatedDouble(String prompt, double min, double max) {
+        double number;
+        while (true) {
+            System.out.println(prompt);
+            try {
+                number = Double.parseDouble(scanner.nextLine().trim());
+                if (number < min || number > max) {
+                    System.out.printf("Please enter a number between %.2f and %.2f.\n", min, max);
+                } else {
+                    break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+        }
+        return number;
+    }
 }
 

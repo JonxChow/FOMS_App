@@ -6,11 +6,14 @@ public class MenuItem {
     private String description;
     private String category;
 
-    public MenuItem(String name, double price, String description, String category) {
+    private int availability;
+
+    public MenuItem(String name, double price, String description, String category, int availability) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
+        this.availability = availability;
     }
 
     // Getters and Setters
@@ -44,5 +47,13 @@ public class MenuItem {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(int availability) {
+        this.availability = availability;
     }
 }

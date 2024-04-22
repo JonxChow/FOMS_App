@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Fixed DIP, added in one more staff action">
-      <change afterPath="$PROJECT_DIR$/src/Interface/Controllers/ILoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2024_5_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2024_5_38_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Login system added. However, some issue with flow of UI in the do-while loop">
+      <change afterPath="$PROJECT_DIR$/src/Boundary/MenuActionsUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boundary/StaffUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Boundaries/getUserBranch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2024_5_38_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2024_5_38_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/AdminUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/AdminUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/LoginUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/StaffCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/StaffCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/NewBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NewBranchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Display/IDisplayMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Display/IDisplayMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helper/InputHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helper/InputHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
         <option value="Interface" />
       </list>
     </option>
@@ -55,23 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.FOMSApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.FOMSApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -94,7 +87,8 @@
       <workItem from="1713332175986" duration="5000" />
       <workItem from="1713360162959" duration="1904000" />
       <workItem from="1713362300514" duration="10683000" />
-      <workItem from="1713544603336" duration="12567000" />
+      <workItem from="1713544603336" duration="12837000" />
+      <workItem from="1713720336079" duration="4304000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -160,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713360438506</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Login system added. However, some issue with flow of UI in the do-while loop">
+      <option name="closed" value="true" />
+      <created>1713559203530</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713559203530</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +174,7 @@
     <MESSAGE value="Login system and main" />
     <MESSAGE value="Changed branch creation and added boundary." />
     <MESSAGE value="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
+    <MESSAGE value="Login system added. However, some issue with flow of UI in the do-while loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login system added. However, some issue with flow of UI in the do-while loop" />
   </component>
 </project>
