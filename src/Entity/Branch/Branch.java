@@ -2,6 +2,7 @@ package Entity.Branch;
 
 import Entity.Actor.Role;
 import Entity.Menu.Menu;
+import Entity.Menu.MenuItem;
 import Entity.Order.Order;
 import Entity.Actor.Staff;
 import Entity.Payment.PaymentMethods;
@@ -16,7 +17,7 @@ public class Branch {
     private int noOfStaff;
     private int noOfManager;
     private ArrayList<Order> orderList;
-    private Menu menu; // Assuming each branch can have a unique menu
+    private ArrayList<MenuItem> menu; // Assuming each branch can have a unique menu
 
     private PaymentMethods paymentMethods; //All the available payment types of a branch
 
@@ -25,7 +26,7 @@ public class Branch {
         this.location = location;
         this.staffMembers = new ArrayList<>();
         this.orderList = new ArrayList<>();
-        this.menu = new Menu();
+        this.menu = new ArrayList<>();
         this.paymentMethods = new PaymentMethods();
         this.noOfStaff = 0;
         this.noOfManager = 0;
@@ -85,4 +86,5 @@ public class Branch {
 
         return null;
     }
+    public ArrayList<MenuItem> getMenu(){return menu;}
 }

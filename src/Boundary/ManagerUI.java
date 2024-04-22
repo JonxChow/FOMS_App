@@ -1,16 +1,23 @@
 package Boundary;
 
+import Controller.StaffManagementController;
+import Entity.Actor.Gender;
+import Entity.Actor.Manager;
+import Entity.Actor.Staff;
 import Entity.Branch.Branch;
 import Helper.InputHelper;
 import Interface.Boundaries.getUserBranch;
+import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
+
+import java.util.ArrayList;
 
 public class ManagerUI implements IDisplayMenu, getUserBranch {
 
-    private StaffActionsUI staffActionsUI;
-    private MenuActionsUI menuActionsUI;
-    public ManagerUI(StaffActionsUI staffActionsUI, MenuActionsUI menuActionsUI) {
-        this.staffActionsUI = staffActionsUI;
+    private IStaffManager staffManagementController;
+    private MenuActionUI menuActionsUI;
+    public ManagerUI(IStaffManager staffManagementController, MenuActionUI menuActionsUI) {
+        this.staffManagementController = staffManagementController;
         this.menuActionsUI = menuActionsUI;
     }
     @Override
@@ -29,7 +36,7 @@ public class ManagerUI implements IDisplayMenu, getUserBranch {
             switch (choice)
             {
                 case 1:
-                    staffActionsUI.displayMenu();
+                    displayMenu();
                     break;
                 case 2:
                     break;

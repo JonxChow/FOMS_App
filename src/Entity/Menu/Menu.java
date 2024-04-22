@@ -9,4 +9,7 @@ public class Menu {
     public Menu() {
         this.items = new ArrayList<>();
     }
+    public List<MenuItem> getMenu(){
+        return items;
+    }
 }
