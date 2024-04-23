@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Changed branch creation and added boundary.">
-      <change afterPath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Actor/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/MenuActionsUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProcessOrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Staff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +122,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713026797769</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController">
+      <option name="closed" value="true" />
+      <created>1713791521893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713791521893</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController">
+      <option name="closed" value="true" />
+      <created>1713791543564</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713791543564</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +149,7 @@
     <MESSAGE value="Added and implemented the functionality for branch to add payment methods" />
     <MESSAGE value="Login system and main" />
     <MESSAGE value="Changed branch creation and added boundary." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed branch creation and added boundary." />
+    <MESSAGE value="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController" />
   </component>
 </project>

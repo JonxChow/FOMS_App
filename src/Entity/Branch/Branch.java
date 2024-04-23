@@ -87,4 +87,5 @@ public class Branch {
         return null;
     }
     public ArrayList<MenuItem> getMenu(){return menu;}
+    public ArrayList<Order> getOrderList(){return orderList;}
 }

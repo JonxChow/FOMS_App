@@ -1,58 +1,60 @@
 package Controller;
 
+import Entity.Branch.Branch;
 import Entity.Menu.MenuItem;
 
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ArrayList;
 
 public class MenuController {
-    private List<MenuItem> menuItems;
 
     public MenuController() {
-        this.menuItems = new ArrayList<>();
+        // Now an empty constructor.
     }
 
-    // Method to add a new menu item
-    public void addItem(MenuItem item) {
-        menuItems.add(item);
+    // Method to add a new menu item to a branch
+    public void addItem(Branch branch, MenuItem item) {
+        branch.getMenu().add(item);
         System.out.println("Menu item added successfully: " + item.getName());
     }
 
-    // Method to remove a menu item
-    public void removeItem(MenuItem item) {
-        if (menuItems.remove(item)) {
+    // Method to remove a menu item from a branch
+    public void removeItem(Branch branch, MenuItem item) {
+        if (branch.getMenu().remove(item)) {
             System.out.println("Menu item removed successfully: " + item.getName());
         } else {
             System.out.println("Failed to remove menu item: " + item.getName());
         }
     }
 
-    // Method to edit an existing menu item
-    public void editItem(MenuItem item) {
-        int index = findItemIndex(item);
-        if (index != -1) {
-            menuItems.set(index, item);
-            System.out.println("Menu item updated successfully: " + item.getName());
+    // Method to edit an existing menu item in a branch
+    public void editItem(Branch branch, MenuItem newItem) {
+        Iterator<MenuItem> iterator = branch.getMenu().iterator();
+        boolean foundAndRemoved = false;
+        while (iterator.hasNext()) {
+            MenuItem item = iterator.next();
+            if (item.getName().equals(newItem.getName())) {
+                iterator.remove();
+                foundAndRemoved = true;
+                break; // Assuming names are unique
+            }
+        }
+
+        if (foundAndRemoved) {
+            branch.getMenu().add(newItem);
+            System.out.println("New menu item added successfully: " + newItem.getName());
         } else {
-            System.out.println("Menu item not found: " + item.getName());
+            System.out.println("Menu item with name '" + newItem.getName() + "' not found.");
         }
     }
 
-    // Helper method to find an item's index
-    private int findItemIndex(MenuItem item) {
-        return menuItems.indexOf(item);
-    }
-
-    // Method to get the list of all menu items
-    public List<MenuItem> getMenuItems() {
-        return new ArrayList<>(menuItems); // Return a copy of the list to avoid external modifications
-    }
-    public void displayMenu() {
-        if (menuItems.isEmpty()) {
+    public void displayMenu(Branch branch) {
+        if (branch.getMenu().isEmpty()) {
             System.out.println("No items in the menu.");
             return;
         }
-        for (MenuItem m : menuItems) {
+        for (MenuItem m : branch.getMenu()) {
             System.out.println("Name: " + m.getName() + ", Price: " + m.getPrice()
                     + ", Description: " + m.getDescription()
                     + ", Category: " + m.getCategory()
@@ -60,4 +62,3 @@ public class MenuController {
         }
     }
 }
-

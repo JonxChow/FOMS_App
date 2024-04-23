@@ -40,4 +40,6 @@ public class Person {
         this.name = name;
     }
 
+    public Role getRole(){return role;}
+
 }

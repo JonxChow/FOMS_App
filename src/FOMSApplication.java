@@ -3,6 +3,7 @@ import Controller.LoginController;
 import Controller.MenuController;
 import Controller.NewBranchController;
 import Controller.StaffManagementController;
+import Entity.Branch.Branch;
 import Entity.Lists.AllBranches;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
@@ -25,13 +26,13 @@ public class FOMSApplication {
         IStaffManager staffManager = new StaffManagementController();
         StaffUI staffUI = new StaffUI();
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
-        MenuActionUI menuActionsUI = new MenuActionUI(new MenuController());
+        //MenuActionUI menuActionsUI = new MenuActionUI();
         IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
         CreateBranchUI branchUI = new CreateBranchUI(branchManger);
         AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
-        ManagerUI managerUI = new ManagerUI(staffManager, menuActionsUI);
+        //ManagerUI managerUI = new ManagerUI(staffManager, menuActionsUI);
         LoginController loginController = new LoginController();
-        LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
+        //LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
 
 
         int choice;
@@ -47,7 +48,7 @@ public class FOMSApplication {
 
 
                 case 2:
-                    loginUi.displayMenu();
+                    //loginUi.displayMenu();
                     break;
 
                 case 3:

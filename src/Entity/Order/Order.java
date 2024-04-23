@@ -6,29 +6,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Order {
-    private final String orderId;
-    private final Map<MenuItem, Integer> items;
+    private final int orderId;
+    private Map<MenuItem, Integer> items;
     private double totalAmount;
     protected OrderStatus orderstatus;
 
-    public Order(String orderId) {
+    public Order(int orderId) {
         this.orderId = orderId;
         this.items = new HashMap<>();
+        this.totalAmount = 0.0;
         this.orderstatus = OrderStatus.PROCESSING; // Default status
     }
 
-    // Method to add items to the order
-//    public void addItem(MenuItem item, int quantity) {
-//        items.put(item, quantity);
-//        calculateTotal();
-//    }
-//
-//    // Calculate total amount
-//    private void calculateTotal() {
-//        totalAmount = items.entrySet().stream()
-//                .mapToDouble(entry -> entry.getKey().getPrice() * entry.getValue())
-//                .sum();
-//    }
-
     // Getters and Setters
+    public int getOrderID(){return orderId;}
+    public Map<MenuItem, Integer> getOrder(){return items;}
+    public double getTotalAmount(){return totalAmount;}
+    public OrderStatus getOrderstatus(){return orderstatus;}
+
+    public void setTotalAmount(double totalAmount){this.totalAmount = totalAmount;}
+
+    public void setOrderStatus(OrderStatus orderstatus){this.orderstatus = orderstatus;}
 }
