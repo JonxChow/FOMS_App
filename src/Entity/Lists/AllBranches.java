@@ -32,7 +32,8 @@ public class AllBranches implements IAllBranches {
         return null;
     }
 
-    public void removeBranch (String name) {
+    @Override
+    public void removeBranch(Branch branch) {
 
     }
 }

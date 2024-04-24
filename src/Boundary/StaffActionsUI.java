@@ -1,29 +1,29 @@
 package Boundary;
 
-import Controller.OrderController;
-import Controller.PaymentController;
+import Controller.StaffPromotionController;
 import Entity.Branch.Branch;
-import Entity.Menu.MenuItem;
-import Entity.Order.DiningOption;
-import Entity.Order.Order;
 import Entity.Actor.Gender;
 import Entity.Actor.Staff;
 import Entity.Actor.Manager;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IStaffUI;
 import Interface.Controllers.IStaffManager;
+import Interface.Controllers.IStaffPromotion;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
-public class StaffActionsUI implements IDisplayMenu {
+public class StaffActionsUI implements IDisplayMenu, IStaffUI {
     private final IStaffManager staffManager;
     private final IAllBranches allBranches;
+    private final IStaffPromotion staffPromotionController;
     private final Scanner scanner = new Scanner(System.in);
 
     public StaffActionsUI(IAllBranches allBranches, IStaffManager staffManager) {
         this.staffManager = staffManager;
         this.allBranches = allBranches;
+        this.staffPromotionController = new StaffPromotionController();
     }
 
     @Override
@@ -32,7 +32,9 @@ public class StaffActionsUI implements IDisplayMenu {
         System.out.println("1: Add Staff");
         System.out.println("2: Add Manager");
         System.out.println("3: Remove Staff/Manager");
-        System.out.println("4: Exit");
+        System.out.println("4: Promote a Staff");
+        System.out.println("5: Transfer Manager");
+        System.out.println("6: Exit");
 
         int choice;
         do {
@@ -49,12 +51,22 @@ public class StaffActionsUI implements IDisplayMenu {
                     removeStaff();
                     break;
                 case 4:
+                    Branch branch = getBranch();
+                    String name = InputHelper.getValidatedString("Enter Staff name: ");
+                    staffPromotionController.promoteStaff(branch, name);
+                    break;
+                case 5:
+                    //Display branches here
+                    System.out.println("Input Name of Branch to select manager below");
+                    Branch sourceBranch = getBranch();
+                    System.out.println("Input Name of Branch to transfer manager to below");
+                    Branch targetBranch = getBranch();
+                    staffPromotionController.transferManager(this.staffManager, sourceBranch, targetBranch);
+                case 6:
                     System.out.println("Exiting...");
-                    return;
-                default:
-                    System.out.println("Invalid option. Please try again.");
+                    break;
             }
-        } while (choice != 4);
+        } while (choice < 6);
     }
 
     public Branch getBranch() {
@@ -108,7 +120,7 @@ public class StaffActionsUI implements IDisplayMenu {
         }
     }
 
-    private void removeStaff() {
+    public void removeStaff() {
         String name = InputHelper.getValidatedString("Enter Branch Name: ");
         Branch branch = allBranches.getBranchByName(name);
         String staffName = InputHelper.getValidatedString("Enter Name of Staff/Manager to remove: ");

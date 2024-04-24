@@ -88,4 +88,11 @@ public class Branch {
     }
     public ArrayList<MenuItem> getMenu(){return menu;}
     public ArrayList<Order> getOrderList(){return orderList;}
+
+    public int getNumberOfStaffByRole(Role role) {
+        return (int) staffMembers.stream()
+                .filter(staff -> staff.getStaffRole().equals(role))
+                .count();
+    }
+
 }

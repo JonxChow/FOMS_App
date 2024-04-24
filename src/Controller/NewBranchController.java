@@ -3,15 +3,16 @@ package Controller;
 import Boundary.StaffActionsUI;
 import Entity.Branch.Branch;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IStaffUI;
 import Interface.Controllers.IBranchController;
 import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
 
 public class NewBranchController implements IBranchController {
     private final IAllBranches allBranches;
-    private final StaffActionsUI staffActionsUI;
+    private final IStaffUI staffActionsUI;
 
-    public NewBranchController(IAllBranches allBranches, StaffActionsUI staffActionsUI){
+    public NewBranchController(IAllBranches allBranches, IStaffUI staffActionsUI){
         this.allBranches = allBranches;
         this.staffActionsUI = staffActionsUI;
     }

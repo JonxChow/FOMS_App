@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Updated MenuActionUI, MenuController, OrderController">
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Login system added. However, some issue with flow of UI in the do-while loop">
+      <change afterPath="$PROJECT_DIR$/src/Controller/StaffPromotionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/Controllers/IStaffPromotion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/AdminUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/AdminUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/NewBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NewBranchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/StaffManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaffManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Controllers/IBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IBranchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Controllers/IStaffManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IStaffManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Actor/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/getUserBranch.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +27,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -47,6 +53,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.FOMSApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -79,6 +86,11 @@
       <workItem from="1712484385795" duration="1214000" />
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
+      <workItem from="1713332175986" duration="5000" />
+      <workItem from="1713360162959" duration="1904000" />
+      <workItem from="1713362300514" duration="10683000" />
+      <workItem from="1713544603336" duration="12837000" />
+      <workItem from="1713720336079" duration="4304000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -120,31 +132,39 @@
       <option name="project" value="LOCAL" />
       <updated>1713026797769</updated>
     </task>
-    <task id="LOCAL-00006" summary="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController">
+    <task id="LOCAL-00006" summary="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
       <option name="closed" value="true" />
-      <created>1713791521893</created>
+      <created>1713037072511</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1713791521893</updated>
+      <updated>1713037072511</updated>
     </task>
-    <task id="LOCAL-00007" summary="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController">
+    <task id="LOCAL-00007" summary="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
       <option name="closed" value="true" />
-      <created>1713791543564</created>
+      <created>1713360424667</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1713791543564</updated>
+      <updated>1713360424667</updated>
     </task>
-    <task id="LOCAL-00008" summary="Updated MenuActionUI, MenuController, OrderController">
+    <task id="LOCAL-00008" summary="Worked on NewBranchController, More UI classes, Main, Begun log in functionality">
       <option name="closed" value="true" />
-      <created>1713880355741</created>
+      <created>1713360438506</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1713880355747</updated>
+      <updated>1713360438506</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Login system added. However, some issue with flow of UI in the do-while loop">
+      <option name="closed" value="true" />
+      <created>1713559203530</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713559203530</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,8 +175,8 @@
     <MESSAGE value="Added and implemented the functionality for branch to add payment methods" />
     <MESSAGE value="Login system and main" />
     <MESSAGE value="Changed branch creation and added boundary." />
-    <MESSAGE value="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController" />
-    <MESSAGE value="Updated MenuActionUI, MenuController, OrderController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated MenuActionUI, MenuController, OrderController" />
+    <MESSAGE value="Worked on NewBranchController, More UI classes, Main, Begun log in functionality" />
+    <MESSAGE value="Login system added. However, some issue with flow of UI in the do-while loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login system added. However, some issue with flow of UI in the do-while loop" />
   </component>
 </project>

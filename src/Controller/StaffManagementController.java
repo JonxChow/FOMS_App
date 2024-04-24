@@ -23,6 +23,8 @@ public class StaffManagementController implements IStaffManager {
         }
         return false;
     }
+
+    //remove if not needed
     @Override
     public boolean addManager(Branch branch, Manager newManager) {
         if (branch != null) {

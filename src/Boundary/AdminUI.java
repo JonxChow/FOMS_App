@@ -34,14 +34,10 @@ public class AdminUI implements IDisplayMenu {
 //        choice = InputHelper.getValidatedInt("Select 1 or 2: ", 1, 2);
 
         do {
-            System.out.println("1: Add, Edit or Remove Staff Accounts");
-            System.out.println("2: Display Staff List");
-            System.out.println("3: Assign Managers to a Branch");
-            System.out.println("4: Promote Staff");
-            System.out.println("5: Transfer Staff or Manager");
-            System.out.println("6: Add or Remove Payment Methods");
-            System.out.println("7: Open or Close a Branch");
-            System.out.println("8: Exit");
+            System.out.println("1: Staff Actions");
+            System.out.println("2: Add or Remove Payment Methods");
+            System.out.println("3: Open or Close a Branch");
+            System.out.println("4: Exit");
             choice = InputHelper.getValidatedInt("Please select from the following:", 1, 8);
 
             switch(choice) {
@@ -50,20 +46,9 @@ public class AdminUI implements IDisplayMenu {
                     break;
 
                 case 2:
+                    break;
 
                 case 3:
-                    break;
-
-                case 4:
-                    break;
-
-                case 5:
-                    break;
-
-                case 6:
-                    break;
-
-                case 7:
                     choice = InputHelper.getValidatedInt("1 to Open and 2 to Close", 1, 2);
                     if(choice == 1) {
                         branchUI.createBranch();
@@ -71,11 +56,8 @@ public class AdminUI implements IDisplayMenu {
                         branchUI.closeBranch();
                     }
                     break;
-
-                case 8:
-                    break;
             }
 
-        } while (choice < 8);
+        } while (choice < 4);
     }
 }
