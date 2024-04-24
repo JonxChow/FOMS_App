@@ -6,7 +6,7 @@ public interface IBranchController {
 
     Branch createBranch(String name, String location);
 
-    void intialiseBranchwithStaff(Branch branch);
+    public void initializeBranchWithStaff(Branch branch, int numberOfStaff, int numberOfManagers);
 
-    void closeBranch(String name);
+    boolean closeBranch(String name);
 }

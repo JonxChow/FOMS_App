@@ -1,27 +1,20 @@
 package Controller;
 
 import Boundary.StaffActionsUI;
-import Entity.Actor.Staff;
 import Entity.Branch.Branch;
 import Interface.Admin.IAllBranches;
 import Interface.Controllers.IBranchController;
 import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
 
-import java.util.ArrayList;
-
 public class NewBranchController implements IBranchController {
-
     private final IAllBranches allBranches;
-    //private final IStaffManager staffManager;
     private final StaffActionsUI staffActionsUI;
 
     public NewBranchController(IAllBranches allBranches, StaffActionsUI staffActionsUI){
         this.allBranches = allBranches;
-        //this.staffManager = staffManager;
         this.staffActionsUI = staffActionsUI;
     }
-
 
     public Branch createBranch(String name, String location) {
         Branch newBranch = new Branch(name, location);
@@ -29,16 +22,22 @@ public class NewBranchController implements IBranchController {
         return newBranch;
     }
 
-
-    public void intialiseBranchwithStaff(Branch branch) {
-        //get createBranchUI to pass in no of staff and managers
-        //call add staff in loop
-        //call add managers in loop
-        staffActionsUI.addStaff(branch);
+    public void initializeBranchWithStaff(Branch branch, int numberOfStaff, int numberOfManagers) {
+        // Adding staff to the branch while respecting the staff to manager ratio
+        for (int i = 0; i < numberOfStaff; i++) {
+            staffActionsUI.addStaffIndividual(branch);
+        }
+        for (int i = 0; i < numberOfManagers; i++) {
+            staffActionsUI.addManagerIndividual(branch);
+        }
     }
 
-
-    public void closeBranch(String name) {
-        allBranches.getAllBranches().remove(allBranches.getBranchByName(name));
+    public boolean closeBranch(String name) {
+        Branch branch = allBranches.getBranchByName(name);
+        if (branch != null) {
+            allBranches.removeBranch(branch);
+            return true;
+        }
+        return false;
     }
 }

@@ -1,5 +1,6 @@
 package Controller;
 
+import Entity.Actor.Gender;
 import Entity.Actor.Manager;
 import Entity.Actor.Staff;
 import Entity.Branch.Branch;
@@ -12,33 +13,46 @@ public class StaffManagementController implements IStaffManager {
 
     private final Scanner scanner = new Scanner(System.in);
 
-
     @Override
-    public boolean addStaff(Branch branch, ArrayList<Staff> staffMembers) {
-        branch.setStaffMembers(staffMembers);
-        return true;
-    }
-
-    @Override
-    public void addManager(Branch branch, int noOfManagers) {
-        for(int i = 0; i < noOfManagers; i++) {
-            System.out.println("Enter Manager name: ");
-            String name = scanner.nextLine();
+    public boolean addStaff(Branch branch, Staff newStaff) {
+        if (branch != null) {
             ArrayList<Staff> staffMembers = branch.getStaffMembers();
-            //staffMembers.add(new Manager(-1, name));
+            staffMembers.add(newStaff);
             branch.setStaffMembers(staffMembers);
+            return true;
         }
-
+        return false;
+    }
+    @Override
+    public boolean addManager(Branch branch, Manager newManager) {
+        if (branch != null) {
+            ArrayList<Staff> staffMembers = branch.getStaffMembers();
+            staffMembers.add(newManager);
+            branch.setStaffMembers(staffMembers);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean removeStaff(Branch branch, String staffName) {
-        Staff staffToRemove = branch.getStaffByName(staffName);
-        return branch.getStaffMembers().remove(staffToRemove);
+        if (branch != null) {
+            ArrayList<Staff> staffMembers = branch.getStaffMembers();
+            Staff staffToRemove = staffMembers.stream()
+                    .filter(s -> s.getName().equals(staffName))
+                    .findFirst()
+                    .orElse(null);
+            if (staffToRemove != null) {
+                staffMembers.remove(staffToRemove);
+                branch.setStaffMembers(staffMembers);
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override
-    public void removeManger(Branch branch, Manager manager) {
-
+    // The removeManager method is not currently needed as per previous discussions, but can be implemented similarly to removeStaff if needed.
+    public void removeManager(Branch branch, Manager manager) {
+        // Implement if required
     }
 }

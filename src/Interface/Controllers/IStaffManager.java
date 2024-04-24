@@ -8,12 +8,16 @@ import java.util.ArrayList;
 
 public interface IStaffManager {
 
-    boolean addStaff(Branch branch, ArrayList<Staff> staffMembers);
+    boolean addStaff(Branch branch, Staff newStaff);
 
-    void addManager(Branch branch, int noOfManagers);
+    public boolean addManager(Branch branch, Manager newManager);
 
-    boolean removeStaff(Branch branch, String staffName);
+    public boolean removeStaff(Branch branch, String staffName);
 
-    void removeManger(Branch branch, Manager manager);
+    //void addStaffIndividual(Branch branch);
+
+    //void addManagerIndividual(Branch branch);
+
+    //void removeManger(Branch branch, Manager manager);
 
 }

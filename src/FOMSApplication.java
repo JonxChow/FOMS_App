@@ -24,12 +24,12 @@ public class FOMSApplication {
         StaffUI staffUI = new StaffUI(orderController);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         IDisplayMenu menuActionUI = new MenuActionUI();
-        IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
-        CreateBranchUI branchUI = new CreateBranchUI(branchManger);
-        AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
+        //IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
+        //CreateBranchUI branchUI = new CreateBranchUI(branchManger);
+        //AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
         ManagerUI managerUI = new ManagerUI(staffActionsUI, menuActionUI);
         LoginController loginController = new LoginController();
-        LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
+        //LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
         PaymentController paymentController = new PaymentController();
         IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController);
 
@@ -45,7 +45,7 @@ public class FOMSApplication {
                     break;
 
                 case 2:
-                    loginUi.displayMenu();
+                    //loginUi.displayMenu();
                     break;
 
                 case 3:

@@ -11,4 +11,6 @@ public interface IAllBranches {
     List<Branch> getAllBranches();
 
     Branch getBranchByName (String name);
+
+    void removeBranch(Branch branch);
 }
