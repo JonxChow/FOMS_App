@@ -23,6 +23,7 @@ public class LoginController implements ILoginController {
         return staff.getStaffRole();
     }
 
+
     @Override
     public Staff getAvailableAccount(Branch branch, Role role) {
         return branch.getUnassignedStaff(role);

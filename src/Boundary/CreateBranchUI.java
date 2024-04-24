@@ -18,11 +18,8 @@ public class CreateBranchUI {
 
         Branch newBranch = branchManager.createBranch(name,location);
 
-//        int noOfStaff = InputHelper.getValidatedInt("Enter number of Staff: ", 1, 15);
-//        int noOfManagers = (int) (double) (noOfStaff / 4);
-//
-//        System.out.println("Creating branch with " + noOfStaff + " Staff members and " + noOfManagers + " Managers");
-        branchManager.intialiseBranchwithStaff(newBranch); //remove noOfStaff and noOfMangers
+        //get no of staff and managers to add and perform check
+        branchManager.intialiseBranchwithStaff(newBranch);
 
         System.out.println("Branch successfully created");
     }

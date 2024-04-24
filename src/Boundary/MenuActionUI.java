@@ -4,21 +4,23 @@ import Controller.MenuController;
 import Entity.Branch.Branch;
 import Entity.Menu.MenuItem;
 import Helper.InputHelper;
+import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
-public class MenuActionUI {
+public class MenuActionUI implements IDisplayMenu {
     private MenuController menuController;
     private Branch branch;
     private Scanner scanner;
 
-    public MenuActionUI(Branch branch) {
-        this.branch = branch;
+    public MenuActionUI() {
+        //check to see if composition or association better
         this.menuController = new MenuController();
         this.scanner = new Scanner(System.in);
     }
 
-    public void showMenu() {
+    @Override
+    public void displayMenu() {
         System.out.println("1. Add Menu Item");
         System.out.println("2. Remove Menu Item");
         System.out.println("3. Edit Menu Item");
@@ -48,7 +50,7 @@ public class MenuActionUI {
         }
     }
 
-    public void displayMenu() {
+    public void showMenu() {
         menuController.displayMenu(branch);
     }
 
@@ -97,9 +99,13 @@ public class MenuActionUI {
         }
     }
 
-    public void start() {
-        while (true) {
-            showMenu();
-        }
+    public void setBranch(Branch branch) {
+        this.branch = branch;
     }
+
+//    public void start() {
+//        while (true) {
+//            showMenu();
+//        }
+//    }
 }

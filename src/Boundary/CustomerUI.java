@@ -6,22 +6,34 @@ import Entity.Branch.Branch;
 import Entity.Menu.MenuItem;
 import Entity.Order.DiningOption;
 import Entity.Order.Order;
+import Helper.InputHelper;
+import Interface.Admin.IAllBranches;
+import Interface.Display.IDisplayMenu;
+
 import java.util.Scanner;
 
-public class CustomerUI {
+public class CustomerUI implements IDisplayMenu {
     private OrderController orderController;
     private PaymentController paymentController;
     private Branch branch;
     private Scanner scanner;
 
-    public CustomerUI(Branch branch, OrderController orderController, PaymentController paymentController) {
-        this.branch = branch;
+    private IAllBranches allBranches;
+
+    public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentController) {
         this.orderController = orderController;
         this.paymentController = paymentController;
         this.scanner = new Scanner(System.in);
+        this.allBranches = allBranches;
     }
-
+    @Override
     public void displayMenu() {
+
+        //get branch
+        String branchName = InputHelper.getValidatedString("Enter Branch to visit: ");
+        Branch branch = allBranches.getBranchByName(branchName);
+        setBranch(branch);
+
         while (true) {
             System.out.println("\n--- Customer Menu ---");
             System.out.println("1. New Order / Modify Existing Order");
@@ -163,5 +175,9 @@ public class CustomerUI {
         } else {
             System.out.println("Order not found.");
         }
+    }
+
+    public void setBranch(Branch branch) {
+        this.branch = branch;
     }
 }

@@ -1,10 +1,8 @@
 import Boundary.*;
-import Controller.LoginController;
-import Controller.MenuController;
-import Controller.NewBranchController;
-import Controller.StaffManagementController;
+import Controller.*;
 import Entity.Branch.Branch;
 import Entity.Lists.AllBranches;
+import Entity.Order.Order;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
 import Interface.Controllers.IBranchController;
@@ -19,21 +17,21 @@ public class FOMSApplication {
 
     public static void main(String[] args) {
 
-
-
         /*INIT CONTROLLERS and INTERFACE*/
         IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
-        //StaffUI staffUI = new StaffUI();
+        OrderController orderController = new OrderController();
+        StaffUI staffUI = new StaffUI(orderController);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
-        //MenuActionUI menuActionsUI = new MenuActionUI();
+        IDisplayMenu menuActionUI = new MenuActionUI();
         IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
         CreateBranchUI branchUI = new CreateBranchUI(branchManger);
         AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
-        //ManagerUI managerUI = new ManagerUI(staffManager, menuActionsUI);
+        ManagerUI managerUI = new ManagerUI(staffActionsUI, menuActionUI);
         LoginController loginController = new LoginController();
-        //LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
-
+        LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
+        PaymentController paymentController = new PaymentController();
+        IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController);
 
         int choice;
 
@@ -43,12 +41,11 @@ public class FOMSApplication {
             choice = InputHelper.getValidatedInt("Press 1 for Customer, 2 to Log in and 3 to Exit", 1, 3);
             switch (choice) {
                 case 1:
-                    //showUserInterface(CustomerUI);
+                    customerUI.displayMenu();
                     break;
 
-
                 case 2:
-                    //loginUi.displayMenu();
+                    loginUi.displayMenu();
                     break;
 
                 case 3:

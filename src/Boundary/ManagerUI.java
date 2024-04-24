@@ -1,23 +1,17 @@
 package Boundary;
 
-import Controller.StaffManagementController;
-import Entity.Actor.Gender;
-import Entity.Actor.Manager;
-import Entity.Actor.Staff;
 import Entity.Branch.Branch;
 import Helper.InputHelper;
-import Interface.Boundaries.getUserBranch;
-import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
 
-import java.util.ArrayList;
+public class ManagerUI implements IDisplayMenu {
 
-public class ManagerUI implements IDisplayMenu, getUserBranch {
+    private IDisplayMenu staffUI;
+    private IDisplayMenu menuActionsUI;
+    private Branch branch;
 
-    private IStaffManager staffManagementController;
-    private MenuActionUI menuActionsUI;
-    public ManagerUI(IStaffManager staffManagementController, MenuActionUI menuActionsUI) {
-        this.staffManagementController = staffManagementController;
+    public ManagerUI(IDisplayMenu staffUI, IDisplayMenu menuActionsUI) {
+        this.staffUI = staffUI;
         this.menuActionsUI = menuActionsUI;
     }
     @Override
@@ -26,7 +20,7 @@ public class ManagerUI implements IDisplayMenu, getUserBranch {
         do{
             System.out.println("Welcome to Manager UI");
             System.out.println("Select from the following actions");
-            System.out.println("1: Staff actions");
+            System.out.println("1: Process Orders");
             System.out.println("2: Manage Menu");
             System.out.println("3: Display Staff List");
             System.out.println("4: Exit ");
@@ -36,23 +30,22 @@ public class ManagerUI implements IDisplayMenu, getUserBranch {
             switch (choice)
             {
                 case 1:
-                    displayMenu();
+                    staffUI.displayMenu();
                     break;
                 case 2:
+                    menuActionsUI.displayMenu();
                     break;
                 case 3:
+                    //display
                     break;
                 case 4:
                     System.out.println("Exiting");
                     break;
             }
         } while(choice < 4);
-
-
     }
 
-    @Override
-    public void getUserBranch(Branch branch) {
-
+    public void setBranch(Branch branch) {
+        this.branch = branch;
     }
 }

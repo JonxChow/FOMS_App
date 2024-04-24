@@ -97,6 +97,25 @@ public class StaffActionsUI implements IDisplayMenu {
         }
     }
 
+    public void AddManager(Branch branch) {
+        //staff number check
+        int totalStaff = branch.getStaffMembers().size();
+        int availableSlots =  - totalStaff;
+        if(totalStaff == 0) {
+            System.out.println("Maximum staff quota reached. Unable to add more");
+            return;
+        }
+        //no need to check if enough managers here, do that in addStaff instead
+
+        //ask for no of managers to add
+        System.out.println("You are able to add " + availableSlots + "number of managers");
+        int noOfManagers = InputHelper.getValidatedInt("Enter no. of managers to add", 1, availableSlots);
+        //check against total staff in branch
+        //loop to add all managers into staff list
+        //use staffManager.addStaff to add using staff list
+
+    }
+
     private void removeStaff() {
         String name = InputHelper.getValidatedString("Enter Branch to Edit: ");
         Branch branch = allBranches.getBranchByName(name);

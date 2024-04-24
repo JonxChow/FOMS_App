@@ -31,7 +31,9 @@ public class NewBranchController implements IBranchController {
 
 
     public void intialiseBranchwithStaff(Branch branch) {
-        //divert to some UI to get staff info
+        //get createBranchUI to pass in no of staff and managers
+        //call add staff in loop
+        //call add managers in loop
         staffActionsUI.addStaff(branch);
     }
 

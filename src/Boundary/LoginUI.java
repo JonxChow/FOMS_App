@@ -65,10 +65,12 @@ public class LoginUI implements IDisplayMenu {
 
                             switch (role) {
                                 case STAFF:
+                                    staffUI.setBranch(branch);
                                     staffUI.displayMenu();
                                     return;
 
                                 case MANAGER:
+                                    managerUI.setBranch(branch);
                                     managerUI.displayMenu();
                                     return;
                             }

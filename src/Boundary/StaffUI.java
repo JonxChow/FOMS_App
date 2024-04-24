@@ -14,8 +14,8 @@ public class StaffUI implements IDisplayMenu {
     private Branch branch;
     private Scanner scanner;
 
-    public StaffUI(Branch branch, OrderController orderController) {
-        this.branch = branch;
+    public StaffUI(OrderController orderController) {
+        //this.branch = branch;
         this.orderController = orderController;
         this.scanner = new Scanner(System.in);
     }
@@ -87,6 +87,10 @@ public class StaffUI implements IDisplayMenu {
         } else {
             System.out.println("Order not found or is not in PROCESSING status.");
         }
+    }
+
+    public void setBranch(Branch branch) {
+        this.branch = branch;
     }
 }
 
