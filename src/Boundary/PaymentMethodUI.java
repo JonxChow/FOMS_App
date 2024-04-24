@@ -1,16 +1,22 @@
 package Boundary;
 
-import Controller.PaymentMethodController;
+import Controller.PaymentController;
+import Entity.Branch.Branch;
 import Entity.Payment.PaymentMethod;
+import Helper.InputHelper;
+import Interface.Admin.IAllBranches;
 
 import java.util.Scanner;
 
 public class PaymentMethodUI {
-    private PaymentMethodController paymentMethodController;
+    private PaymentController paymentController;
+    private IAllBranches allBranches;
     private Scanner scanner;
 
-    public PaymentMethodUI(PaymentMethodController paymentMethodController) {
-        this.paymentMethodController = paymentMethodController;
+
+    public PaymentMethodUI(PaymentController paymentController, IAllBranches allBranches) {
+        this.paymentController = paymentController;
+        this.allBranches = allBranches;
         this.scanner = new Scanner(System.in);
     }
 
@@ -26,15 +32,17 @@ public class PaymentMethodUI {
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume the newline
 
+            Branch branch = getBranch(); // Get the branch for context-specific actions
+
             switch (choice) {
                 case 1:
-                    addPaymentMethod();
+                    addPaymentMethod(branch);
                     break;
                 case 2:
-                    removePaymentMethod();
+                    removePaymentMethod(branch);
                     break;
                 case 3:
-                    showCurrentPaymentMethods();
+                    showCurrentPaymentMethods(branch);
                     break;
                 case 4:
                     System.out.println("Exiting...");
@@ -46,7 +54,13 @@ public class PaymentMethodUI {
         }
     }
 
-    private void addPaymentMethod() {
+    private Branch getBranch() {
+        System.out.print("Enter the branch name for payment method management: ");
+        String branchName = scanner.nextLine();
+        return allBranches.getBranchByName(branchName);
+    }
+
+    private void addPaymentMethod(Branch branch) {
         System.out.println("Available Methods: ");
         for (PaymentMethod method : PaymentMethod.values()) {
             System.out.println("- " + method);
@@ -55,34 +69,39 @@ public class PaymentMethodUI {
         String methodName = scanner.nextLine();
         try {
             PaymentMethod method = PaymentMethod.valueOf(methodName.toUpperCase());
-            paymentMethodController.addPaymentMethod(method);
-            System.out.println(method + " added successfully.");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid payment method. Please try again.");
-        }
-    }
-
-    private void removePaymentMethod() {
-        System.out.print("Enter the name of the payment method to remove: ");
-        String methodName = scanner.nextLine();
-        try {
-            PaymentMethod method = PaymentMethod.valueOf(methodName.toUpperCase());
-            if (paymentMethodController.getAcceptedPaymentMethods().contains(method)) {
-                paymentMethodController.removePaymentMethod(method);
-                System.out.println(method + " removed successfully.");
+            if (branch != null && paymentController.addPaymentMethod(branch, method)) {
+                System.out.println(method + " added successfully to " + branch.getBranchName());
             } else {
-                System.out.println("Payment method not found in the current accepted list.");
+                System.out.println("Failed to add payment method to the branch.");
             }
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid payment method. Please try again.");
         }
     }
 
-    private void showCurrentPaymentMethods() {
-        System.out.println("Current Accepted Payment Methods:");
-        paymentMethodController.getAcceptedPaymentMethods().forEach(
-                method -> System.out.println("- " + method)
-        );
+    private void removePaymentMethod(Branch branch) {
+        System.out.print("Enter the name of the payment method to remove: ");
+        String methodName = scanner.nextLine();
+        try {
+            PaymentMethod method = PaymentMethod.valueOf(methodName.toUpperCase());
+            if (branch != null && paymentController.removePaymentMethod(branch, method)) {
+                System.out.println(method + " removed successfully from " + branch.getBranchName());
+            } else {
+                System.out.println("Payment method not found in the current accepted list or failed to remove.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid payment method. Please try again.");
+        }
+    }
+
+    public void showCurrentPaymentMethods(Branch branch) {
+        if (branch != null) {
+            System.out.println("Current Accepted Payment Methods for " + branch.getBranchName() + ":");
+            branch.getPaymentMethods().forEach(
+                    method -> System.out.println("- " + method)
+            );
+        } else {
+            System.out.println("Branch not found.");
+        }
     }
 }
-

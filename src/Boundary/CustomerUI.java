@@ -14,17 +14,19 @@ import java.util.Scanner;
 
 public class CustomerUI implements IDisplayMenu {
     private OrderController orderController;
-    private PaymentController paymentController;
+    private PaymentController paymentMethodController;
     private Branch branch;
     private Scanner scanner;
 
     private IAllBranches allBranches;
+    private PaymentMethodUI paymentMethodUI;
 
-    public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentController) {
+    public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentMethodController, PaymentMethodUI paymentMethodUI) {
         this.orderController = orderController;
-        this.paymentController = paymentController;
+        this.paymentMethodController = paymentMethodController;
         this.scanner = new Scanner(System.in);
         this.allBranches = allBranches;
+        this.paymentMethodUI = paymentMethodUI;
     }
     @Override
     public void displayMenu() {
@@ -164,9 +166,10 @@ public class CustomerUI implements IDisplayMenu {
             System.out.println("Proceeding to Checkout...");
             orderController.checkoutOrder(branch, orderId); // Assuming this method displays the order summary
             System.out.println("Do you wish to proceed with payment? (yes/no)");
+            paymentMethodUI.showCurrentPaymentMethods(branch);
             String input = scanner.next();
             if ("yes".equalsIgnoreCase(input)) {
-                paymentController.makePayment(orderId, order.getTotalAmount());
+                paymentMethodController.makePayment(branch, orderId, order.getTotalAmount());
                 orderController.printReceipt(branch, orderId); // Print the receipt after successful payment
                 System.out.println("Payment successful. Receipt has been printed.");
             } else {

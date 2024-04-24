@@ -5,9 +5,12 @@ import Entity.Menu.Menu;
 import Entity.Menu.MenuItem;
 import Entity.Order.Order;
 import Entity.Actor.Staff;
+import Entity.Payment.PaymentMethod;
 import Entity.Payment.PaymentMethods;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.Set;
 import java.util.function.Predicate;
 
 public class Branch {
@@ -19,7 +22,7 @@ public class Branch {
     private ArrayList<Order> orderList;
     private ArrayList<MenuItem> menu; // Assuming each branch can have a unique menu
 
-    private PaymentMethods paymentMethods; //All the available payment types of a branch
+    private Set<PaymentMethod> paymentMethods; //All the available payment types of a branch
 
     public Branch(String branchName, String location) {
         this.branchName = branchName;
@@ -27,7 +30,7 @@ public class Branch {
         this.staffMembers = new ArrayList<>();
         this.orderList = new ArrayList<>();
         this.menu = new ArrayList<>();
-        this.paymentMethods = new PaymentMethods();
+        this.paymentMethods = EnumSet.noneOf(PaymentMethod.class);
         this.noOfStaff = 0;
         this.noOfManager = 0;
     }
@@ -40,8 +43,12 @@ public class Branch {
     }
 
     // Getters and Setters
-    public PaymentMethods getPaymentMethods() {
+    public Set<PaymentMethod> getPaymentMethods() {
         return paymentMethods;
+    }
+
+    public void setPaymentMethods(Set<PaymentMethod> paymentMethods) {
+        this.paymentMethods = paymentMethods;
     }
 
     public ArrayList<Staff> getStaffMembers() {

@@ -31,7 +31,7 @@ public class FOMSApplication {
         LoginController loginController = new LoginController();
         //LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
         PaymentController paymentController = new PaymentController();
-        IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController);
+        //IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController);
 
         int choice;
 
@@ -41,7 +41,7 @@ public class FOMSApplication {
             choice = InputHelper.getValidatedInt("Press 1 for Customer, 2 to Log in and 3 to Exit", 1, 3);
             switch (choice) {
                 case 1:
-                    customerUI.displayMenu();
+                    //customerUI.displayMenu();
                     break;
 
                 case 2:
