@@ -25,9 +25,10 @@ public class PaymentController implements AddPaymentMethod, RemovePaymentMethod 
         System.out.println("2: To remove payment method");
     }
 
-
-
-
-
-
+    public void makePayment(int orderId, double amount) {
+        // Simulate payment processing
+        System.out.println("Processing payment for Order ID: " + orderId);
+        System.out.println("Amount Paid: $" + amount);
+        System.out.println("Payment Successful. Thank you!");
+    }
 }

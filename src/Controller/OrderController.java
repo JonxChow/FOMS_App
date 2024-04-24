@@ -2,20 +2,25 @@ package Controller;
 
 import Entity.Branch.Branch;
 import Entity.Menu.MenuItem;
+import Entity.Order.DiningOption;
 import Entity.Order.Order;
 import Entity.Order.OrderStatus;
 
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.List;
 
 public class OrderController {
 
-    public OrderController() {}
+    public OrderController() {
+        // Now an empty constructor, no specific branch associated
+    }
 
     // Create a new order in the specified branch and return the randomly generated order ID
-    public int createOrder(Branch branch) {
+    public int createOrder(Branch branch, DiningOption diningOption) {
         int orderId = ThreadLocalRandom.current().nextInt(10000, 99999 + 1); // Generate a random order ID
         Order newOrder = new Order(orderId);
+        newOrder.setDiningOption(diningOption); // Set order type based on user input
         branch.getOrderList().add(newOrder); // Add the order directly to the branch's order list
         return orderId;
     }
@@ -33,15 +38,8 @@ public class OrderController {
     public void removeItemFromOrder(Branch branch, int orderId, MenuItem item) {
         Order order = findOrderById(branch, orderId);
         if (order != null) {
-            Integer currentQuantity = order.getOrder().get(item);
-            if (currentQuantity != null) {
-                if (currentQuantity > 1) {
-                    order.getOrder().put(item, currentQuantity - 1);
-                } else {
-                    order.getOrder().remove(item);
-                }
-                updateTotalAmount(order);
-            }
+            order.getOrder().remove(item);  // Remove the item entirely, regardless of quantity
+            updateTotalAmount(order);
         }
     }
 
@@ -62,11 +60,28 @@ public class OrderController {
         }
     }
 
-    // Remove an entire order from the specified branch
-    public void removeOrder(Branch branch, int orderId) {
+    // Collect food to change the order status from “Ready to pickup” to “Completed”
+    public void collectFood(Branch branch, int orderId) {
+        Order order = findOrderById(branch, orderId);
+        if (order != null && order.getOrderStatus() == OrderStatus.READY) {
+            order.setOrderStatus(OrderStatus.COMPLETED);
+            System.out.println("Order " + orderId + " has been collected and marked as completed.");
+        } else {
+            System.out.println("Order not ready to be picked up or does not exist.");
+        }
+    }
+
+    // Print a receipt for an order
+    public void printReceipt(Branch branch, int orderId) {
         Order order = findOrderById(branch, orderId);
         if (order != null) {
-            branch.getOrderList().remove(order);
+            System.out.println("Receipt for Order ID: " + orderId);
+            System.out.println("Order Type: " + (order.getDiningOption() == DiningOption.TAKEAWAY ? "Takeaway" : "Dine-in"));
+            System.out.println("Total Amount: $" + order.getTotalAmount());
+            System.out.println("Items Ordered:");
+            order.getOrder().forEach((item, qty) -> System.out.println(item.getName() + " x " + qty));
+        } else {
+            System.out.println("Order does not exist.");
         }
     }
 
@@ -79,4 +94,27 @@ public class OrderController {
         }
         return null;
     }
+
+    // Method to list all orders from a specified branch
+    public List<Order> listAllOrders(Branch branch) {
+        return branch.getOrderList(); // Return a reference to the list of orders
+    }
+
+    // Method to view details of a particular order
+    public Order viewOrderDetails(Branch branch, int orderId) {
+        return findOrderById(branch, orderId); // Utilize the existing method to find an order by ID
+    }
+
+    public void checkoutOrder(Branch branch, int orderId) {
+        Order order = findOrderById(branch, orderId);
+        if (order != null) {
+            System.out.println("Checkout Order ID: " + orderId);
+            System.out.println("Items in Your Cart:");
+            order.getOrder().forEach((item, qty) -> System.out.println(item.getName() + " x " + qty + " = $" + (item.getPrice() * qty)));
+            System.out.println("Total Amount: $" + order.getTotalAmount());
+        } else {
+            System.out.println("Order not found.");
+        }
+    }
+
 }

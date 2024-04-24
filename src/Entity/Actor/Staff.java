@@ -6,12 +6,9 @@ public class Staff extends Person{
 
     private String username = "default";
     private String password = "password";
-    private Branch branch;
-
-    public Staff(int id, String name, int age, Gender gender, Branch branch) {
+    public Staff(int id, String name, int age, Gender gender) {
         super(id, name, age, gender);
         role = Role.STAFF;
-        this.branch = branch;
     }
 
     public String getUsername() {

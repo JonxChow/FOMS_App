@@ -10,6 +10,7 @@ public class Order {
     private Map<MenuItem, Integer> items;
     private double totalAmount;
     protected OrderStatus orderstatus;
+    protected DiningOption diningOption;
 
     public Order(int orderId) {
         this.orderId = orderId;
@@ -27,4 +28,8 @@ public class Order {
     public void setTotalAmount(double totalAmount){this.totalAmount = totalAmount;}
 
     public void setOrderStatus(OrderStatus orderstatus){this.orderstatus = orderstatus;}
+
+    public OrderStatus getOrderStatus(){return this.orderstatus;}
+    public DiningOption getDiningOption(){return this.diningOption;}
+    public void setDiningOption(DiningOption diningOption){this.diningOption = diningOption;}
 }

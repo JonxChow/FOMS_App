@@ -24,7 +24,7 @@ public class FOMSApplication {
         /*INIT CONTROLLERS and INTERFACE*/
         IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
-        StaffUI staffUI = new StaffUI();
+        //StaffUI staffUI = new StaffUI();
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         //MenuActionUI menuActionsUI = new MenuActionUI();
         IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
