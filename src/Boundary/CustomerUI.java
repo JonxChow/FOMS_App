@@ -8,6 +8,7 @@ import Entity.Order.DiningOption;
 import Entity.Order.Order;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IPaymentMethodUI;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
@@ -19,9 +20,9 @@ public class CustomerUI implements IDisplayMenu {
     private Scanner scanner;
 
     private IAllBranches allBranches;
-    private PaymentMethodUI paymentMethodUI;
+    private IPaymentMethodUI paymentMethodUI;
 
-    public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentMethodController, PaymentMethodUI paymentMethodUI) {
+    public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentMethodController, IPaymentMethodUI paymentMethodUI) {
         this.orderController = orderController;
         this.paymentMethodController = paymentMethodController;
         this.scanner = new Scanner(System.in);

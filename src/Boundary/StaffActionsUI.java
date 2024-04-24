@@ -28,17 +28,17 @@ public class StaffActionsUI implements IDisplayMenu, IStaffUI {
 
     @Override
     public void displayMenu() {
-        System.out.println("\n--- Staff Management Menu ---");
-        System.out.println("1: Add Staff");
-        System.out.println("2: Add Manager");
-        System.out.println("3: Remove Staff/Manager");
-        System.out.println("4: Promote a Staff");
-        System.out.println("5: Transfer Manager");
-        System.out.println("6: Exit");
 
         int choice;
         do {
-            choice = InputHelper.getValidatedInt("Select Option: ", 1, 4);
+            System.out.println("\n--- Staff Management Menu ---");
+            System.out.println("1: Add Staff");
+            System.out.println("2: Add Manager");
+            System.out.println("3: Remove Staff/Manager");
+            System.out.println("4: Promote a Staff");
+            System.out.println("5: Transfer Manager");
+            System.out.println("6: Exit");
+            choice = InputHelper.getValidatedInt("Select Option: ", 1, 6);
 
             switch (choice) {
                 case 1:

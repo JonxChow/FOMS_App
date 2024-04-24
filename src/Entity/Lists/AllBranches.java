@@ -1,10 +1,12 @@
 package Entity.Lists;
 
+import Entity.Actor.Staff;
 import Entity.Branch.Branch;
 import Interface.Admin.IAllBranches;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AllBranches implements IAllBranches {
 
@@ -35,5 +37,19 @@ public class AllBranches implements IAllBranches {
     @Override
     public void removeBranch(Branch branch) {
 
+    }
+
+    @Override
+    public List<Staff> getAllStaff() {
+        return allBranches.stream()
+                .flatMap(branch -> branch.getStaffMembers().stream())
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void printBranches() {
+        for (Branch allBranch : allBranches) {
+            System.out.println(allBranch.getBranchName());
+        }
     }
 }

@@ -45,4 +45,12 @@ public class Person {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public Gender getGender() {
+        return this.gender;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
 }

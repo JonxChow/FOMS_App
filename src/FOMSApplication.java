@@ -4,7 +4,10 @@ import Entity.Branch.Branch;
 import Entity.Lists.AllBranches;
 import Entity.Order.Order;
 import Helper.InputHelper;
+import Helper.StaffDisplayUI;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IPaymentMethodUI;
+import Interface.Boundaries.IStaffDisplayUI;
 import Interface.Controllers.IBranchController;
 import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
@@ -24,14 +27,16 @@ public class FOMSApplication {
         StaffUI staffUI = new StaffUI(orderController);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         IDisplayMenu menuActionUI = new MenuActionUI();
-        //IBranchController branchManger = new NewBranchController(allBranches, staffActionsUI);
-        //CreateBranchUI branchUI = new CreateBranchUI(branchManger);
-        //AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI);
-        ManagerUI managerUI = new ManagerUI(staffActionsUI, menuActionUI);
-        LoginController loginController = new LoginController();
-        //LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
+        IBranchController branchManger = new BranchController(allBranches, staffActionsUI);
+        CreateBranchUI branchUI = new CreateBranchUI(branchManger);
+        IStaffDisplayUI staffDisplayUI = new StaffDisplayUI(allBranches);
         PaymentController paymentController = new PaymentController();
-        //IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController);
+        IPaymentMethodUI paymentMethodUI = new PaymentMethodUI(paymentController, allBranches);
+        AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI, paymentMethodUI, staffDisplayUI);
+        ManagerUI managerUI = new ManagerUI(staffActionsUI, menuActionUI, staffDisplayUI);
+        LoginController loginController = new LoginController();
+        LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
+        IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController, paymentMethodUI);
 
         int choice;
 
@@ -41,11 +46,11 @@ public class FOMSApplication {
             choice = InputHelper.getValidatedInt("Press 1 for Customer, 2 to Log in and 3 to Exit", 1, 3);
             switch (choice) {
                 case 1:
-                    //customerUI.displayMenu();
+                    customerUI.displayMenu();
                     break;
 
                 case 2:
-                    //loginUi.displayMenu();
+                    loginUi.displayMenu();
                     break;
 
                 case 3:

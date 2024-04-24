@@ -5,10 +5,12 @@ import Entity.Branch.Branch;
 import Entity.Payment.PaymentMethod;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IPaymentMethodUI;
+import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
-public class PaymentMethodUI {
+public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
     private PaymentController paymentController;
     private IAllBranches allBranches;
     private Scanner scanner;
@@ -20,6 +22,7 @@ public class PaymentMethodUI {
         this.scanner = new Scanner(System.in);
     }
 
+    @Override
     public void displayMenu() {
         while (true) {
             System.out.println("\n--- Payment Method Management Menu ---");
@@ -94,9 +97,11 @@ public class PaymentMethodUI {
         }
     }
 
+    @Override
     public void showCurrentPaymentMethods(Branch branch) {
         if (branch != null) {
             System.out.println("Current Accepted Payment Methods for " + branch.getBranchName() + ":");
+            //not working
             branch.getPaymentMethods().forEach(
                     method -> System.out.println("- " + method)
             );

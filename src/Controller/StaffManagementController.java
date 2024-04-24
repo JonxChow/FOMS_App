@@ -52,9 +52,4 @@ public class StaffManagementController implements IStaffManager {
         }
         return false;
     }
-
-    // The removeManager method is not currently needed as per previous discussions, but can be implemented similarly to removeStaff if needed.
-    public void removeManager(Branch branch, Manager manager) {
-        // Implement if required
-    }
 }
