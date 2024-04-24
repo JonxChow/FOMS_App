@@ -1,5 +1,7 @@
 package Boundary;
 
+import Controller.PaymentController;
+import Controller.PaymentMethodController;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
 import Interface.Display.IDisplayMenu;
@@ -9,11 +11,13 @@ public class AdminUI implements IDisplayMenu {
     private final IAllBranches allBranches;
     private final CreateBranchUI branchUI;
     private final  IDisplayMenu staffActionsUI;
+    private final PaymentMethodUI paymentMethodUI;
 
-    public AdminUI (IAllBranches allBranches, CreateBranchUI branchUI, IDisplayMenu staffActionsUI) {
+    public AdminUI (IAllBranches allBranches, CreateBranchUI branchUI, IDisplayMenu staffActionsUI, PaymentMethodUI paymentMethodUI) {
         this.allBranches = allBranches;
         this.branchUI = branchUI;
         this.staffActionsUI = staffActionsUI;
+        this.paymentMethodUI = paymentMethodUI;
     }
 
     @Override
@@ -46,6 +50,7 @@ public class AdminUI implements IDisplayMenu {
                     break;
 
                 case 2:
+                    paymentMethodUI.displayMenu();
                     break;
 
                 case 3:

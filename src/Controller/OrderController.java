@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.List;
 
 public class OrderController {
-
+    private OrderExpiryController expiryManager = new OrderExpiryController(30);  // Orders expire after 30 minutes
     public OrderController() {
         // Now an empty constructor, no specific branch associated
     }
@@ -115,6 +115,11 @@ public class OrderController {
         } else {
             System.out.println("Order not found.");
         }
+    }
+
+    public void setOrderReady(Order order) {
+        order.setOrderStatus(OrderStatus.READY);
+        expiryManager.scheduleOrderExpiry(order);
     }
 
 }

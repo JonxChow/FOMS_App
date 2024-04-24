@@ -5,8 +5,6 @@ import Entity.Branch.Branch;
 import Interface.Admin.IAllBranches;
 import Interface.Boundaries.IStaffUI;
 import Interface.Controllers.IBranchController;
-import Interface.Controllers.IStaffManager;
-import Interface.Display.IDisplayMenu;
 
 public class NewBranchController implements IBranchController {
     private final IAllBranches allBranches;

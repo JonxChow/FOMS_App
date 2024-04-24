@@ -83,6 +83,7 @@ public class StaffUI implements IDisplayMenu {
         Order order = orderController.viewOrderDetails(branch, orderId);
         if (order != null && order.getOrderStatus() == OrderStatus.PROCESSING) {
             orderController.processOrder(branch, orderId, OrderStatus.READY);
+            orderController.setOrderReady(order);
             System.out.println("Order " + orderId + " is now Ready to Pickup.");
         } else {
             System.out.println("Order not found or is not in PROCESSING status.");
