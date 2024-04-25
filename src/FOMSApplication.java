@@ -7,6 +7,7 @@ import Helper.DataPersistence;
 import Helper.InputHelper;
 import Helper.StaffDisplayUI;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IMenuActionUI;
 import Interface.Boundaries.IPaymentMethodUI;
 import Interface.Boundaries.IStaffDisplayUI;
 import Interface.Controllers.IBranchController;
@@ -32,7 +33,7 @@ public class FOMSApplication {
         OrderController orderController = new OrderController();
         StaffUI staffUI = new StaffUI(orderController);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
-        IDisplayMenu menuActionUI = new MenuActionUI();
+        IMenuActionUI menuActionUI = new MenuActionUI();
         IBranchController branchManger = new BranchController(allBranches, staffActionsUI);
         CreateBranchUI branchUI = new CreateBranchUI(branchManger);
         IStaffDisplayUI staffDisplayUI = new StaffDisplayUI(allBranches);

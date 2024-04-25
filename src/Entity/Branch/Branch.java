@@ -1,5 +1,6 @@
 package Entity.Branch;
 
+import Entity.Actor.Manager;
 import Entity.Actor.Role;
 import Entity.Menu.Menu;
 import Entity.Menu.MenuItem;

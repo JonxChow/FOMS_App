@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class Staff extends Person {
     private static final long serialVersionUID = 1L;
-    private String username = "default";
+    private String username = "Staff";
     private String password = "password";
     public Staff(int id, String name, int age, Gender gender) {
         super(id, name, age, gender);

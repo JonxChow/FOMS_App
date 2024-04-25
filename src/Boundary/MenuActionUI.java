@@ -4,11 +4,12 @@ import Controller.MenuController;
 import Entity.Branch.Branch;
 import Entity.Menu.MenuItem;
 import Helper.InputHelper;
+import Interface.Boundaries.IMenuActionUI;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
-public class MenuActionUI implements IDisplayMenu {
+public class MenuActionUI implements IMenuActionUI {
     private MenuController menuController;
     private Branch branch;
     private Scanner scanner;
@@ -21,33 +22,37 @@ public class MenuActionUI implements IDisplayMenu {
 
     @Override
     public void displayMenu() {
-        System.out.println("1. Add Menu Item");
-        System.out.println("2. Remove Menu Item");
-        System.out.println("3. Edit Menu Item");
-        System.out.println("4. Display Menu");
-        System.out.println("5. Exit");
-        int choice = InputHelper.getValidatedInt("Choose an option: ", 1, 5);
+        int choice = 0;
 
-        switch (choice) {
-            case 1:
-                addMenuItem();
-                break;
-            case 2:
-                removeMenuItem();
-                break;
-            case 3:
-                editMenuItem();
-                break;
-            case 4:
-                displayMenu();
-                break;
-            case 5:
-                System.out.println("Exiting...");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Invalid option. Please choose again.");
-        }
+        do{
+            System.out.println("1. Add Menu Item");
+            System.out.println("2. Remove Menu Item");
+            System.out.println("3. Edit Menu Item");
+            System.out.println("4. Display Menu");
+            System.out.println("5. Exit");
+            choice = InputHelper.getValidatedInt("Choose an option: ", 1, 5);
+
+            switch (choice) {
+                case 1:
+                    addMenuItem();
+                    break;
+                case 2:
+                    removeMenuItem();
+                    break;
+                case 3:
+                    editMenuItem();
+                    break;
+                case 4:
+                    showMenu();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid option. Please choose again.");
+            }
+        } while(choice < 5);
     }
 
     public void showMenu() {
@@ -88,10 +93,10 @@ public class MenuActionUI implements IDisplayMenu {
 
         if (itemToEdit != null) {
             MenuItem newItem = new MenuItem(name,
-                    Double.parseDouble(InputHelper.getValidatedString("Enter new price (leave blank to keep " + itemToEdit.getPrice() + "):")),
-                    InputHelper.getValidatedString("Enter new description (leave blank to keep \"" + itemToEdit.getDescription() + "\"):"),
-                    InputHelper.getValidatedString("Enter new category (leave blank to keep \"" + itemToEdit.getCategory() + "\"):"),
-                    InputHelper.getValidatedInt("Enter new availability (1 for available, 0 for not available, leave blank to keep " + itemToEdit.getAvailability() + "):", 0, 1));
+                    Double.parseDouble(InputHelper.getValidatedString("Enter new price (retype current to keep " + itemToEdit.getPrice() + "):")),
+                    InputHelper.getValidatedString("Enter new description (retype current to keep \"" + itemToEdit.getDescription() + "\"):"),
+                    InputHelper.getValidatedString("Enter new category (retype current to keep \"" + itemToEdit.getCategory() + "\"):"),
+                    InputHelper.getValidatedInt("Enter new availability (1 for available, 0 for not available, retype current to keep " + itemToEdit.getAvailability() + "):", 0, 1));
 
             menuController.editItem(branch, newItem);
         } else {
@@ -103,9 +108,4 @@ public class MenuActionUI implements IDisplayMenu {
         this.branch = branch;
     }
 
-//    public void start() {
-//        while (true) {
-//            showMenu();
-//        }
-//    }
 }

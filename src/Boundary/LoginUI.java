@@ -1,5 +1,6 @@
 package Boundary;
 
+import Entity.Actor.Manager;
 import Entity.Actor.Role;
 import Entity.Actor.Staff;
 import Entity.Branch.Branch;
@@ -84,6 +85,11 @@ public class LoginUI implements IDisplayMenu {
                     //check branch selected for unassigned objects
                     branch = getBranch();
 
+                    if(branch == null) {
+                        System.out.println("Branch doesn't exist");
+                        continue;
+                    }
+
                     while(true) {
                         String roleName = InputHelper.getValidatedString("Enter your role: ");
 
@@ -138,7 +144,10 @@ public class LoginUI implements IDisplayMenu {
                 case 4:
                     branch = getBranch();
 
-
+                    if(branch == null) {
+                        System.out.println("Branch doesn't exist");
+                        continue;
+                    }
 
                     //login to retrieve staff object
                     enteredUsername = InputHelper.getValidatedString("Enter username: ");

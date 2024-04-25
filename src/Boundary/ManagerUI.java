@@ -2,17 +2,18 @@ package Boundary;
 
 import Entity.Branch.Branch;
 import Helper.InputHelper;
+import Interface.Boundaries.IMenuActionUI;
 import Interface.Boundaries.IStaffDisplayUI;
 import Interface.Display.IDisplayMenu;
 
 public class ManagerUI implements IDisplayMenu {
 
     private IDisplayMenu staffUI;
-    private IDisplayMenu menuActionsUI;
+    private IMenuActionUI menuActionsUI;
     private final IStaffDisplayUI staffDisplayUI;
     private Branch branch;
 
-    public ManagerUI(IDisplayMenu staffUI, IDisplayMenu menuActionsUI, IStaffDisplayUI staffDisplayUI) {
+    public ManagerUI(IDisplayMenu staffUI, IMenuActionUI menuActionsUI, IStaffDisplayUI staffDisplayUI) {
         this.staffUI = staffUI;
         this.menuActionsUI = menuActionsUI;
         this.staffDisplayUI = staffDisplayUI;
@@ -36,6 +37,7 @@ public class ManagerUI implements IDisplayMenu {
                     staffUI.displayMenu();
                     break;
                 case 2:
+                    menuActionsUI.setBranch(this.branch);
                     menuActionsUI.displayMenu();
                     break;
                 case 3:
