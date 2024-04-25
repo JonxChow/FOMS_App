@@ -10,17 +10,26 @@ import Interface.Display.IDisplayMenu;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Provides a user interface for staff members to manage orders within a branch.
+ */
 public class StaffUI implements IStaffUI {
     private OrderController orderController;
     private Branch branch;
     private Scanner scanner;
 
+    /**
+     * Constructs a StaffUI object with the provided OrderController.
+     * @param orderController The OrderController used for managing orders.
+     */
     public StaffUI(OrderController orderController) {
-        //this.branch = branch;
         this.orderController = orderController;
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays the menu for staff to manage orders and handles user interactions.
+     */
     @Override
     public void displayMenu() {
         while (true) {
@@ -54,6 +63,9 @@ public class StaffUI implements IStaffUI {
         }
     }
 
+    /**
+     * Displays the new orders for the current branch.
+     */
     private void displayNewOrders() {
         List<Order> orders = orderController.listAllOrders(branch);
         System.out.println("\n--- New Orders ---");
@@ -62,6 +74,9 @@ public class StaffUI implements IStaffUI {
                 .forEach(order -> System.out.println("Order ID: " + order.getOrderID() + " - Status: " + order.getOrderStatus()));
     }
 
+    /**
+     * Displays the details of a specific order.
+     */
     private void viewOrderDetails() {
         System.out.print("Enter the Order ID to view details: ");
         int orderId = scanner.nextInt();
@@ -77,6 +92,9 @@ public class StaffUI implements IStaffUI {
         }
     }
 
+    /**
+     * Processes a specific order, setting it to 'READY' status.
+     */
     private void processOrder() {
         System.out.print("Enter the Order ID to process: ");
         int orderId = scanner.nextInt();
@@ -91,9 +109,12 @@ public class StaffUI implements IStaffUI {
         }
     }
 
+    /**
+     * Sets the branch for the staff UI.
+     * @param branch The branch to be set.
+     */
     @Override
     public void setBranch(Branch branch) {
         this.branch = branch;
     }
 }
-

@@ -14,18 +14,29 @@ import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
+/**
+ * Provides a user interface for managing staff and managers within different branches.
+ */
 public class StaffActionsUI implements IDisplayMenu, IStaffActionsUI {
     private final IStaffManager staffManager;
     private final IAllBranches allBranches;
     private final IStaffPromotion staffPromotionController;
     private final Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Constructs a StaffActionsUI object with the provided IAllBranches and IStaffManager implementations.
+     * @param allBranches The interface providing access to all branches.
+     * @param staffManager The interface providing staff and manager management functionalities.
+     */
     public StaffActionsUI(IAllBranches allBranches, IStaffManager staffManager) {
         this.staffManager = staffManager;
         this.allBranches = allBranches;
         this.staffPromotionController = new StaffPromotionController();
     }
 
+    /**
+     * Displays the menu for managing staff and managers and handles user interactions.
+     */
     @Override
     public void displayMenu() {
 
@@ -70,11 +81,19 @@ public class StaffActionsUI implements IDisplayMenu, IStaffActionsUI {
         } while (choice < 6);
     }
 
+    /**
+     * Retrieves the branch for staff and manager management based on user input.
+     * @return The branch selected by the user.
+     */
     public Branch getBranch() {
         String name = InputHelper.getValidatedString("Enter Branch Name: ");
         return allBranches.getBranchByName(name);
     }
 
+    /**
+     * Adds a new staff member to the specified branch.
+     * @param branch The branch to which the staff member will be added.
+     */
     public void addStaffIndividual(Branch branch) {
         if (branch == null) {
             System.out.println("Branch not found.");
@@ -105,6 +124,10 @@ public class StaffActionsUI implements IDisplayMenu, IStaffActionsUI {
         }
     }
 
+    /**
+     * Adds a new manager to the specified branch.
+     * @param branch The branch to which the manager will be added.
+     */
     public void addManagerIndividual(Branch branch) {
         if (branch == null) {
             System.out.println("Branch not found.");
@@ -123,6 +146,9 @@ public class StaffActionsUI implements IDisplayMenu, IStaffActionsUI {
         }
     }
 
+    /**
+     * Removes a staff member or manager from the specified branch.
+     */
     public void removeStaff() {
         String name = InputHelper.getValidatedString("Enter Branch Name: ");
         Branch branch = allBranches.getBranchByName(name);
@@ -135,6 +161,11 @@ public class StaffActionsUI implements IDisplayMenu, IStaffActionsUI {
         }
     }
 
+    /**
+     * Calculates the number of managers needed based on the total number of staff.
+     * @param noOfStaff The total number of staff.
+     * @return The number of managers needed.
+     */
     private int calculateManagersNeeded(int noOfStaff) {
         if (noOfStaff <= 4) {
             return 1;

@@ -12,7 +12,10 @@ import Interface.Boundaries.IPaymentMethodUI;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
-
+/**
+ * Provides an interface for customer interactions, allowing them to create orders, modify them,
+ * check status, collect orders, and handle payment processes.
+ */
 public class CustomerUI implements IDisplayMenu {
     private OrderController orderController;
     private PaymentController paymentMethodController;
@@ -21,7 +24,14 @@ public class CustomerUI implements IDisplayMenu {
 
     private IAllBranches allBranches;
     private IPaymentMethodUI paymentMethodUI;
-
+    /**
+     * Constructs a CustomerUI with necessary controllers and utilities.
+     *
+     * @param allBranches Interface to access all branches.
+     * @param orderController Controller for managing orders.
+     * @param paymentMethodController Controller for handling payments.
+     * @param paymentMethodUI Interface to display payment method options.
+     */
     public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentMethodController, IPaymentMethodUI paymentMethodUI) {
         this.orderController = orderController;
         this.paymentMethodController = paymentMethodController;
@@ -29,6 +39,9 @@ public class CustomerUI implements IDisplayMenu {
         this.allBranches = allBranches;
         this.paymentMethodUI = paymentMethodUI;
     }
+    /**
+     * Displays the main menu for customer actions and handles the flow of customer interactions.
+     */
     @Override
     public void displayMenu() {
 
@@ -183,10 +196,18 @@ public class CustomerUI implements IDisplayMenu {
         }
     }
 
+    /**
+     * Sets the current active branch for the customer UI.
+     * @param branch The branch to be set as the active branch.
+     */
     public void setBranch(Branch branch) {
         if(branch != null) {this.branch = branch;}
     }
 
+    /**
+     * Displays the menu items available at the branch.
+     * @param branch The branch whose menu items are displayed.
+     */
     private void showMenu(Branch branch) {
         for(MenuItem menuItem : branch.getMenu()) {
             System.out.println(menuItem);

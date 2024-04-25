@@ -9,22 +9,32 @@ import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
+/**
+ * Provides a user interface for performing actions related to menu items such as adding, removing,
+ * editing, and displaying items within a specific branch's menu.
+ */
 public class MenuActionUI implements IMenuActionUI {
     private MenuController menuController;
     private Branch branch;
     private Scanner scanner;
 
+    /**
+     * Constructs a MenuActionUI and initializes the underlying MenuController.
+     */
     public MenuActionUI() {
-        //check to see if composition or association better
         this.menuController = new MenuController();
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays the menu for menu item management and handles user interactions for
+     * adding, removing, editing, and listing menu items.
+     */
     @Override
     public void displayMenu() {
         int choice = 0;
 
-        do{
+        do {
             System.out.println("1. Add Menu Item");
             System.out.println("2. Remove Menu Item");
             System.out.println("3. Edit Menu Item");
@@ -51,13 +61,19 @@ public class MenuActionUI implements IMenuActionUI {
                 default:
                     System.out.println("Invalid option. Please choose again.");
             }
-        } while(choice < 5);
+        } while (choice < 5);
     }
 
+    /**
+     * Displays all menu items from the branch's menu.
+     */
     public void showMenu() {
         menuController.displayMenu(branch);
     }
 
+    /**
+     * Interactively adds a new menu item to the branch's menu.
+     */
     public void addMenuItem() {
         String name = InputHelper.getValidatedString("Enter the name of the new menu item:");
         double price = Double.parseDouble(InputHelper.getValidatedString("Enter the price of the new menu item:"));
@@ -69,6 +85,9 @@ public class MenuActionUI implements IMenuActionUI {
         menuController.addItem(branch, newItem);
     }
 
+    /**
+     * Interactively removes a specified menu item from the branch's menu.
+     */
     public void removeMenuItem() {
         String name = InputHelper.getValidatedString("Enter the name of the menu item you want to remove:");
         MenuItem item = branch.getMenu().stream()
@@ -83,6 +102,9 @@ public class MenuActionUI implements IMenuActionUI {
         }
     }
 
+    /**
+     * Interactively edits details of a specified menu item in the branch's menu.
+     */
     public void editMenuItem() {
         String name = InputHelper.getValidatedString("Enter the name of the menu item you want to edit:");
         MenuItem itemToEdit = branch.getMenu().stream()
@@ -103,8 +125,11 @@ public class MenuActionUI implements IMenuActionUI {
         }
     }
 
+    /**
+     * Sets the current working branch context for the UI.
+     * @param branch The branch whose menu will be managed.
+     */
     public void setBranch(Branch branch) {
         this.branch = branch;
     }
-
 }

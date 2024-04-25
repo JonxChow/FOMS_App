@@ -11,18 +11,28 @@ import Interface.Display.IDisplayMenu;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Provides a user interface for managing payment methods for different branches.
+ */
 public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
     private PaymentController paymentController;
     private IAllBranches allBranches;
     private Scanner scanner;
 
-
+    /**
+     * Constructs a PaymentMethodUI object with the provided PaymentController and IAllBranches implementations.
+     * @param paymentController The PaymentController used for managing payment methods.
+     * @param allBranches The interface providing access to all branches.
+     */
     public PaymentMethodUI(PaymentController paymentController, IAllBranches allBranches) {
         this.paymentController = paymentController;
         this.allBranches = allBranches;
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays the menu for managing payment methods and handles user interactions.
+     */
     @Override
     public void displayMenu() {
         while (true) {
@@ -61,12 +71,20 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
         }
     }
 
+    /**
+     * Retrieves the branch for payment method management based on user input.
+     * @return The branch selected by the user.
+     */
     private Branch getBranch() {
         System.out.print("Enter the branch name for payment method management: ");
         String branchName = scanner.nextLine();
         return allBranches.getBranchByName(branchName);
     }
 
+    /**
+     * Adds a new payment method to the specified branch.
+     * @param branch The branch to which the payment method will be added.
+     */
     private void addPaymentMethod(Branch branch) {
         System.out.println("Available Methods: ");
         for (PaymentMethod method : PaymentMethod.values()) {
@@ -86,6 +104,10 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
         }
     }
 
+    /**
+     * Removes a payment method from the specified branch.
+     * @param branch The branch from which the payment method will be removed.
+     */
     private void removePaymentMethod(Branch branch) {
         System.out.print("Enter the name of the payment method to remove: ");
         String methodName = scanner.nextLine();
@@ -101,6 +123,10 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
         }
     }
 
+    /**
+     * Displays the current accepted payment methods for the specified branch.
+     * @param branch The branch for which to display the accepted payment methods.
+     */
     @Override
     public void showCurrentPaymentMethods(Branch branch) {
         if (branch != null) {
@@ -115,5 +141,4 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
             System.out.println("Branch not found.");
         }
     }
-
 }
