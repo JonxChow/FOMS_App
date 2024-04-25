@@ -36,16 +36,19 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume the newline
 
-            Branch branch = getBranch(); // Get the branch for context-specific actions
+            Branch branch; // Declare the variable outside the switch to use in multiple cases.
 
             switch (choice) {
                 case 1:
+                    branch = getBranch(); // Only get the branch when needed.
                     addPaymentMethod(branch);
                     break;
                 case 2:
+                    branch = getBranch(); // Only get the branch when needed.
                     removePaymentMethod(branch);
                     break;
                 case 3:
+                    branch = getBranch(); // Only get the branch when needed.
                     showCurrentPaymentMethods(branch);
                     break;
                 case 4:
