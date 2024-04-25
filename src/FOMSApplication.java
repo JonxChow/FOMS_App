@@ -1,9 +1,8 @@
 import Boundary.*;
 import Controller.*;
-import Entity.Branch.Branch;
 import Entity.Lists.AllBranches;
-import Entity.Order.Order;
 import Helper.DataPersistence;
+import Helper.ExcelBranchInitializer;
 import Helper.InputHelper;
 import Helper.StaffDisplayUI;
 import Interface.Admin.IAllBranches;
@@ -16,12 +15,7 @@ import Interface.Display.IDisplayMenu;
 
 public class FOMSApplication {
 
-    public static void showUserInterface(IDisplayMenu userInterface) {
-        userInterface.displayMenu();
-    }
-
     public static void main(String[] args) {
-
         IAllBranches allBranches = (AllBranches) DataPersistence.deserialize("branches.dat");
         if (allBranches == null) {
             allBranches = new AllBranches();
@@ -34,8 +28,9 @@ public class FOMSApplication {
         StaffUI staffUI = new StaffUI(orderController);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         IMenuActionUI menuActionUI = new MenuActionUI();
-        IBranchController branchManger = new BranchController(allBranches, staffActionsUI);
-        CreateBranchUI branchUI = new CreateBranchUI(branchManger);
+        IBranchController branchManager = new BranchController(allBranches, staffActionsUI);
+        ExcelBranchInitializer initializer = new ExcelBranchInitializer(branchManager, staffManager);
+        CreateBranchUI branchUI = new CreateBranchUI(branchManager);
         IStaffDisplayUI staffDisplayUI = new StaffDisplayUI(allBranches);
         PaymentController paymentController = new PaymentController();
         IPaymentMethodUI paymentMethodUI = new PaymentMethodUI(paymentController, allBranches);
@@ -46,6 +41,12 @@ public class FOMSApplication {
         IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController, paymentMethodUI);
 
         int choice;
+
+        choice = InputHelper.getValidatedInt("Type 0 to continue to FOMS App \n Type 1 to initialise staff using staff list: ", 0, 1);
+        if(choice == 1){
+            //run code to read
+            initializer.initializeBranchesFromFile("./staff_list.xlsx");
+        }
 
         do {
             System.out.println("**********WELCOME TO FOMS APPLICATION************");
@@ -59,8 +60,8 @@ public class FOMSApplication {
                 case 2:
                     loginUi.displayMenu();
                     break;
-
                 case 3:
+                    System.out.println("Thank you for using FOMS App!");
                     System.out.println("Program terminating");
             }
 

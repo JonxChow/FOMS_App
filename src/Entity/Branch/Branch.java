@@ -104,5 +104,8 @@ public class Branch implements Serializable {
                 .filter(staff -> staff.getStaffRole().equals(role))
                 .count();
     }
-
+    public int getNoOfStaff(){return this.noOfStaff;}
+    public void setNoOfStaff(int noOfStaff){this.noOfStaff = noOfStaff;}
+    public int getNoOfManager(){return this.noOfManager;}
+    public void setNoOfManager(int noOfManager){this.noOfManager = noOfStaff;}
 }
