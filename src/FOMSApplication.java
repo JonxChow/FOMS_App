@@ -1,10 +1,7 @@
 import Boundary.*;
 import Controller.*;
 import Entity.Lists.AllBranches;
-import Helper.DataPersistence;
-import Helper.ExcelBranchInitializer;
-import Helper.InputHelper;
-import Helper.StaffDisplayUI;
+import Helper.*;
 import Interface.Admin.IAllBranches;
 import Interface.Boundaries.IMenuActionUI;
 import Interface.Boundaries.IPaymentMethodUI;
@@ -30,7 +27,7 @@ public class FOMSApplication {
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         IMenuActionUI menuActionUI = new MenuActionUI();
         IBranchController branchManager = new BranchController(allBranches, staffActionsUI);
-        ExcelBranchInitializer initializer = new ExcelBranchInitializer(branchManager, staffManager);
+        ExcelBranchInitializer initializer = new ExcelBranchInitializer(branchManager, staffManager, allBranches);
         CreateBranchUI branchUI = new CreateBranchUI(branchManager);
         IStaffDisplayUI staffDisplayUI = new StaffDisplayUI(allBranches);
         PaymentController paymentController = new PaymentController();
