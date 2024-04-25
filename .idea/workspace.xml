@@ -7,31 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Updated PaymentMethodUI">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YourProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffActionsUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_4_24__4_08pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_4_24__4_08pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2024_2_19_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2024_2_19_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Fixed errors hopefully">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CreateBranchUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/LoginUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/ManagerUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffActionsUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BranchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StaffPromotionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaffPromotionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lists/AllBranches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +98,7 @@
       <workItem from="1712484385795" duration="1214000" />
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
-      <workItem from="1714040815706" duration="3373000" />
+      <workItem from="1714040815706" duration="5222000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -194,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713962172606</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed errors hopefully">
+      <option name="closed" value="true" />
+      <created>1714044230438</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714044230438</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +195,7 @@
     <MESSAGE value="Branch contains ArrList of MenuItem, Fixed MenuActionUI &amp; MenuController" />
     <MESSAGE value="Updated MenuActionUI, MenuController, OrderController" />
     <MESSAGE value="Updated AdminUI, new PaymentMethodController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated AdminUI, new PaymentMethodController" />
+    <MESSAGE value="Fixed errors hopefully" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors hopefully" />
   </component>
 </project>
