@@ -51,8 +51,6 @@ public class LoginUI implements IDisplayMenu {
 
             switch(choice){
                 case 1:
-                    while(true) {
-
                         branch = getBranch();
 
                         if(branch == null) {
@@ -81,7 +79,7 @@ public class LoginUI implements IDisplayMenu {
                         } else {
                             System.out.println("Incorrect Username or Password");
                         }
-                    }
+
                 case 2:
                     //check branch selected for unassigned objects
                     branch = getBranch();

@@ -184,7 +184,7 @@ public class CustomerUI implements IDisplayMenu {
     }
 
     public void setBranch(Branch branch) {
-        this.branch = branch;
+        if(branch != null) {this.branch = branch;}
     }
 
     private void showMenu(Branch branch) {

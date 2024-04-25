@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Fixed errors hopefully">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Removed the systemexit line">
+      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/LoginUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +99,7 @@
       <workItem from="1712484385795" duration="1214000" />
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
-      <workItem from="1714040815706" duration="5222000" />
+      <workItem from="1714040815706" duration="5735000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -180,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714044230438</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Removed the systemexit line">
+      <option name="closed" value="true" />
+      <created>1714048172114</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714048172114</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +205,7 @@
     <MESSAGE value="Updated MenuActionUI, MenuController, OrderController" />
     <MESSAGE value="Updated AdminUI, new PaymentMethodController" />
     <MESSAGE value="Fixed errors hopefully" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors hopefully" />
+    <MESSAGE value="Removed the systemexit line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed the systemexit line" />
   </component>
 </project>

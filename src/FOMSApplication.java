@@ -43,7 +43,7 @@ public class FOMSApplication {
 
         int choice;
 
-        choice = InputHelper.getValidatedInt("Type 0 to continue to FOMS App \n Type 1 to initialise staff using staff list: ", 0, 1);
+        choice = InputHelper.getValidatedInt("Type 0 to continue to FOMS App \nType 1 to initialise staff using staff list: ", 0, 1);
         if(choice == 1){
             //run code to read
             initializer.initializeBranchesFromFile("./staff_list.xlsx");
