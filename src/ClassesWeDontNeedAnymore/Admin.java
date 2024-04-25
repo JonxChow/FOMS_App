@@ -1,4 +1,4 @@
-package Entity.Actor;
+package ClassesWeDontNeedAnymore;
 
 public class Admin {
 

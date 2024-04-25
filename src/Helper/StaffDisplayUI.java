@@ -12,16 +12,30 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * The {@code StaffDisplayUI} class is responsible for displaying staff information to the user.
+ * It allows different display options based on the user's role (Manager or Admin) and supports filtering
+ * staff by various criteria such as role, gender, and age.
+ */
 public class StaffDisplayUI implements IStaffDisplayUI {
     private final Scanner scanner;
     private final IAllBranches allBranches;
 
-
+    /**
+     * Constructs a new StaffDisplayUI with a reference to an IAllBranches instance.
+     *
+     * @param allBranches The {@code IAllBranches} object that contains all branch-related information.
+     */
     public StaffDisplayUI(IAllBranches allBranches) {
         this.scanner = new Scanner(System.in);
         this.allBranches = allBranches;
     }
 
+    /**
+     * Displays staff information for a manager. This method only shows staff in the manager's branch.
+     *
+     * @param branch The {@code Branch} object representing the manager's branch.
+     */
     @Override
     public void displayForManager(Branch branch) {
         // Manager can only display staff in their own branch, no filters applied
@@ -30,6 +44,10 @@ public class StaffDisplayUI implements IStaffDisplayUI {
         staffList.forEach(staff -> System.out.println(staff.getName() + " - " + staff.getStaffRole() + " - Age: " + staff.getAge() + " - Gender: " + staff.getGender()));
     }
 
+    /**
+     * Displays staff information for an admin with various filter options.
+     * The admin can filter the staff list by role, gender, and age, or choose to display all staff.
+     */
     @Override
     public void displayForAdmin() {
         // Admin can display staff across all branches with filter options
@@ -41,7 +59,7 @@ public class StaffDisplayUI implements IStaffDisplayUI {
 
         System.out.print("Enter your choice: ");
         int filterChoice = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline
+        scanner.nextLine();
 
         List<Staff> allStaff = allBranches.getAllStaff();
         List<Staff> filteredStaff = switch (filterChoice) {
@@ -59,7 +77,12 @@ public class StaffDisplayUI implements IStaffDisplayUI {
         }
     }
 
-    // Helper methods for filtering
+    /**
+     * Filters the list of staff by their role and returns a list of staff matching the selected role.
+     *
+     * @param staff The list of {@code Staff} to filter.
+     * @return A list of {@code Staff} filtered by the selected role.
+     */
     private List<Staff> filterByRole(List<Staff> staff) {
         int roleChoice = InputHelper.getValidatedInt("Select role for filtering: 0: Staff, 1: Manager: ", 0, 1);
 
@@ -70,6 +93,12 @@ public class StaffDisplayUI implements IStaffDisplayUI {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Filters the list of staff by their gender and returns a list of staff matching the selected gender.
+     *
+     * @param staff The list of {@code Staff} to filter.
+     * @return A list of {@code Staff} filtered by the selected gender.
+     */
     private List<Staff> filterByGender(List<Staff> staff) {
         int choice = InputHelper.getValidatedInt("0: Female or 1: Male: ", 0, 1);
 
@@ -85,6 +114,12 @@ public class StaffDisplayUI implements IStaffDisplayUI {
         }
     }
 
+    /**
+     * Filters the list of staff by their age and returns a list of staff matching the specified age.
+     *
+     * @param staff The list of {@code Staff} to filter.
+     * @return A list of {@code Staff} filtered by the specified age.
+     */
     private List<Staff> filterByAge(List<Staff> staff) {
         int age = InputHelper.getValidatedInt("Enter the age to filter by: ", 0, 150); // Assuming age range
 

@@ -2,6 +2,12 @@ package Helper;
 
 import java.util.Scanner;
 
+/**
+ * The {@code InputHelper} class provides static utility methods for reading and validating user input from the console.
+ * It offers methods to read strings and numbers after ensuring they meet specific criteria, such as being non-empty,
+ * within a certain range, or of a certain type. The class is designed to handle repeated prompts and validations
+ * until the user provides an acceptable input.
+ */
 public class InputHelper {
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -47,6 +53,16 @@ public class InputHelper {
         return number;
     }
 
+    /**
+     * Gets a validated double from the user.
+     * The method prompts the user and validates that the input is a double within the specified range.
+     * If the input is not a valid double or is not within the range, the user is prompted again.
+     *
+     * @param prompt The prompt to display to the user.
+     * @param min The minimum acceptable value (inclusive).
+     * @param max The maximum acceptable value (inclusive).
+     * @return A valid double within the specified range.
+     */
     public static double getValidatedDouble(String prompt, double min, double max) {
         double number;
         while (true) {

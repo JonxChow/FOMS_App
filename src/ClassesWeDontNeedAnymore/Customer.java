@@ -1,11 +1,14 @@
-package Entity.Actor;
+package ClassesWeDontNeedAnymore;
 
+import Entity.Actor.Gender;
+import Entity.Actor.Person;
+import Entity.Actor.Role;
 import Entity.Order.Order;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer extends Person{
+public class Customer extends Person {
     private String username = "default";
     private String password = "password";
     private List<Order> orderList = new ArrayList<>();

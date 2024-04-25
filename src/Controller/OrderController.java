@@ -120,6 +120,7 @@ public class OrderController {
             System.out.println("Total Amount: $" + order.getTotalAmount());
             System.out.println("Items Ordered:");
             order.getOrder().forEach((item, qty) -> System.out.println(item.getName() + " x " + qty));
+            System.out.println("Customisation: " + order.getCustomisation());
         } else {
             System.out.println("Order does not exist.");
         }
@@ -194,6 +195,12 @@ public class OrderController {
         Order order = findOrderById(branch, orderID);
         assert  order != null;
         order.getOrder().forEach((item, qty) -> System.out.println(item.getName() + " x " + qty + " = $" + (item.getPrice() * qty)));
+    }
+
+    public void addCustomisation(Branch branch, int orderID, String customisation) {
+        Order order = findOrderById(branch, orderID);
+        assert order != null;
+        order.setCustomisation(customisation);
     }
 
 }

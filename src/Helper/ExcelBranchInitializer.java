@@ -14,17 +14,38 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Iterator;
 
+
+/**
+ * The {@code ExcelBranchInitializer} class is responsible for initializing
+ * branches and their associated staff from an Excel file.
+ * It uses the Apache POI library to read XLSX documents.
+ */
 public class ExcelBranchInitializer {
     private IBranchController branchController;
     private IStaffManager staffManagementController;
     private IAllBranches allBranches;
 
+    /**
+     * Constructs an ExcelBranchInitializer with the necessary controllers and repositories.
+     *
+     * @param branchController         The controller responsible for branch operations.
+     * @param staffManagementController The controller responsible for staff operations.
+     * @param allBranches              The repository containing all branches.
+     */
     public ExcelBranchInitializer(IBranchController branchController, IStaffManager staffManagementController, IAllBranches allBranches) {
         this.branchController = branchController;
         this.staffManagementController = staffManagementController;
         this.allBranches = allBranches;
     }
 
+    /**
+     * Initializes branches and their staff members from the specified Excel file.
+     * The method reads the Excel file, creating new branches and staff members as defined in the file.
+     * It assumes a specific format for the Excel file, where the first row is considered to be header information
+     * and is skipped, and the following rows contain the data for branches and staff.
+     *
+     * @param filePath the path to the Excel file that contains branch and staff information
+     */
     public void initializeBranchesFromFile(String filePath) {
         try (FileInputStream excelFile = new FileInputStream(new File(filePath));
              Workbook workbook = new XSSFWorkbook(excelFile)) {
@@ -75,6 +96,13 @@ public class ExcelBranchInitializer {
         }
     }
 
+    /**
+     * Checks if a row is effectively empty. An effectively empty row is defined as a row
+     * where the first seven cells are blank, as these cells are expected to contain branch and staff information.
+     *
+     * @param row the row to check for effective emptiness
+     * @return {@code true} if the row is effectively empty, {@code false} otherwise
+     */
     private boolean isRowEffectivelyEmpty(Row row) {
         for (int cellNum = 0; cellNum < 7; cellNum++) { // Check the first 7 cells expected to contain data
             Cell cell = row.getCell(cellNum, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);

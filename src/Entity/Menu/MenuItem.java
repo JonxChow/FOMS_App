@@ -8,7 +8,6 @@ public class MenuItem implements Serializable {
     private double price;
     private String description;
     private String category;
-
     private int availability;
 
     public MenuItem(String name, double price, String description, String category, int availability) {

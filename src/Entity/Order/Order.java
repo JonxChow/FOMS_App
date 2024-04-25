@@ -14,11 +14,14 @@ public class Order implements Serializable {
     protected OrderStatus orderstatus;
     protected DiningOption diningOption;
 
+    private String customisation;
+
     public Order(int orderId) {
         this.orderId = orderId;
         this.items = new HashMap<>();
         this.totalAmount = 0.0;
         this.orderstatus = OrderStatus.PROCESSING; // Default status
+        this.customisation = "nil";
     }
 
     // Getters and Setters
@@ -34,4 +37,11 @@ public class Order implements Serializable {
     public OrderStatus getOrderStatus(){return this.orderstatus;}
     public DiningOption getDiningOption(){return this.diningOption;}
     public void setDiningOption(DiningOption diningOption){this.diningOption = diningOption;}
+
+    public void setCustomisation(String customisation) {
+        this.customisation = customisation;
+    }
+    public String getCustomisation() {
+        return customisation;
+    }
 }

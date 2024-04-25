@@ -20,8 +20,6 @@ public class CustomerUI implements IDisplayMenu {
     private OrderController orderController;
     private PaymentController paymentMethodController;
     private Branch branch;
-    private Scanner scanner;
-
     private IAllBranches allBranches;
     private IPaymentMethodUI paymentMethodUI;
     /**
@@ -35,7 +33,6 @@ public class CustomerUI implements IDisplayMenu {
     public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentMethodController, IPaymentMethodUI paymentMethodUI) {
         this.orderController = orderController;
         this.paymentMethodController = paymentMethodController;
-        this.scanner = new Scanner(System.in);
         this.allBranches = allBranches;
         this.paymentMethodUI = paymentMethodUI;
     }
@@ -50,19 +47,18 @@ public class CustomerUI implements IDisplayMenu {
         Branch branch = allBranches.getBranchByName(branchName);
         setBranch(branch);
 
+        System.out.println("\n--- Customer Menu ---");
+        System.out.println("\n--- Current Menu Available ---");
+        showMenu(branch);
+
         while (true) {
-            System.out.println("\n--- Customer Menu ---");
-            System.out.println("\n--- Current Menu Available ---");
-            showMenu(branch);
             System.out.println("1. New Order / Modify Existing Order");
             System.out.println("2. Check Order Status");
             System.out.println("3. Collect Food");
             System.out.println("4. Checkout and Make Payment");
             System.out.println("5. Exit");
-            System.out.print("Select an option: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();  // consume newline left-over
+            int choice = InputHelper.getValidatedInt("Select an option",1,5);
 
             switch (choice) {
                 case 1:
@@ -80,20 +76,17 @@ public class CustomerUI implements IDisplayMenu {
                 case 5:
                     System.out.println("Exiting...");
                     return;
-                default:
-                    System.out.println("Invalid option. Please try again.");
-                    break;
             }
         }
     }
 
     private void modifyOrder() {
         System.out.println("Enter Order ID to modify, or 0 to create a new order:");
-        int orderId = scanner.nextInt();
-        scanner.nextLine();
+        int orderId = InputHelper.getValidatedInt("ID: ", 0, 99999);
+
         if (orderId == 0) {
             System.out.println("Choose Dining Option: 1 for Takeaway, 2 for Dine-in");
-            int option = scanner.nextInt();
+            int option = InputHelper.getValidatedInt("Option: ", 0, 1);
             DiningOption diningOption = (option == 1) ? DiningOption.TAKEAWAY : DiningOption.DINE_IN;
             orderId = orderController.createOrder(branch, diningOption);
             System.out.println("New Order Created. Order ID: " + orderId);
@@ -103,9 +96,10 @@ public class CustomerUI implements IDisplayMenu {
         while (modifying) {
             System.out.println("1. Add Item to Order");
             System.out.println("2. Remove Item from Order");
-            System.out.println("3. Finished Modifying");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            System.out.println("3: Add customisation comments");
+            System.out.println("4: View Cart");
+            System.out.println("5. Finished Modifying");
+            int choice = InputHelper.getValidatedInt("Option: ", 1, 5);
 
             switch (choice) {
                 case 1:
@@ -115,21 +109,22 @@ public class CustomerUI implements IDisplayMenu {
                     removeItemFromOrder(orderId);
                     break;
                 case 3:
-                    modifying = false;
+                    addCustomisation(orderId);
                     break;
-                default:
-                    System.out.println("Invalid option. Please try again.");
+                case 4:
+                    orderController.printCart(branch, orderId);
+                case 5:
+                    modifying = false;
                     break;
             }
         }
     }
 
     private void addItemToOrder(int orderId) {
-        System.out.println("Enter Item Name:");
-        String name = scanner.nextLine();
+        String name = InputHelper.getValidatedString("Enter Item Name:");
         System.out.println("Enter Quantity:");
-        int quantity = scanner.nextInt();
-        scanner.nextLine();
+        int quantity = InputHelper.getValidatedInt("Quantity: ", 0, 500);
+
         MenuItem item = branch.getMenu().stream()
                 .filter(m -> m.getName().equalsIgnoreCase(name))
                 .findFirst()
@@ -143,8 +138,7 @@ public class CustomerUI implements IDisplayMenu {
     }
 
     private void removeItemFromOrder(int orderId) {
-        System.out.println("Enter Item Name to Remove:");
-        String name = scanner.nextLine();
+        String name = InputHelper.getValidatedString("Enter Item Name to Remove:");
         MenuItem item = branch.getMenu().stream()
                 .filter(m -> m.getName().equalsIgnoreCase(name))
                 .findFirst()
@@ -158,8 +152,7 @@ public class CustomerUI implements IDisplayMenu {
     }
 
     private void checkOrderStatus() {
-        System.out.println("Enter Order ID to Check Status:");
-        int orderId = scanner.nextInt();
+        int orderId = InputHelper.getValidatedInt("Enter Order ID to Check Status: ", 0, 99999);
         Order order = orderController.viewOrderDetails(branch, orderId);
         if (order != null) {
             System.out.println("Order ID: " + orderId + " Status: " + order.getOrderStatus());
@@ -169,21 +162,19 @@ public class CustomerUI implements IDisplayMenu {
     }
 
     private void collectFood() {
-        System.out.println("Enter Order ID to Collect Food:");
-        int orderId = scanner.nextInt();
+        int orderId = InputHelper.getValidatedInt("Enter Order ID to Collect Food: ", 0, 99999);
         orderController.collectFood(branch, orderId);
     }
 
     private void handleCheckoutAndPayment() {
-        System.out.println("Enter Order ID to Checkout:");
-        int orderId = scanner.nextInt();
+        int orderId = InputHelper.getValidatedInt("Enter Order ID to Checkout :", 0, 99999);
         Order order = orderController.viewOrderDetails(branch, orderId);
         if (order != null) {
             System.out.println("Proceeding to Checkout...");
             orderController.checkoutOrder(branch, orderId); // Assuming this method displays the order summary
-            System.out.println("Do you wish to proceed with payment? (yes/no)");
+            System.out.println("Do you wish to proceed with payment?");
             paymentMethodUI.showCurrentPaymentMethods(branch);
-            String input = scanner.next();
+            String input = InputHelper.getValidatedString("Yes or No: ");
             if ("yes".equalsIgnoreCase(input)) {
                 paymentMethodController.makePayment(branch, orderId, order.getTotalAmount());
                 orderController.printReceipt(branch, orderId); // Print the receipt after successful payment
@@ -213,5 +204,10 @@ public class CustomerUI implements IDisplayMenu {
             System.out.println(menuItem);
             System.out.println("\n");
         }
+    }
+
+    private void addCustomisation(int orderID) {
+        String customisation = InputHelper.getValidatedString("Enter your preferences here: ");
+        orderController.addCustomisation(branch, orderID, customisation);
     }
 }
