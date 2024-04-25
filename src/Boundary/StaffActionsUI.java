@@ -7,14 +7,14 @@ import Entity.Actor.Staff;
 import Entity.Actor.Manager;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
-import Interface.Boundaries.IStaffUI;
+import Interface.Boundaries.IStaffActionsUI;
 import Interface.Controllers.IStaffManager;
 import Interface.Controllers.IStaffPromotion;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
 
-public class StaffActionsUI implements IDisplayMenu, IStaffUI {
+public class StaffActionsUI implements IDisplayMenu, IStaffActionsUI {
     private final IStaffManager staffManager;
     private final IAllBranches allBranches;
     private final IStaffPromotion staffPromotionController;
@@ -62,6 +62,7 @@ public class StaffActionsUI implements IDisplayMenu, IStaffUI {
                     System.out.println("Input Name of Branch to transfer manager to below");
                     Branch targetBranch = getBranch();
                     staffPromotionController.transferManager(this.staffManager, sourceBranch, targetBranch);
+                    break;
                 case 6:
                     System.out.println("Exiting...");
                     break;
@@ -81,19 +82,21 @@ public class StaffActionsUI implements IDisplayMenu, IStaffUI {
         }
 
         // Calculate needed managers
-        int currentStaff = branch.getStaffMembers().size();
-        int currentManagers = (int) branch.getStaffMembers().stream().filter(s -> s instanceof Manager).count();
-        int requiredManagers = (currentStaff / 4) - currentManagers;
+        // Calculate the number of managers needed after adding one more staff
+        int requiredManagers = calculateManagersNeeded(branch.getNoOfStaff() + 1);
+
+        // Check if the current number of managers meets the requirement
+        if (requiredManagers > branch.getNoOfManager()) {
+            System.out.println(requiredManagers + " managers needed, only " + branch.getNoOfManager() + " present.");
+            System.out.println("Additional manager required. Please add a manager first.");
+            return;
+        }
 
         String staffName = InputHelper.getValidatedString("Enter staff name: ");
         Gender gender = InputHelper.getValidatedInt("Enter staff gender 0(female), 1(male)", 0, 1) == 0 ? Gender.FEMALE : Gender.MALE;
         int staffAge = InputHelper.getValidatedInt("Enter staff age: ", 18, 65);
         Staff newStaff = new Staff(-1, staffName, staffAge, gender);
 
-        if (requiredManagers > 0) {
-            System.out.println("Additional manager required. Please add a manager first.");
-            return;
-        }
 
         if (staffManager.addStaff(branch, newStaff)) {
             System.out.println("Staff added successfully.");
@@ -129,6 +132,16 @@ public class StaffActionsUI implements IDisplayMenu, IStaffUI {
             System.out.println("Staff/Manager removed successfully.");
         } else {
             System.out.println("Unable to remove staff/manager.");
+        }
+    }
+
+    private int calculateManagersNeeded(int noOfStaff) {
+        if (noOfStaff <= 4) {
+            return 1;
+        } else if (noOfStaff <= 8) {
+            return 2;
+        } else {
+            return 3; // For 9-15 staff members
         }
     }
 }

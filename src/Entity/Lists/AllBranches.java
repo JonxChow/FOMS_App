@@ -54,4 +54,10 @@ public class AllBranches implements IAllBranches, Serializable {
             System.out.println(allBranch.getBranchName());
         }
     }
+
+    @Override
+    public boolean branchExists(String branchName) {
+        Branch branch = getBranchByName(branchName);
+        return branch != null;
+    }
 }

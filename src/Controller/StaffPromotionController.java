@@ -18,8 +18,10 @@ public class StaffPromotionController implements IStaffPromotion {
     @Override
     public void transferManager(IStaffManager staffManager, Branch branch, Branch targetBranch) {
         //check no of staff and managers
-        int noOfManagers = branch.getNumberOfStaffByRole(Role.MANAGER);
-        int noOfStaff = branch.getNumberOfStaffByRole(Role.STAFF);
+//        int noOfManagers = branch.getNumberOfStaffByRole(Role.MANAGER);
+//        int noOfStaff = branch.getNumberOfStaffByRole(Role.STAFF);
+        int noOfManagers = branch.getNoOfManager();
+        int noOfStaff = branch.getNoOfStaff();
         //if transferring manager breaks quota restriction, reject transfer
 
         if (noOfManagers <= 1) {
@@ -40,6 +42,7 @@ public class StaffPromotionController implements IStaffPromotion {
         String name = InputHelper.getValidatedString("Enter name of Manager to transfer: ");
         Staff staff = branch.getStaffByName(name);
         if(staffManager.addStaff(targetBranch, staff)) {
+            staffManager.removeStaff(branch, staff.getName());
             System.out.println("Manager transferred successfully.");
         } else {
             System.out.println("Failed to transfer manager");

@@ -1,14 +1,8 @@
 package Interface.Boundaries;
 
 import Entity.Branch.Branch;
+import Interface.Display.IDisplayMenu;
 
-public interface IStaffUI {
-
-    Branch getBranch();
-
-    void addStaffIndividual(Branch branch);
-
-    void addManagerIndividual(Branch branch);
-
-    void removeStaff();
+public interface IStaffUI  extends IDisplayMenu {
+    void setBranch(Branch branch);
 }

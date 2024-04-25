@@ -4,16 +4,17 @@ import Entity.Branch.Branch;
 import Helper.InputHelper;
 import Interface.Boundaries.IMenuActionUI;
 import Interface.Boundaries.IStaffDisplayUI;
+import Interface.Boundaries.IStaffUI;
 import Interface.Display.IDisplayMenu;
 
 public class ManagerUI implements IDisplayMenu {
 
-    private IDisplayMenu staffUI;
+    private IStaffUI staffUI;
     private IMenuActionUI menuActionsUI;
     private final IStaffDisplayUI staffDisplayUI;
     private Branch branch;
 
-    public ManagerUI(IDisplayMenu staffUI, IMenuActionUI menuActionsUI, IStaffDisplayUI staffDisplayUI) {
+    public ManagerUI(IStaffUI staffUI, IMenuActionUI menuActionsUI, IStaffDisplayUI staffDisplayUI) {
         this.staffUI = staffUI;
         this.menuActionsUI = menuActionsUI;
         this.staffDisplayUI = staffDisplayUI;
@@ -34,6 +35,7 @@ public class ManagerUI implements IDisplayMenu {
             switch (choice)
             {
                 case 1:
+                    staffUI.setBranch(this.branch);
                     staffUI.displayMenu();
                     break;
                 case 2:

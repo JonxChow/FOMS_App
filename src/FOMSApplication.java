@@ -9,6 +9,7 @@ import Interface.Admin.IAllBranches;
 import Interface.Boundaries.IMenuActionUI;
 import Interface.Boundaries.IPaymentMethodUI;
 import Interface.Boundaries.IStaffDisplayUI;
+import Interface.Boundaries.IStaffUI;
 import Interface.Controllers.IBranchController;
 import Interface.Controllers.IStaffManager;
 import Interface.Display.IDisplayMenu;
@@ -25,7 +26,7 @@ public class FOMSApplication {
         //IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
         OrderController orderController = new OrderController();
-        StaffUI staffUI = new StaffUI(orderController);
+        IStaffUI staffUI = new StaffUI(orderController);
         StaffActionsUI staffActionsUI = new StaffActionsUI(allBranches, staffManager);
         IMenuActionUI menuActionUI = new MenuActionUI();
         IBranchController branchManager = new BranchController(allBranches, staffActionsUI);
@@ -35,7 +36,7 @@ public class FOMSApplication {
         PaymentController paymentController = new PaymentController();
         IPaymentMethodUI paymentMethodUI = new PaymentMethodUI(paymentController, allBranches);
         AdminUI adminUI = new AdminUI(allBranches, branchUI, staffActionsUI, paymentMethodUI, staffDisplayUI);
-        ManagerUI managerUI = new ManagerUI(staffActionsUI, menuActionUI, staffDisplayUI);
+        ManagerUI managerUI = new ManagerUI(staffUI, menuActionUI, staffDisplayUI);
         LoginController loginController = new LoginController();
         LoginUI loginUi = new LoginUI(allBranches, loginController, staffUI, managerUI, adminUI);
         IDisplayMenu customerUI = new CustomerUI(allBranches, orderController, paymentController, paymentMethodUI);

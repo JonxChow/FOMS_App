@@ -4,12 +4,13 @@ import Controller.OrderController;
 import Entity.Branch.Branch;
 import Entity.Order.Order;
 import Entity.Order.OrderStatus;
+import Interface.Boundaries.IStaffUI;
 import Interface.Display.IDisplayMenu;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class StaffUI implements IDisplayMenu {
+public class StaffUI implements IStaffUI {
     private OrderController orderController;
     private Branch branch;
     private Scanner scanner;
@@ -90,6 +91,7 @@ public class StaffUI implements IDisplayMenu {
         }
     }
 
+    @Override
     public void setBranch(Branch branch) {
         this.branch = branch;
     }

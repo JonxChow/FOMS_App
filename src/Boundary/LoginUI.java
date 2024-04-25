@@ -6,6 +6,7 @@ import Entity.Actor.Staff;
 import Entity.Branch.Branch;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
+import Interface.Boundaries.IStaffUI;
 import Interface.Controllers.ILoginController;
 import Interface.Display.IDisplayMenu;
 
@@ -14,13 +15,13 @@ public class LoginUI implements IDisplayMenu {
     private  IAllBranches allBranches;
     private ILoginController loginController;
 
-    private StaffUI staffUI;
+    private IStaffUI staffUI;
 
     private ManagerUI managerUI;
 
     private AdminUI adminUI;
 
-    public LoginUI(IAllBranches allBranches, ILoginController loginController, StaffUI staffUI, ManagerUI managerUI, AdminUI adminUI) {
+    public LoginUI(IAllBranches allBranches, ILoginController loginController, IStaffUI staffUI, ManagerUI managerUI, AdminUI adminUI) {
         this.allBranches = allBranches;
         this.loginController = loginController;
         this.staffUI = staffUI;

@@ -60,6 +60,7 @@ public class Branch implements Serializable {
 
     public void setStaffMembers(ArrayList<Staff> staffMembers) {
         this.staffMembers = staffMembers;
+        updateNoOfStaff();
     }
 
     private int getIndexByPredicate(Predicate<Staff> predicate) {
@@ -104,8 +105,24 @@ public class Branch implements Serializable {
                 .filter(staff -> staff.getStaffRole().equals(role))
                 .count();
     }
-    public int getNoOfStaff(){return this.noOfStaff;}
-    public void setNoOfStaff(int noOfStaff){this.noOfStaff = noOfStaff;}
-    public int getNoOfManager(){return this.noOfManager;}
-    public void setNoOfManager(int noOfManager){this.noOfManager = noOfStaff;}
+
+    private void updateNoOfStaff() {
+        for(Staff staff: staffMembers) {
+            if(staff.getStaffRole() == Role.STAFF) {
+                noOfStaff++;
+            } else if(staff.getStaffRole() == Role.MANAGER) {
+                noOfManager++;
+            }
+        }
+    }
+
+    public int getNoOfManager() {
+        updateNoOfStaff();
+        return noOfManager;
+    }
+
+    public int getNoOfStaff() {
+        updateNoOfStaff();
+        return noOfStaff;
+    }
 }

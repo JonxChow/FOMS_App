@@ -16,6 +16,10 @@ public class CreateBranchUI {
         String location = InputHelper.getValidatedString("Enter Location Name:");
 
         Branch newBranch = branchManager.createBranch(name, location);
+        if(newBranch == null) {
+            System.out.println("Branch creation unsuccessful");
+            return;
+        }
 
         int numberOfStaff = InputHelper.getValidatedInt("Enter the number of staff to add: ", 1, 100);
         int numberOfManagers = (int) Math.ceil(numberOfStaff / 4.0);  // Ensuring there is one manager for every four staff

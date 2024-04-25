@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.List;
 
 public class OrderController {
-    private OrderExpiryController expiryManager = new OrderExpiryController(30);  // Orders expire after 30 minutes
+    private final OrderExpiryController expiryManager = new OrderExpiryController(30);  // Orders expire after 30 minutes
     public OrderController() {
         // Now an empty constructor, no specific branch associated
     }
@@ -120,6 +120,12 @@ public class OrderController {
     public void setOrderReady(Order order) {
         order.setOrderStatus(OrderStatus.READY);
         expiryManager.scheduleOrderExpiry(order);
+    }
+
+    public void printCart(Branch branch, int orderID) {
+        Order order = findOrderById(branch, orderID);
+        assert  order != null;
+        order.getOrder().forEach((item, qty) -> System.out.println(item.getName() + " x " + qty + " = $" + (item.getPrice() * qty)));
     }
 
 }

@@ -18,4 +18,6 @@ public interface IAllBranches {
     List<Staff> getAllStaff();
 
     void printBranches();
+
+    boolean branchExists(String branchName);
 }

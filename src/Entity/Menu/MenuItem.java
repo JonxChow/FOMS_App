@@ -59,4 +59,9 @@ public class MenuItem implements Serializable {
     public void setAvailability(int availability) {
         this.availability = availability;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.name +" Price: $" + this.price + " Category: " + this.category + " Description: " + this.description;
+    }
 }

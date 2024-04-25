@@ -39,6 +39,8 @@ public class CustomerUI implements IDisplayMenu {
 
         while (true) {
             System.out.println("\n--- Customer Menu ---");
+            System.out.println("\n--- Current Menu Available ---");
+            showMenu(branch);
             System.out.println("1. New Order / Modify Existing Order");
             System.out.println("2. Check Order Status");
             System.out.println("3. Collect Food");
@@ -183,5 +185,12 @@ public class CustomerUI implements IDisplayMenu {
 
     public void setBranch(Branch branch) {
         this.branch = branch;
+    }
+
+    private void showMenu(Branch branch) {
+        for(MenuItem menuItem : branch.getMenu()) {
+            System.out.println(menuItem);
+            System.out.println("\n");
+        }
     }
 }
