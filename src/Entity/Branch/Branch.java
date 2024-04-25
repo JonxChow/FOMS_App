@@ -107,6 +107,8 @@ public class Branch implements Serializable {
     }
 
     private void updateNoOfStaff() {
+        noOfStaff = 0;
+        noOfManager = 0;
         for(Staff staff: staffMembers) {
             if(staff.getStaffRole() == Role.STAFF) {
                 noOfStaff++;
