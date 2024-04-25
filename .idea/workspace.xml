@@ -7,11 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Removed the systemexit line">
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/LoginUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Fixed more UI issues" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +95,7 @@
       <workItem from="1712484385795" duration="1214000" />
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
-      <workItem from="1714040815706" duration="5735000" />
+      <workItem from="1714040815706" duration="6687000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -189,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714048172114</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed more UI issues">
+      <option name="closed" value="true" />
+      <created>1714049633772</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714049633772</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +210,7 @@
     <MESSAGE value="Updated AdminUI, new PaymentMethodController" />
     <MESSAGE value="Fixed errors hopefully" />
     <MESSAGE value="Removed the systemexit line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed the systemexit line" />
+    <MESSAGE value="Fixed more UI issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed more UI issues" />
   </component>
 </project>
