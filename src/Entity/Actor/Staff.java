@@ -2,8 +2,10 @@ package Entity.Actor;
 
 import Entity.Branch.Branch;
 
-public class Staff extends Person{
+import java.io.Serializable;
 
+public class Staff extends Person {
+    private static final long serialVersionUID = 1L;
     private String username = "default";
     private String password = "password";
     public Staff(int id, String name, int age, Gender gender) {

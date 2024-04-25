@@ -4,11 +4,13 @@ import Entity.Actor.Staff;
 import Entity.Branch.Branch;
 import Interface.Admin.IAllBranches;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AllBranches implements IAllBranches {
+public class AllBranches implements IAllBranches, Serializable {
+    private static final long serialVersionUID = 1L;  // Ensure version compatibility
 
     private final List<Branch> allBranches;
 
@@ -36,7 +38,7 @@ public class AllBranches implements IAllBranches {
 
     @Override
     public void removeBranch(Branch branch) {
-
+        allBranches.remove(branch);
     }
 
     @Override

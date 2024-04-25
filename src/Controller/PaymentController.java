@@ -17,17 +17,32 @@ public class PaymentController {
     }
 
     public boolean addPaymentMethod(Branch branch, PaymentMethod method) {
-        Set<PaymentMethod> methods = branchPaymentMethods.computeIfAbsent(branch, k -> EnumSet.noneOf(PaymentMethod.class));
-        return methods.add(method);
-    }
+        if (branch != null) {
+            Set<PaymentMethod> methods = branch.getPaymentMethods(); // Use the getter to access the set.
 
-    public boolean removePaymentMethod(Branch branch, PaymentMethod method) {
-        if (branchPaymentMethods.containsKey(branch)) {
-            Set<PaymentMethod> methods = branchPaymentMethods.get(branch);
-            return methods.remove(method);
+            if (methods == null) {
+                methods = EnumSet.noneOf(PaymentMethod.class); // Initialize if null.
+                branch.setPaymentMethods(methods); // Use the setter to update the branch.
+            }
+
+            return methods.add(method); // Add the method to the set.
         }
         return false;
     }
+
+    public boolean removePaymentMethod(Branch branch, PaymentMethod method) {
+        if (branch != null) {
+            Set<PaymentMethod> methods = branch.getPaymentMethods(); // Use the getter to access the set.
+
+            if (methods != null && methods.contains(method)) {
+                boolean wasRemoved = methods.remove(method); // Attempt to remove the method.
+                branch.setPaymentMethods(methods); // Update the set in the branch.
+                return wasRemoved; // Return true if the method was successfully removed.
+            }
+        }
+        return false; // Return false if the branch is null, the set is null, or the method is not found.
+    }
+
 
     public Set<PaymentMethod> getAcceptedPaymentMethods(Branch branch) {
         return branchPaymentMethods.getOrDefault(branch, EnumSet.noneOf(PaymentMethod.class));

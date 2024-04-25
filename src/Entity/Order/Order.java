@@ -2,10 +2,12 @@ package Entity.Order;
 
 import Entity.Menu.MenuItem;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Order {
+public class Order implements Serializable {
+    private static final long serialVersionUID = 1L;
     private final int orderId;
     private Map<MenuItem, Integer> items;
     private double totalAmount;

@@ -9,6 +9,7 @@ import Interface.Boundaries.IPaymentMethodUI;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
+import java.util.Set;
 
 public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
     private PaymentController paymentController;
@@ -100,13 +101,16 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
     @Override
     public void showCurrentPaymentMethods(Branch branch) {
         if (branch != null) {
-            System.out.println("Current Accepted Payment Methods for " + branch.getBranchName() + ":");
-            //not working
-            branch.getPaymentMethods().forEach(
-                    method -> System.out.println("- " + method)
-            );
+            Set<PaymentMethod> methods = branch.getPaymentMethods();
+            if (methods != null && !methods.isEmpty()) {
+                System.out.println("Current Accepted Payment Methods for " + branch.getBranchName() + ":");
+                methods.forEach(method -> System.out.println("- " + method));
+            } else {
+                System.out.println("No payment methods found for " + branch.getBranchName());
+            }
         } else {
             System.out.println("Branch not found.");
         }
     }
+
 }

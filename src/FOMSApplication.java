@@ -3,6 +3,7 @@ import Controller.*;
 import Entity.Branch.Branch;
 import Entity.Lists.AllBranches;
 import Entity.Order.Order;
+import Helper.DataPersistence;
 import Helper.InputHelper;
 import Helper.StaffDisplayUI;
 import Interface.Admin.IAllBranches;
@@ -20,8 +21,13 @@ public class FOMSApplication {
 
     public static void main(String[] args) {
 
+        IAllBranches allBranches = (AllBranches) DataPersistence.deserialize("branches.dat");
+        if (allBranches == null) {
+            allBranches = new AllBranches();
+        }
+
         /*INIT CONTROLLERS and INTERFACE*/
-        IAllBranches allBranches = new AllBranches();
+        //IAllBranches allBranches = new AllBranches();
         IStaffManager staffManager = new StaffManagementController();
         OrderController orderController = new OrderController();
         StaffUI staffUI = new StaffUI(orderController);
@@ -61,5 +67,8 @@ public class FOMSApplication {
             //to create a branch: createBranchUI.createBranch();
             //Display admin menu: showUserInterface(adminUI);
         } while(choice < 3);
+
+        //Serialize allBranches after exit
+        DataPersistence.serialize(allBranches, "branches.dat");
     }
 }
