@@ -76,6 +76,10 @@ public class MenuActionUI implements IMenuActionUI {
      */
     public void addMenuItem() {
         String name = InputHelper.getValidatedString("Enter the name of the new menu item:");
+        if(menuController.isItemNameExists(branch, name)){
+            System.out.println("Menu item already exist in thus branch. Please try adding another item.");
+            return;
+        }
         double price = Double.parseDouble(InputHelper.getValidatedString("Enter the price of the new menu item:"));
         String description = InputHelper.getValidatedString("Enter the description of the new menu item:");
         String category = InputHelper.getValidatedString("Enter the category of the new menu item:");

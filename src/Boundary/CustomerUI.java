@@ -12,9 +12,10 @@ import Interface.Boundaries.IPaymentMethodUI;
 import Interface.Display.IDisplayMenu;
 
 import java.util.Scanner;
+
 /**
- * Provides an interface for customer interactions, allowing them to create orders, modify them,
- * check status, collect orders, and handle payment processes.
+ * Handles the customer interactions with the restaurant's order and payment system, providing
+ * a menu-driven interface to create and manage orders, and handle payments.
  */
 public class CustomerUI implements IDisplayMenu {
     private OrderController orderController;
@@ -22,27 +23,28 @@ public class CustomerUI implements IDisplayMenu {
     private Branch branch;
     private IAllBranches allBranches;
     private IPaymentMethodUI paymentMethodUI;
+
     /**
-     * Constructs a CustomerUI with necessary controllers and utilities.
+     * Constructor initializing the UI with required controllers and interfaces.
      *
      * @param allBranches Interface to access all branches.
      * @param orderController Controller for managing orders.
      * @param paymentMethodController Controller for handling payments.
      * @param paymentMethodUI Interface to display payment method options.
      */
-    public CustomerUI(IAllBranches allBranches, OrderController orderController, PaymentController paymentMethodController, IPaymentMethodUI paymentMethodUI) {
+    public CustomerUI(IAllBranches allBranches, OrderController orderController,
+                      PaymentController paymentMethodController, IPaymentMethodUI paymentMethodUI) {
         this.orderController = orderController;
         this.paymentMethodController = paymentMethodController;
         this.allBranches = allBranches;
         this.paymentMethodUI = paymentMethodUI;
     }
+
     /**
-     * Displays the main menu for customer actions and handles the flow of customer interactions.
+     * Displays the main menu for customer actions and manages the flow of interactions.
      */
     @Override
     public void displayMenu() {
-
-        //get branch
         String branchName = InputHelper.getValidatedString("Enter Branch to visit: ");
         Branch branch = allBranches.getBranchByName(branchName);
         setBranch(branch);
@@ -58,7 +60,7 @@ public class CustomerUI implements IDisplayMenu {
             System.out.println("4. Checkout and Make Payment");
             System.out.println("5. Exit");
 
-            int choice = InputHelper.getValidatedInt("Select an option",1,5);
+            int choice = InputHelper.getValidatedInt("Select an option", 1, 5);
 
             switch (choice) {
                 case 1:
@@ -75,18 +77,22 @@ public class CustomerUI implements IDisplayMenu {
                     break;
                 case 5:
                     System.out.println("Exiting...");
-                    return;
+                    return; // Exits the loop and thus the menu
             }
         }
     }
 
+    /**
+     * Manages modifications to an existing order or creates a new order.
+     */
     private void modifyOrder() {
         System.out.println("Enter Order ID to modify, or 0 to create a new order:");
         int orderId = InputHelper.getValidatedInt("ID: ", 0, 99999);
 
+        // Logic to handle new order creation
         if (orderId == 0) {
             System.out.println("Choose Dining Option: 1 for Takeaway, 2 for Dine-in");
-            int option = InputHelper.getValidatedInt("Option: ", 0, 1);
+            int option = InputHelper.getValidatedInt("Option: ", 1, 2);
             DiningOption diningOption = (option == 1) ? DiningOption.TAKEAWAY : DiningOption.DINE_IN;
             orderId = orderController.createOrder(branch, diningOption);
             System.out.println("New Order Created. Order ID: " + orderId);
@@ -113,22 +119,27 @@ public class CustomerUI implements IDisplayMenu {
                     break;
                 case 4:
                     orderController.printCart(branch, orderId);
+                    break;
                 case 5:
-                    modifying = false;
+                    modifying = false; // Exits modification loop
                     break;
             }
         }
     }
 
+    /**
+     * Adds an item to an order.
+     * @param orderId the ID of the order to modify.
+     */
     private void addItemToOrder(int orderId) {
         String name = InputHelper.getValidatedString("Enter Item Name:");
-        System.out.println("Enter Quantity:");
-        int quantity = InputHelper.getValidatedInt("Quantity: ", 0, 500);
+        int quantity = InputHelper.getValidatedInt("Quantity: ", 1, 500); // Validate that at least 1 item is added
 
         MenuItem item = branch.getMenu().stream()
                 .filter(m -> m.getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
+
         if (item != null) {
             orderController.addItemToOrder(branch, orderId, item, quantity);
             System.out.println("Item added successfully.");
@@ -137,12 +148,17 @@ public class CustomerUI implements IDisplayMenu {
         }
     }
 
+    /**
+     * Removes an item from an order.
+     * @param orderId the ID of the order to modify.
+     */
     private void removeItemFromOrder(int orderId) {
         String name = InputHelper.getValidatedString("Enter Item Name to Remove:");
         MenuItem item = branch.getMenu().stream()
                 .filter(m -> m.getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
+
         if (item != null) {
             orderController.removeItemFromOrder(branch, orderId, item);
             System.out.println("Item removed successfully.");
@@ -151,6 +167,9 @@ public class CustomerUI implements IDisplayMenu {
         }
     }
 
+    /**
+     * Checks the status of an existing order.
+     */
     private void checkOrderStatus() {
         int orderId = InputHelper.getValidatedInt("Enter Order ID to Check Status: ", 0, 99999);
         Order order = orderController.viewOrderDetails(branch, orderId);
@@ -161,23 +180,33 @@ public class CustomerUI implements IDisplayMenu {
         }
     }
 
+    /**
+     * Facilitates the collection of prepared food for an order.
+     */
     private void collectFood() {
         int orderId = InputHelper.getValidatedInt("Enter Order ID to Collect Food: ", 0, 99999);
         orderController.collectFood(branch, orderId);
     }
 
+    /**
+     * Handles the checkout and payment process for an order.
+     */
     private void handleCheckoutAndPayment() {
-        int orderId = InputHelper.getValidatedInt("Enter Order ID to Checkout :", 0, 99999);
+        int orderId = InputHelper.getValidatedInt("Enter Order ID to Checkout: ", 0, 99999);
         Order order = orderController.viewOrderDetails(branch, orderId);
         if (order != null) {
             System.out.println("Proceeding to Checkout...");
-            orderController.checkoutOrder(branch, orderId); // Assuming this method displays the order summary
+            orderController.checkoutOrder(branch, orderId);
             System.out.println("Do you wish to proceed with payment?");
             paymentMethodUI.showCurrentPaymentMethods(branch);
             String input = InputHelper.getValidatedString("Yes or No: ");
             if ("yes".equalsIgnoreCase(input)) {
+                if(order.getOrder().isEmpty()){
+                    System.out.println("Order is empty. Please add menu items.");
+                    return;
+                }
                 paymentMethodController.makePayment(branch, orderId, order.getTotalAmount());
-                orderController.printReceipt(branch, orderId); // Print the receipt after successful payment
+                orderController.printReceipt(branch, orderId);
                 System.out.println("Payment successful. Receipt has been printed.");
             } else {
                 System.out.println("Payment cancelled.");
@@ -188,24 +217,28 @@ public class CustomerUI implements IDisplayMenu {
     }
 
     /**
-     * Sets the current active branch for the customer UI.
-     * @param branch The branch to be set as the active branch.
+     * Sets the branch as the current active branch for the UI.
+     * @param branch The branch to set as active.
      */
     public void setBranch(Branch branch) {
-        if(branch != null) {this.branch = branch;}
+        this.branch = branch;
     }
 
     /**
      * Displays the menu items available at the branch.
-     * @param branch The branch whose menu items are displayed.
+     * @param branch The branch whose menu is displayed.
      */
     private void showMenu(Branch branch) {
-        for(MenuItem menuItem : branch.getMenu()) {
+        for (MenuItem menuItem : branch.getMenu()) {
             System.out.println(menuItem);
             System.out.println("\n");
         }
     }
 
+    /**
+     * Adds customisation comments to an order.
+     * @param orderID The ID of the order to modify.
+     */
     private void addCustomisation(int orderID) {
         String customisation = InputHelper.getValidatedString("Enter your preferences here: ");
         orderController.addCustomisation(branch, orderID, customisation);

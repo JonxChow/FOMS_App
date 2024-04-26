@@ -47,6 +47,22 @@ public class MenuController {
     }
 
     /**
+     * Helper method to determine if a menu item with the specified name already exists in the branch's menu.
+     *
+     * @param branch The branch whose menu is to be checked.
+     * @param name The name of the menu item to check for.
+     * @return true if the item name exists, false otherwise.
+     */
+    public boolean isItemNameExists(Branch branch, String name) {
+        for (MenuItem menuItem : branch.getMenu()) {
+            if (menuItem.getName().equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Edits an existing menu item in a specified branch's menu. The method finds
      * an item by name, removes it, and replaces it with the updated version.
      *
