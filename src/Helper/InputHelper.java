@@ -1,6 +1,12 @@
 package Helper;
 
+import Entity.Payment.PaymentMethod;
+
+import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * The {@code InputHelper} class provides static utility methods for reading and validating user input from the console.
@@ -26,6 +32,30 @@ public class InputHelper {
             }
         } while (input.isEmpty());
         return input;
+    }
+    /**
+     * Prompts the user to select a valid payment method from the available options.
+     * This method ensures the selection is within the list of methods provided by the branch.
+     *
+     * @param message The message to display to the user.
+     * @param availableMethods The set of available payment methods.
+     * @return The selected payment method.
+     */
+    public static PaymentMethod getValidatedPaymentMethod(String message, Set<PaymentMethod> availableMethods) {
+        if (availableMethods.isEmpty()) {
+            System.out.println("No payment methods available.");
+            return null;
+        }
+
+        List<PaymentMethod> methodList = availableMethods.stream().collect(Collectors.toList());
+        int index = 1;
+        System.out.println(message);
+        for (PaymentMethod method : methodList) {
+            System.out.println(index++ + ". " + method);
+        }
+
+        int choice = getValidatedInt("Choose a method (1-" + methodList.size() + "): ", 1, methodList.size());
+        return methodList.get(choice - 1);  // Retrieve the selected payment method
     }
 
     /**

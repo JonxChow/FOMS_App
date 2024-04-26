@@ -6,6 +6,7 @@ import Entity.Branch.Branch;
 import Entity.Menu.MenuItem;
 import Entity.Order.DiningOption;
 import Entity.Order.Order;
+import Entity.Payment.PaymentMethod;
 import Helper.InputHelper;
 import Interface.Admin.IAllBranches;
 import Interface.Boundaries.IPaymentMethodUI;
@@ -196,21 +197,19 @@ public class CustomerUI implements IDisplayMenu {
         Order order = orderController.viewOrderDetails(branch, orderId);
         if (order != null) {
             System.out.println("Proceeding to Checkout...");
-            orderController.checkoutOrder(branch, orderId);
-            System.out.println("Do you wish to proceed with payment?");
-            paymentMethodUI.showCurrentPaymentMethods(branch);
-            String input = InputHelper.getValidatedString("Yes or No: ");
-            if ("yes".equalsIgnoreCase(input)) {
-                if(order.getOrder().isEmpty()){
-                    System.out.println("Order is empty. Please add menu items.");
-                    return;
-                }
-                paymentMethodController.makePayment(branch, orderId, order.getTotalAmount());
-                orderController.printReceipt(branch, orderId);
-                System.out.println("Payment successful. Receipt has been printed.");
-            } else {
-                System.out.println("Payment cancelled.");
+            if(order.getOrder().isEmpty()){
+                System.out.println("Order is empty. Please add more menu items.");
+                return;
             }
+            orderController.checkoutOrder(branch, orderId);
+            PaymentMethod method = InputHelper.getValidatedPaymentMethod("Select Payment Method: ", paymentMethodController.getAcceptedPaymentMethods(branch));
+            if (method == PaymentMethod.DEBIT_CARD || method == PaymentMethod.CREDIT_CARD) {
+                String cardNumber = InputHelper.getValidatedString("Enter your 16-digit card number: ");
+                paymentMethodController.makePayment(branch, orderId, order.getTotalAmount(), cardNumber, method);
+            } else {
+                paymentMethodController.makePayment(branch, orderId, order.getTotalAmount(), null, method);
+            }
+            orderController.printReceipt(branch, orderId);
         } else {
             System.out.println("Order not found.");
         }
