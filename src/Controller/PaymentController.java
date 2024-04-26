@@ -3,91 +3,95 @@ package Controller;
 import Entity.Branch.Branch;
 import Entity.Payment.PaymentMethod;
 
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
+import java.util.*;
 /**
- * Manages payment methods for branches and processes payments.
- * This controller allows adding and removing payment methods for each branch and handles payment transactions.
+ * The PaymentController class is responsible for managing payment methods
+ * associated with different branches of a restaurant or retail chain.
+ * It allows adding and removing payment methods for each branch,
+ * retrieving the accepted payment methods for a given branch,
+ * and processing payments for orders at a specific branch.
  */
 public class PaymentController {
-    // Mapping from branch to a set of accepted payment methods
     private Map<Branch, Set<PaymentMethod>> branchPaymentMethods;
-
     /**
-     * Constructs a PaymentController with an empty map to keep track of payment methods for each branch.
+     * Constructs a new instance of the PaymentController.
      */
     public PaymentController() {
         branchPaymentMethods = new HashMap<>();
     }
-
     /**
-     * Adds a payment method to a specific branch.
+     * Adds a payment method to the list of accepted payment methods for a given branch.
      *
-     * @param branch The branch to which the payment method will be added.
-     * @param method The payment method to add.
-     * @return true if the payment method was successfully added, false otherwise.
+     * @param branch the branch to which the payment method should be added
+     * @param method the payment method to be added
+     * @return true if the payment method was successfully added, false otherwise
      */
     public boolean addPaymentMethod(Branch branch, PaymentMethod method) {
-        if (branch != null) {
-            Set<PaymentMethod> methods = branch.getPaymentMethods(); // Use the getter to access the set.
-
-            if (methods == null) {
-                methods = EnumSet.noneOf(PaymentMethod.class); // Initialize if null.
-                branch.setPaymentMethods(methods); // Use the setter to update the branch.
-            }
-
-            return methods.add(method); // Add the method to the set.
+        Set<PaymentMethod> paymentMethods = branch.getPaymentMethods();
+        Set<PaymentMethod> updatedPaymentMethods = new HashSet<>(paymentMethods);
+        boolean added = updatedPaymentMethods.add(method);
+        if (added) {
+            branch.setPaymentMethods(updatedPaymentMethods);
+            branchPaymentMethods.put(branch, updatedPaymentMethods);
         }
-        return false;
+        return added;
     }
-
     /**
-     * Removes a payment method from a specific branch.
+     * Removes a payment method from the list of accepted payment methods for a given branch.
      *
-     * @param branch The branch from which the payment method will be removed.
-     * @param method The payment method to remove.
-     * @return true if the payment method was successfully removed, false otherwise.
+     * @param branch the branch from which the payment method should be removed
+     * @param method the payment method to be removed
+     * @return true if the payment method was successfully removed, false otherwise
      */
     public boolean removePaymentMethod(Branch branch, PaymentMethod method) {
-        if (branch != null) {
-            Set<PaymentMethod> methods = branch.getPaymentMethods(); // Use the getter to access the set.
-
-            if (methods != null && methods.contains(method)) {
-                boolean wasRemoved = methods.remove(method); // Attempt to remove the method.
-                branch.setPaymentMethods(methods); // Update the set in the branch.
-                return wasRemoved; // Return true if the method was successfully removed.
-            }
+        Set<PaymentMethod> paymentMethods = branch.getPaymentMethods();
+        Set<PaymentMethod> updatedPaymentMethods = new HashSet<>(paymentMethods);
+        boolean removed = updatedPaymentMethods.remove(method);
+        if (removed) {
+            branch.setPaymentMethods(updatedPaymentMethods);
+            branchPaymentMethods.put(branch, updatedPaymentMethods);
         }
-        return false; // Return false if the branch is null, the set is null, or the method is not found.
+        return removed;
     }
-
     /**
-     * Retrieves the set of accepted payment methods for a specified branch.
+     * Retrieves the set of accepted payment methods for a given branch.
      *
-     * @param branch The branch for which to retrieve the accepted payment methods.
-     * @return A set of payment methods accepted by the branch.
+     * @param branch the branch for which to retrieve the accepted payment methods
+     * @return a set of accepted payment methods for the given branch
      */
     public Set<PaymentMethod> getAcceptedPaymentMethods(Branch branch) {
         return branchPaymentMethods.getOrDefault(branch, EnumSet.noneOf(PaymentMethod.class));
     }
-
     /**
-     * Processes a payment for an order within a specific branch.
+     * Validates a card number based on a specific format (16 digits).
      *
-     * @param branch The branch where the order is placed.
-     * @param orderId The ID of the order for which payment is being processed.
-     * @param amount The amount of the payment.
+     * @param cardNumber the card number to be validated
+     * @return true if the card number is valid, false otherwise
      */
-    public void makePayment(Branch branch, int orderId, double amount) {
+    public boolean validateCardNumber(String cardNumber) {
+        return cardNumber != null && cardNumber.matches("\\d{16}");
+    }
+    /**
+     * Processes a payment for an order at a given branch.
+     *
+     * @param branch    the branch where the order is placed
+     * @param orderId   the ID of the order
+     * @param amount    the amount to be paid
+     * @param cardNumber the card number to be used for payment (if applicable)
+     * @param method    the payment method to be used
+     */
+    public void makePayment(Branch branch, int orderId, double amount, String cardNumber, PaymentMethod method) {
         if (branch == null) {
             System.out.println("Branch not found. Cannot process payment.");
             return;
         }
-        // Simulate payment processing
-        System.out.println("Processing payment for Order ID: " + orderId + " at " + branch.getBranchName());
+        if (method == PaymentMethod.DEBIT_CARD || method == PaymentMethod.CREDIT_CARD) {
+            if (!validateCardNumber(cardNumber)) {
+                System.out.println("Invalid card number. Payment could not be processed.");
+                return;
+            }
+        }
+        System.out.println("Processing payment for Order ID: " + orderId + " at " + branch.getBranchName() + " with " + method);
         System.out.println("Amount Paid: $" + amount);
         System.out.println("Payment Successful. Thank you!");
     }

@@ -130,7 +130,7 @@ public class PaymentMethodUI implements IDisplayMenu, IPaymentMethodUI {
     @Override
     public void showCurrentPaymentMethods(Branch branch) {
         if (branch != null) {
-            Set<PaymentMethod> methods = branch.getPaymentMethods();
+            Set<PaymentMethod> methods = paymentController.getAcceptedPaymentMethods(branch);
             if (methods != null && !methods.isEmpty()) {
                 System.out.println("Current Accepted Payment Methods for " + branch.getBranchName() + ":");
                 methods.forEach(method -> System.out.println("- " + method));

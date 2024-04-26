@@ -7,16 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Removed unnecessary classes">
-      <change afterPath="$PROJECT_DIR$/src.uml" afterDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Updated PaymentController, PaymentMethodUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/branches.dat" beforeDir="false" afterPath="$PROJECT_DIR$/branches.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order/DiningOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/DiningOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Payment/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Payment/PaymentMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PaymentController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,31 +40,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.FOMSApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "openjdk-20",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Anish/IdeaProjects/FOMS_App",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.FOMSApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jonathanchow/Documents/FOMS_App/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.archetype.catalogs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="FOMS_App" />
@@ -194,13 +188,13 @@
       <option name="project" value="LOCAL" />
       <updated>1714055067638</updated>
     </task>
-    <task id="LOCAL-00012" summary="Removed unnecessary classes">
+    <task id="LOCAL-00012" summary="Updated PaymentController, PaymentMethodUI">
       <option name="closed" value="true" />
-      <created>1714105141260</created>
+      <created>1714109463370</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1714105141260</updated>
+      <updated>1714109463371</updated>
     </task>
     <option name="localTasksCounter" value="13" />
     <servers />
@@ -219,7 +213,7 @@
     <MESSAGE value="Updated AdminUI, new PaymentMethodController" />
     <MESSAGE value="extra files changed" />
     <MESSAGE value="Fixed branch getters" />
-    <MESSAGE value="Removed unnecessary classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary classes" />
+    <MESSAGE value="Updated PaymentController, PaymentMethodUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated PaymentController, PaymentMethodUI" />
   </component>
 </project>
