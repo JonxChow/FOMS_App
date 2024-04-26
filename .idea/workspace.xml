@@ -7,10 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Updated PaymentController, PaymentMethodUI">
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Added javadoc comments">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/branches.dat" beforeDir="false" afterPath="$PROJECT_DIR$/branches.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FOMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOMSApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Admin/IAllBranches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/IMenuActionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IMenuActionUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/IPaymentMethodUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IPaymentMethodUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffActionsUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffActionsUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffDisplayUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffDisplayUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Boundaries/IStaffUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Controllers/IBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IBranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Controllers/ILoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/ILoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Controllers/IStaffManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IStaffManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Controllers/IStaffPromotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Controllers/IStaffPromotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Display/IDisplayMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Display/IDisplayMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +110,7 @@
       <workItem from="1712484385795" duration="1214000" />
       <workItem from="1712652769245" duration="3278000" />
       <workItem from="1712731210200" duration="1037000" />
+      <workItem from="1714111468006" duration="1166000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
