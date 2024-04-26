@@ -7,52 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Fixed branch getters">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_4_24__4_08pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_4_24__4_08pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2024_2_19_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2024_2_19_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Removed unnecessary classes">
+      <change afterPath="$PROJECT_DIR$/src.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/AddManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/AddStaff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchControlUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchCreationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchCreationUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/CloseBranch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/CreateBranch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/ManagerCreationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/OpenBranch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/RemoveManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/RemoveStaff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/StaffCreationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Payment/PaymentMethods.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Payment/PaymentType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/AddPaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/EditManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/EditStaff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/PromoteStaff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/RemovePaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/TransferStaff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/AddToOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CollectFood.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CreateOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/DisplayMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/EditOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/MakePayment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/PrintReceipt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/RemoveFromOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/TrackOrderStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/AddMenuItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/EditMenuItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/ListStaff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/RemoveMenuItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/DisplayNewOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/ProcessOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/ViewOrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/branches.dat" beforeDir="false" afterPath="$PROJECT_DIR$/branches.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order/DiningOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/DiningOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Payment/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Payment/PaymentMethod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +57,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "openjdk-20",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/jonathanchow/Documents/FOMS_App/pom.xml",
+    "last_opened_file_path": "C:/Users/Anish/IdeaProjects/FOMS_App",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -230,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714055067638</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Removed unnecessary classes">
+      <option name="closed" value="true" />
+      <created>1714105141260</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714105141260</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +219,7 @@
     <MESSAGE value="Updated AdminUI, new PaymentMethodController" />
     <MESSAGE value="extra files changed" />
     <MESSAGE value="Fixed branch getters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed branch getters" />
+    <MESSAGE value="Removed unnecessary classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary classes" />
   </component>
 </project>

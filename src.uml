@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Anish/IdeaProjects/FOMS_App/src</OriginalElement>
+  <nodes>
+    <node x="549.5" y="2479.5">Controller.OrderController</node>
+    <node x="3113.5" y="214.0">Entity.Menu.MenuItem</node>
+    <node x="3201.0" y="1873.0">Interface.Boundaries.IStaffActionsUI</node>
+    <node x="1066.5" y="2910.0">Entity.Lists.AllBranches</node>
+    <node x="3090.5" y="3669.0">Controller.LoginController</node>
+    <node x="3572.5" y="2935.5">Boundary.StaffActionsUI</node>
+    <node x="-115.0" y="4037.0">FOMSApplication</node>
+    <node x="3265.5" y="1117.0">Entity.Menu.Menu</node>
+    <node x="-140.5" y="1849.0">Controller.MenuController</node>
+    <node x="2762.0" y="2973.0">Controller.BranchController</node>
+    <node x="739.5" y="1461.0">Interface.Boundaries.IMenuActionUI</node>
+    <node x="3460.0" y="858.5">Interface.Controllers.IStaffPromotion</node>
+    <node x="1307.0" y="1666.0">Entity.Branch.Branch</node>
+    <node x="4083.0" y="-15.0">Entity.Actor.Gender</node>
+    <node x="2110.5" y="1898.5">Interface.Boundaries.IStaffDisplayUI</node>
+    <node x="1192.5" y="845.0">Entity.Payment.PaymentMethod</node>
+    <node x="4251.0" y="1510.5">Entity.Actor.Manager</node>
+    <node x="3885.0" y="2625.0">Helper.ExcelBranchInitializer</node>
+    <node x="4057.0" y="190.0">Entity.Actor.Person</node>
+    <node x="151.0" y="2961.0">Controller.PaymentController</node>
+    <node x="824.5" y="605.0">Entity.Order.DiningOption</node>
+    <node x="2762.0" y="1885.0">Boundary.CreateBranchUI</node>
+    <node x="1746.5" y="1837.0">Interface.Admin.IAllBranches</node>
+    <node x="4028.5" y="1054.0">Entity.Actor.Staff</node>
+    <node x="-120.5" y="2922.0">Boundary.MenuActionUI</node>
+    <node x="1426.0" y="2970.0">Boundary.ManagerUI</node>
+    <node x="2968.5" y="846.5">Interface.Controllers.IBranchController</node>
+    <node x="4187.0" y="2973.0">Controller.StaffManagementController</node>
+    <node x="3560.0" y="1873.0">Controller.StaffPromotionController</node>
+    <node x="489.0" y="1885.0">Controller.OrderExpiryController</node>
+    <node x="3090.5" y="2602.5">Interface.Controllers.ILoginController</node>
+    <node x="676.5" y="3654.0">Boundary.StaffUI</node>
+    <node x="931.5" y="1910.5">Interface.Boundaries.IStaffUI</node>
+    <node x="4047.0" y="1886.5">Interface.Controllers.IStaffManager</node>
+    <node x="2162.5" y="3667.5">Boundary.LoginUI</node>
+    <node x="4313.5" y="-15.0">Entity.Actor.Role</node>
+    <node x="856.5" y="995.5">Entity.Order.Order</node>
+    <node x="2530.5" y="3393.0">Helper.InputHelper</node>
+    <node x="1032.0" y="1510.5">Interface.Boundaries.IPaymentMethodUI</node>
+    <node x="1917.5" y="2997.0">Boundary.AdminUI</node>
+    <node x="865.5" y="3405.0">Helper.DataPersistence</node>
+    <node x="1524.0" y="3367.5">Boundary.PaymentMethodUI</node>
+    <node x="2289.0" y="2589.0">Helper.StaffDisplayUI</node>
+    <node x="1153.0" y="3594.0">Boundary.CustomerUI</node>
+    <node x="3387.5" y="605.0">Entity.Order.OrderStatus</node>
+    <node x="1956.0" y="1130.5">Interface.Display.IDisplayMenu</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Controller.BranchController" target="Interface.Controllers.IBranchController" relationship="REALIZATION">
+      <point x="-183.0" y="15.0" />
+      <point x="2648.5" y="3058.0" />
+      <point x="2648.5" y="903.0" />
+      <point x="-176.5" y="0.0" />
+    </edge>
+    <edge source="Boundary.ManagerUI" target="Interface.Boundaries.IStaffDisplayUI" relationship="TO_ONE">
+      <point x="199.0" y="-68.5" />
+      <point x="2078.0" y="2974.5" />
+      <point x="2078.0" y="1943.0" />
+      <point x="-134.5" y="0.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Controller.BranchController" relationship="CREATE">
+      <point x="-15.0" y="46.0" />
+      <point x="-30.0" y="4168.0" />
+      <point x="2960.0" y="4168.0" />
+      <point x="15.0" y="70.0" />
+    </edge>
+    <edge source="Boundary.AdminUI" target="Boundary.CreateBranchUI" relationship="TO_ONE">
+      <point x="227.5" y="0.0" />
+      <point x="2618.5" y="3043.0" />
+      <point x="2618.5" y="1943.0" />
+      <point x="-143.0" y="0.0" />
+    </edge>
+    <edge source="Controller.LoginController" target="Interface.Controllers.ILoginController" relationship="REALIZATION">
+      <point x="15.0" y="-94.0" />
+      <point x="15.0" y="80.5" />
+    </edge>
+    <edge source="Helper.StaffDisplayUI" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="94.0" />
+      <point x="2445.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Controller.OrderController" relationship="CREATE">
+      <point x="-100.0" y="0.0" />
+      <point x="-218.0" y="4083.0" />
+      <point x="-218.0" y="2698.0" />
+      <point x="-195.5" y="15.0" />
+    </edge>
+    <edge source="Boundary.CustomerUI" target="Interface.Display.IDisplayMenu" relationship="REALIZATION">
+      <point x="15.0" y="-169.0" />
+      <point x="1400.0" y="3320.0" />
+      <point x="1902.0" y="3320.0" />
+      <point x="1902.0" y="2708.0" />
+      <point x="2045.0" y="2708.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Entity.Lists.AllBranches" relationship="CREATE">
+      <point x="100.0" y="15.0" />
+      <point x="1135.5" y="4098.0" />
+      <point x="-69.5" y="133.0" />
+    </edge>
+    <edge source="Entity.Order.Order" target="Entity.Order.DiningOption" relationship="TO_ONE">
+      <point x="-40.0" y="-167.5" />
+      <point x="0.0" y="58.0" />
+    </edge>
+    <edge source="Boundary.CustomerUI" target="Controller.OrderController" relationship="TO_ONE">
+      <point x="-232.0" y="-131.5" />
+      <point x="819.0" y="3631.5" />
+      <point x="819.0" y="3117.5" />
+      <point x="745.0" y="3117.5" />
+      <point x="0.0" y="203.5" />
+    </edge>
+    <edge source="Boundary.MenuActionUI" target="Controller.MenuController" relationship="CREATE">
+      <point x="0.0" y="-121.0" />
+      <point x="-40.0" y="94.0" />
+    </edge>
+    <edge source="Interface.Boundaries.IStaffUI" target="Interface.Display.IDisplayMenu" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-32.5" />
+      <point x="1005.0" y="1396.0" />
+      <point x="2030.0" y="1396.0" />
+      <point x="-15.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.AdminUI" target="Interface.Boundaries.IStaffDisplayUI" relationship="TO_ONE">
+      <point x="0.0" y="-46.0" />
+      <point x="2145.0" y="2980.5" />
+      <point x="2078.0" y="2980.5" />
+      <point x="2078.0" y="1943.0" />
+      <point x="-134.5" y="0.0" />
+    </edge>
+    <edge source="Boundary.CustomerUI" target="Interface.Boundaries.IPaymentMethodUI" relationship="TO_ONE">
+      <point x="-232.0" y="126.5" />
+      <point x="-158.0" y="3889.5" />
+      <point x="-158.0" y="2237.5" />
+      <point x="1705.0" y="2237.5" />
+      <point x="1705.0" y="1543.0" />
+      <point x="173.0" y="0.0" />
+    </edge>
+    <edge source="Boundary.CustomerUI" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="-169.0" />
+      <point x="1385.0" y="3272.0" />
+      <point x="2724.0" y="3272.0" />
+      <point x="2724.0" y="3179.0" />
+      <point x="2739.0" y="3179.0" />
+      <point x="2739.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.LoginUI" relationship="CREATE">
+      <point x="100.0" y="-30.0" />
+      <point x="2400.0" y="4053.0" />
+      <point x="15.0" y="95.5" />
+    </edge>
+    <edge source="Boundary.ManagerUI" target="Interface.Boundaries.IMenuActionUI" relationship="TO_ONE">
+      <point x="0.0" y="-73.0" />
+      <point x="1625.0" y="2357.5" />
+      <point x="845.0" y="2357.5" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Interface.Controllers.IStaffManager" relationship="TO_ONE">
+      <point x="172.5" y="-102.5" />
+      <point x="4353.0" y="2940.5" />
+      <point x="4353.0" y="2487.0" />
+      <point x="4205.0" y="2487.0" />
+      <point x="0.0" y="56.5" />
+    </edge>
+    <edge source="Entity.Order.Order" target="Entity.Menu.MenuItem" relationship="TO_MANY">
+      <point x="128.5" y="0.0" />
+      <point x="1205.0" y="1163.0" />
+      <point x="1205.0" y="1042.0" />
+      <point x="3339.0" y="1042.0" />
+      <point x="54.0" y="169.0" />
+    </edge>
+    <edge source="Interface.Boundaries.IPaymentMethodUI" target="Interface.Display.IDisplayMenu" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-32.5" />
+      <point x="1205.0" y="1396.0" />
+      <point x="2030.0" y="1396.0" />
+      <point x="-15.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.CreateBranchUI" target="Interface.Controllers.IBranchController" relationship="TO_ONE">
+      <point x="143.0" y="0.0" />
+      <point x="3070.0" y="1943.0" />
+      <point x="3070.0" y="1027.0" />
+      <point x="3145.0" y="1027.0" />
+      <point x="0.0" y="56.5" />
+    </edge>
+    <edge source="Controller.OrderController" target="Controller.OrderExpiryController" relationship="TO_ONE">
+      <point x="-120.0" y="-203.5" />
+      <point x="0.0" y="58.0" />
+    </edge>
+    <edge source="Entity.Actor.Staff" target="Entity.Actor.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-109.0" />
+      <point x="0.0" y="193.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Helper.ExcelBranchInitializer" relationship="CREATE">
+      <point x="100.0" y="-45.0" />
+      <point x="4120.0" y="4038.0" />
+      <point x="15.0" y="58.0" />
+    </edge>
+    <edge source="Boundary.AdminUI" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="46.0" />
+      <point x="2145.0" y="3179.0" />
+      <point x="2739.0" y="3179.0" />
+      <point x="2739.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="Controller.BranchController" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="70.0" />
+      <point x="2945.0" y="3179.0" />
+      <point x="2739.0" y="3179.0" />
+      <point x="2739.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="Boundary.MenuActionUI" target="Entity.Menu.MenuItem" relationship="CREATE">
+      <point x="-105.5" y="15.0" />
+      <point x="-203.0" y="3058.0" />
+      <point x="-203.0" y="383.0" />
+      <point x="-171.5" y="0.0" />
+    </edge>
+    <edge source="Boundary.LoginUI" target="Interface.Controllers.ILoginController" relationship="TO_ONE">
+      <point x="153.0" y="-95.5" />
+      <point x="2538.0" y="3631.5" />
+      <point x="3305.0" y="3631.5" />
+      <point x="0.0" y="80.5" />
+    </edge>
+    <edge source="Entity.Branch.Branch" target="Entity.Payment.PaymentMethod" relationship="TO_MANY">
+      <point x="-35.0" y="-277.0" />
+      <point x="125.0" y="58.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Helper.StaffDisplayUI" relationship="CREATE">
+      <point x="-100.0" y="15.0" />
+      <point x="-233.0" y="4098.0" />
+      <point x="-233.0" y="544.5" />
+      <point x="2445.0" y="544.5" />
+      <point x="0.0" y="-94.0" />
+    </edge>
+    <edge source="Boundary.CustomerUI" target="Entity.Branch.Branch" relationship="TO_ONE">
+      <point x="-15.0" y="-169.0" />
+      <point x="1370.0" y="3320.0" />
+      <point x="852.0" y="3320.0" />
+      <point x="852.0" y="3224.0" />
+      <point x="1408.5" y="3224.0" />
+      <point x="-76.5" y="277.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Controller.PaymentController" relationship="CREATE">
+      <point x="-30.0" y="-46.0" />
+      <point x="-45.0" y="3194.0" />
+      <point x="355.0" y="3194.0" />
+      <point x="-30.0" y="82.0" />
+    </edge>
+    <edge source="Boundary.PaymentMethodUI" target="Interface.Boundaries.IPaymentMethodUI" relationship="REALIZATION">
+      <point x="-201.0" y="-75.5" />
+      <point x="1049.0" y="3387.5" />
+      <point x="1049.0" y="2532.0" />
+      <point x="1205.0" y="2532.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.AdminUI" target="Interface.Display.IDisplayMenu" relationship="REALIZATION">
+      <point x="-227.5" y="0.0" />
+      <point x="1902.0" y="3043.0" />
+      <point x="1902.0" y="2708.0" />
+      <point x="2045.0" y="2708.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Entity.Actor.Manager" relationship="CREATE">
+      <point x="0.0" y="-107.5" />
+      <point x="3745.0" y="2066.5" />
+      <point x="4024.0" y="2066.5" />
+      <point x="4024.0" y="1543.0" />
+      <point x="-134.0" y="0.0" />
+    </edge>
+    <edge source="Boundary.StaffUI" target="Interface.Boundaries.IStaffUI" relationship="REALIZATION">
+      <point x="-55.0" y="-109.0" />
+      <point x="730.0" y="3028.5" />
+      <point x="989.0" y="3028.5" />
+      <point x="-16.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.ManagerUI" target="Entity.Branch.Branch" relationship="TO_ONE">
+      <point x="0.0" y="73.0" />
+      <point x="1625.0" y="3224.0" />
+      <point x="1408.5" y="3224.0" />
+      <point x="-76.5" y="277.0" />
+    </edge>
+    <edge source="Boundary.LoginUI" target="Interface.Boundaries.IStaffUI" relationship="TO_ONE">
+      <point x="0.0" y="95.5" />
+      <point x="2385.0" y="3949.5" />
+      <point x="-173.0" y="3949.5" />
+      <point x="-173.0" y="2222.5" />
+      <point x="933.0" y="2222.5" />
+      <point x="-72.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.LoginUI" target="Boundary.ManagerUI" relationship="TO_ONE">
+      <point x="15.0" y="-95.5" />
+      <point x="2400.0" y="3194.0" />
+      <point x="1755.0" y="3194.0" />
+      <point x="130.0" y="73.0" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Interface.Boundaries.IStaffActionsUI" relationship="REALIZATION">
+      <point x="-30.0" y="-107.5" />
+      <point x="3715.0" y="2417.5" />
+      <point x="3360.0" y="2417.5" />
+      <point x="15.0" y="70.0" />
+    </edge>
+    <edge source="Boundary.MenuActionUI" target="Controller.MenuController" relationship="TO_ONE">
+      <point x="40.0" y="-121.0" />
+      <point x="0.0" y="94.0" />
+    </edge>
+    <edge source="Helper.ExcelBranchInitializer" target="Entity.Actor.Staff" relationship="CREATE">
+      <point x="-15.0" y="-58.0" />
+      <point x="4090.0" y="2045.5" />
+      <point x="4000.0" y="2045.5" />
+      <point x="4000.0" y="1163.0" />
+      <point x="-156.5" y="0.0" />
+    </edge>
+    <edge source="Entity.Lists.AllBranches" target="Interface.Admin.IAllBranches" relationship="REALIZATION">
+      <point x="138.5" y="-90.5" />
+      <point x="1816.5" y="2952.5" />
+      <point x="-68.5" y="106.0" />
+    </edge>
+    <edge source="Boundary.LoginUI" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="-95.5" />
+      <point x="2385.0" y="3272.0" />
+      <point x="2724.0" y="3272.0" />
+      <point x="2724.0" y="3179.0" />
+      <point x="2739.0" y="3179.0" />
+      <point x="2739.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="Boundary.LoginUI" target="Interface.Display.IDisplayMenu" relationship="REALIZATION">
+      <point x="-15.0" y="-95.5" />
+      <point x="2370.0" y="3320.0" />
+      <point x="1902.0" y="3320.0" />
+      <point x="1902.0" y="2708.0" />
+      <point x="2045.0" y="2708.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.StaffUI" relationship="CREATE">
+      <point x="100.0" y="0.0" />
+      <point x="785.0" y="4083.0" />
+      <point x="0.0" y="109.0" />
+    </edge>
+    <edge source="Entity.Branch.Branch" target="Entity.Actor.Staff" relationship="TO_MANY">
+      <point x="15.0" y="-277.0" />
+      <point x="1500.0" y="827.5" />
+      <point x="4170.0" y="827.5" />
+      <point x="-15.0" y="-109.0" />
+    </edge>
+    <edge source="Controller.OrderController" target="Controller.OrderExpiryController" relationship="CREATE">
+      <point x="0.0" y="-203.5" />
+      <point x="120.0" y="58.0" />
+    </edge>
+    <edge source="Controller.OrderController" target="Entity.Order.Order" relationship="CREATE">
+      <point x="-195.5" y="0.0" />
+      <point x="471.5" y="2683.0" />
+      <point x="471.5" y="1163.0" />
+      <point x="-128.5" y="0.0" />
+    </edge>
+    <edge source="Interface.Boundaries.IMenuActionUI" target="Interface.Display.IDisplayMenu" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-82.0" />
+      <point x="845.0" y="1396.0" />
+      <point x="2030.0" y="1396.0" />
+      <point x="-15.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.StaffUI" target="Entity.Branch.Branch" relationship="TO_ONE">
+      <point x="0.0" y="-109.0" />
+      <point x="785.0" y="3320.0" />
+      <point x="852.0" y="3320.0" />
+      <point x="852.0" y="3224.0" />
+      <point x="1408.5" y="3224.0" />
+      <point x="-76.5" y="277.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.AdminUI" relationship="CREATE">
+      <point x="0.0" y="46.0" />
+      <point x="-15.0" y="4153.0" />
+      <point x="2130.0" y="4153.0" />
+      <point x="-15.0" y="46.0" />
+    </edge>
+    <edge source="Entity.Order.Order" target="Entity.Order.OrderStatus" relationship="TO_ONE">
+      <point x="98.0" y="-167.5" />
+      <point x="1083.0" y="663.0" />
+      <point x="-117.5" y="0.0" />
+    </edge>
+    <edge source="Boundary.PaymentMethodUI" target="Interface.Display.IDisplayMenu" relationship="REALIZATION">
+      <point x="-15.0" y="-95.5" />
+      <point x="1710.0" y="3320.0" />
+      <point x="1902.0" y="3320.0" />
+      <point x="1902.0" y="2708.0" />
+      <point x="2045.0" y="2708.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Interface.Controllers.IStaffPromotion" relationship="TO_ONE">
+      <point x="-15.0" y="-107.5" />
+      <point x="3730.0" y="2096.5" />
+      <point x="3512.0" y="2096.5" />
+      <point x="-153.0" y="44.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.ManagerUI" relationship="CREATE">
+      <point x="100.0" y="30.0" />
+      <point x="1943.5" y="4113.0" />
+      <point x="1943.5" y="3335.0" />
+      <point x="1740.0" y="3335.0" />
+      <point x="115.0" y="73.0" />
+    </edge>
+    <edge source="Entity.Lists.AllBranches" target="Entity.Branch.Branch" relationship="TO_MANY">
+      <point x="0.0" y="133.0" />
+      <point x="1205.0" y="3224.0" />
+      <point x="1408.5" y="3224.0" />
+      <point x="-76.5" y="277.0" />
+    </edge>
+    <edge source="Boundary.AdminUI" target="Interface.Boundaries.IPaymentMethodUI" relationship="TO_ONE">
+      <point x="-227.5" y="-15.0" />
+      <point x="1856.5" y="3028.0" />
+      <point x="1856.5" y="2217.5" />
+      <point x="1705.0" y="2217.5" />
+      <point x="1705.0" y="1543.0" />
+      <point x="173.0" y="0.0" />
+    </edge>
+    <edge source="Entity.Branch.Branch" target="Entity.Menu.MenuItem" relationship="TO_MANY">
+      <point x="0.0" y="-277.0" />
+      <point x="1485.0" y="1042.0" />
+      <point x="3339.0" y="1042.0" />
+      <point x="54.0" y="169.0" />
+    </edge>
+    <edge source="Helper.ExcelBranchInitializer" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="58.0" />
+      <point x="4105.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="Boundary.PaymentMethodUI" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="-95.5" />
+      <point x="1725.0" y="3272.0" />
+      <point x="2724.0" y="3272.0" />
+      <point x="2724.0" y="3179.0" />
+      <point x="2739.0" y="3179.0" />
+      <point x="2739.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="Entity.Branch.Branch" target="Entity.Order.Order" relationship="TO_MANY">
+      <point x="-178.0" y="-111.5" />
+      <point x="985.0" y="1831.5" />
+      <point x="0.0" y="167.5" />
+    </edge>
+    <edge source="Boundary.MenuActionUI" target="Entity.Branch.Branch" relationship="TO_ONE">
+      <point x="0.0" y="121.0" />
+      <point x="-15.0" y="3224.0" />
+      <point x="1408.5" y="3224.0" />
+      <point x="-76.5" y="277.0" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Interface.Admin.IAllBranches" relationship="TO_ONE">
+      <point x="0.0" y="107.5" />
+      <point x="3745.0" y="3179.0" />
+      <point x="2739.0" y="3179.0" />
+      <point x="2739.0" y="2844.0" />
+      <point x="1885.0" y="2844.0" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="Boundary.StaffUI" target="Controller.OrderController" relationship="TO_ONE">
+      <point x="-15.0" y="-109.0" />
+      <point x="770.0" y="3270.5" />
+      <point x="819.0" y="3270.5" />
+      <point x="819.0" y="3117.5" />
+      <point x="745.0" y="3117.5" />
+      <point x="0.0" y="203.5" />
+    </edge>
+    <edge source="Boundary.MenuActionUI" target="Interface.Boundaries.IMenuActionUI" relationship="REALIZATION">
+      <point x="-105.5" y="0.0" />
+      <point x="-188.0" y="3043.0" />
+      <point x="-188.0" y="1543.0" />
+      <point x="-105.5" y="0.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Controller.StaffManagementController" relationship="CREATE">
+      <point x="15.0" y="-46.0" />
+      <point x="0.0" y="4009.5" />
+      <point x="4345.0" y="4009.5" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="Entity.Actor.Manager" target="Entity.Actor.Staff" relationship="GENERALIZATION">
+      <point x="-51.0" y="-32.5" />
+      <point x="149.0" y="109.0" />
+    </edge>
+    <edge source="Helper.ExcelBranchInitializer" target="Interface.Controllers.IStaffManager" relationship="TO_ONE">
+      <point x="220.0" y="0.0" />
+      <point x="4353.0" y="2683.0" />
+      <point x="4353.0" y="2487.0" />
+      <point x="4205.0" y="2487.0" />
+      <point x="0.0" y="56.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.MenuActionUI" relationship="CREATE">
+      <point x="-15.0" y="-46.0" />
+      <point x="-15.0" y="121.0" />
+    </edge>
+    <edge source="Entity.Menu.Menu" target="Entity.Menu.MenuItem" relationship="TO_MANY">
+      <point x="0.0" y="-46.0" />
+      <point x="3365.0" y="1042.0" />
+      <point x="3339.0" y="1042.0" />
+      <point x="54.0" y="169.0" />
+    </edge>
+    <edge source="Entity.Actor.Person" target="Entity.Actor.Gender" relationship="TO_ONE">
+      <point x="0.0" y="-193.0" />
+      <point x="0.0" y="58.0" />
+    </edge>
+    <edge source="Entity.Actor.Person" target="Entity.Actor.Role" relationship="TO_ONE">
+      <point x="128.0" y="0.0" />
+      <point x="4405.0" y="383.0" />
+      <point x="0.0" y="58.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.CustomerUI" relationship="CREATE">
+      <point x="30.0" y="-46.0" />
+      <point x="15.0" y="3904.5" />
+      <point x="-232.0" y="141.5" />
+    </edge>
+    <edge source="Boundary.PaymentMethodUI" target="Controller.PaymentController" relationship="TO_ONE">
+      <point x="0.0" y="95.5" />
+      <point x="1725.0" y="3577.0" />
+      <point x="370.0" y="3577.0" />
+      <point x="-15.0" y="82.0" />
+    </edge>
+    <edge source="Controller.BranchController" target="Entity.Branch.Branch" relationship="CREATE">
+      <point x="-183.0" y="0.0" />
+      <point x="2663.5" y="3043.0" />
+      <point x="2663.5" y="1816.5" />
+      <point x="178.0" y="-126.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Controller.LoginController" relationship="CREATE">
+      <point x="0.0" y="-46.0" />
+      <point x="-15.0" y="3994.5" />
+      <point x="3305.0" y="3994.5" />
+      <point x="0.0" y="94.0" />
+    </edge>
+    <edge source="Boundary.CustomerUI" target="Controller.PaymentController" relationship="TO_ONE">
+      <point x="-30.0" y="-169.0" />
+      <point x="1355.0" y="3577.0" />
+      <point x="370.0" y="3577.0" />
+      <point x="-15.0" y="82.0" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.PaymentMethodUI" relationship="CREATE">
+      <point x="100.0" y="-15.0" />
+      <point x="1740.0" y="4068.0" />
+      <point x="15.0" y="95.5" />
+    </edge>
+    <edge source="Boundary.LoginUI" target="Boundary.AdminUI" relationship="TO_ONE">
+      <point x="-215.0" y="-95.5" />
+      <point x="25.0" y="46.0" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Interface.Display.IDisplayMenu" relationship="REALIZATION">
+      <point x="15.0" y="107.5" />
+      <point x="3760.0" y="3320.0" />
+      <point x="1902.0" y="3320.0" />
+      <point x="1902.0" y="2708.0" />
+      <point x="2045.0" y="2708.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="Controller.BranchController" target="Interface.Boundaries.IStaffActionsUI" relationship="TO_ONE">
+      <point x="0.0" y="-70.0" />
+      <point x="2945.0" y="2141.5" />
+      <point x="3345.0" y="2141.5" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="Helper.ExcelBranchInitializer" target="Interface.Controllers.IBranchController" relationship="TO_ONE">
+      <point x="0.0" y="-58.0" />
+      <point x="4105.0" y="2030.5" />
+      <point x="3070.0" y="2030.5" />
+      <point x="3070.0" y="1027.0" />
+      <point x="3145.0" y="1027.0" />
+      <point x="0.0" y="56.5" />
+    </edge>
+    <edge source="Controller.StaffPromotionController" target="Interface.Controllers.IStaffPromotion" relationship="REALIZATION">
+      <point x="0.0" y="-70.0" />
+      <point x="100.0" y="44.5" />
+    </edge>
+    <edge source="Controller.PaymentController" target="Entity.Branch.Branch" relationship="TO_MANY">
+      <point x="0.0" y="82.0" />
+      <point x="385.0" y="3224.0" />
+      <point x="1408.5" y="3224.0" />
+      <point x="-76.5" y="277.0" />
+    </edge>
+    <edge source="Controller.StaffManagementController" target="Interface.Controllers.IStaffManager" relationship="REALIZATION">
+      <point x="50.5" y="-70.0" />
+      <point x="4395.5" y="1943.0" />
+      <point x="158.0" y="0.0" />
+    </edge>
+    <edge source="Boundary.AdminUI" target="Interface.Display.IDisplayMenu" relationship="TO_ONE">
+      <point x="-85.0" y="-46.0" />
+      <point x="15.0" y="32.5" />
+    </edge>
+    <edge source="Helper.StaffDisplayUI" target="Interface.Boundaries.IStaffDisplayUI" relationship="REALIZATION">
+      <point x="-148.5" y="-94.0" />
+      <point x="51.5" y="44.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.StaffActionsUI" relationship="CREATE">
+      <point x="-100.0" y="30.0" />
+      <point x="-248.0" y="4113.0" />
+      <point x="-248.0" y="-32.5" />
+      <point x="4551.5" y="-32.5" />
+      <point x="4551.5" y="3130.5" />
+      <point x="172.5" y="87.5" />
+    </edge>
+    <edge source="Helper.ExcelBranchInitializer" target="Entity.Actor.Manager" relationship="CREATE">
+      <point x="-30.0" y="-58.0" />
+      <point x="4075.0" y="2060.5" />
+      <point x="4024.0" y="2060.5" />
+      <point x="4024.0" y="1543.0" />
+      <point x="-134.0" y="0.0" />
+    </edge>
+    <edge source="Boundary.ManagerUI" target="Interface.Display.IDisplayMenu" relationship="REALIZATION">
+      <point x="199.0" y="0.0" />
+      <point x="1902.0" y="3043.0" />
+      <point x="1902.0" y="2708.0" />
+      <point x="2045.0" y="2708.0" />
+      <point x="0.0" y="32.5" />
+    </edge>
+    <edge source="FOMSApplication" target="Boundary.CreateBranchUI" relationship="CREATE">
+      <point x="100.0" y="45.0" />
+      <point x="3537.0" y="4128.0" />
+      <point x="3537.0" y="2447.5" />
+      <point x="2905.0" y="2447.5" />
+      <point x="0.0" y="58.0" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Controller.StaffPromotionController" relationship="CREATE">
+      <point x="20.0" y="-107.5" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="Boundary.StaffActionsUI" target="Entity.Actor.Staff" relationship="CREATE">
+      <point x="172.5" y="-87.5" />
+      <point x="4380.5" y="2955.5" />
+      <point x="4380.5" y="1816.5" />
+      <point x="4000.0" y="1816.5" />
+      <point x="4000.0" y="1163.0" />
+      <point x="-156.5" y="0.0" />
+    </edge>
+    <edge source="Boundary.ManagerUI" target="Interface.Boundaries.IStaffUI" relationship="TO_ONE">
+      <point x="100.0" y="73.0" />
+      <point x="1725.0" y="3239.0" />
+      <point x="1004.0" y="3239.0" />
+      <point x="1004.0" y="2222.5" />
+      <point x="933.0" y="2222.5" />
+      <point x="-72.0" y="32.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.6461759168258412" showDependencies="true" x="1306.8041016391608" y="3690.9927429370628" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
