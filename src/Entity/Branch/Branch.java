@@ -1,13 +1,10 @@
 package Entity.Branch;
 
-import Entity.Actor.Manager;
 import Entity.Actor.Role;
-import Entity.Menu.Menu;
 import Entity.Menu.MenuItem;
 import Entity.Order.Order;
 import Entity.Actor.Staff;
 import Entity.Payment.PaymentMethod;
-import Entity.Payment.PaymentMethods;
 
 import java.io.Serializable;
 import java.util.ArrayList;

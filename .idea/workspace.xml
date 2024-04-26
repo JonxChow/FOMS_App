@@ -9,10 +9,50 @@
   <component name="ChangeListManager">
     <list default="true" id="7042dfb3-8633-4184-91e1-0fffaebe01a4" name="Changes" comment="Fixed branch getters">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_4_24__4_08pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_4_24__4_08pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2024_2_19_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2024_2_19_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/MenuActionUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/AddManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/AddStaff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchControlUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchCreationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/BranchCreationUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/CloseBranch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/CreateBranch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/ManagerCreationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/OpenBranch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/RemoveManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/RemoveStaff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassesWeDontNeedAnymore/StaffCreationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branch/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Payment/PaymentMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Payment/PaymentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/AddPaymentMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/EditManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/EditStaff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/PromoteStaff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/RemovePaymentMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Admin/TransferStaff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/AddToOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CollectFood.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/CreateOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/DisplayMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/EditOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/MakePayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/PrintReceipt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/RemoveFromOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Customer/TrackOrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/AddMenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/EditMenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/ListStaff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Manager/RemoveMenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/DisplayNewOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/ProcessOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Staff/ViewOrderDetail.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,31 +82,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.FOMSApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jonathanchow/Documents/FOMS_App/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.archetype.catalogs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.FOMSApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "openjdk-20",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/jonathanchow/Documents/FOMS_App/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="FOMS_App" />
